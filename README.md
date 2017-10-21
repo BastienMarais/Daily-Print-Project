@@ -1,4 +1,4 @@
-# Projet_Reprographie
+# DailyPrint Project
 
 ## Description du projet
 
