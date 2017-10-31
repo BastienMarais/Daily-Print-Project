@@ -1,3 +1,3 @@
 # SQL
 
-Ce dossier contient tous .sql de l'application web.
+Ce dossier contient tous les .sql de l'application web.
