@@ -2,8 +2,21 @@
 
 ## Description du projet
 
-Ce projet réaliser par Bastien Marais, Julien DAURAT, Saliou BA et Ariella LEVY est basé sur la reprographie de l'iut de vélizy-Villacoublay.  
-Nous savons tous faire un commit !
+Ce projet vise a remplacer le système de reprographie de l'IUT de Vélizy par une application web traitant les demandes numériquement et facilitant la communication entre les professeurs et le service de reprographie.
+
+####Contributeurs :
+* Bastien Marais,
+* Julien DAURAT,
+* Saliou BA,
+* Ariella LEVY
+
+
+#### Langages utilisés :
+* HTML/CSS
+* PHP
+* JS
+* SQL
+* PL/SQL
 
 ## Installation
 
