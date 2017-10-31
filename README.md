@@ -1,4 +1,4 @@
-﻿# DailyPrint Project
+﻿# Daily'Print Project
 
 ## Description du projet
 
