@@ -2,7 +2,7 @@
 
 ## Description du projet
 
-Ce projet vise a remplacer le système de reprographie de l'IUT de Vélizy par une application web traitant les demandes numériquement et facilitant la communication entre les professeurs et le service de reprographie.
+Ce projet vise à remplacer le système de reprographie de l'IUT de Vélizy par une application web traitant les demandes numériquement et facilitant la communication entre les professeurs et le service de reprographie.
 
 #### Contributeurs :
 * Bastien MARAIS,
