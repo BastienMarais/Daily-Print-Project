@@ -22,4 +22,3 @@ Ce projet vise à remplacer le système de reprographie de l'IUT de Vélizy par 
 
 TODO
 
-test_bot_discord
