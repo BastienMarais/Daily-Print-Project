@@ -52,3 +52,7 @@ git pull
 ```sh
 git status
 ```
+*Pour changer de branche :*
+```sh
+git checkout NOM_BRANCHE_VOULUE
+```
