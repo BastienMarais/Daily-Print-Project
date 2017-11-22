@@ -6,7 +6,7 @@ drop table REQUESTS ;
 drop table PROTECT_FILES ;
 
 create table REAL_USER (
-email varchar(50) primary key,
+email varchar(50) primary key, check (email LIKE "%@%"),
 name varchar(30) not null,
 surname varchar(30) not null,
 status varchar(30) not null,
@@ -14,12 +14,12 @@ password varchar(50) not null,
 department varchar(30) not null);
 
 create table TMP_USER (
-email varchar(50) primary key,
+email varchar(50) primary key, check (email LIKE "%@%.%"),
 name varchar(30) not null,
 surname varchar(30) not null,
 status varchar(30) not null,
 password varchar(50) not null,
-department varchar(30) not null);
+department varchar(30) not null,);
 
 create table REQUESTS (
 id_requests number(8) primary key identity(0,1),
