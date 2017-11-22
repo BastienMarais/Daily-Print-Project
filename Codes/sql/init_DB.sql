@@ -5,8 +5,6 @@ drop table TMP_USER  ;
 drop table REQUESTS ;
 drop table PROTECT_FILES ;
 
-
-
 create table REAL_USER (
 email varchar(50) primary key,
 name varchar(30) not null,
