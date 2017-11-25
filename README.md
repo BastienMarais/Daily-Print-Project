@@ -56,3 +56,8 @@ git status
 ```sh
 git checkout NOM_BRANCHE_VOULUE
 ```
+
+*Pour fusionner sa branche avec une autre branche :*
+```sh
+git merge AUTRE_BRANCHE
+```
