@@ -89,6 +89,7 @@
 									<option value="MMI">MMI</option>
 									<option value="GEII">GEII</option>
 									<option value="Recherches">Recherches</option>
+									<option value="REPRO">Reprographie</option>
 									<option value="Autre">Autre</option>
 								</select>
                             </div>
