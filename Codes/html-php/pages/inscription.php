@@ -76,7 +76,7 @@
                             <label class="col-sm-2 control-label">Statut</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="inputStatus">
-									<option value="professeur">Professeur</option>
+									<option value="client">Client</option>
 									<option value="reprographie">Service reprographie</option>
 								</select>
                             </div>
