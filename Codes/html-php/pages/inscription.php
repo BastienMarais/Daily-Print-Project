@@ -88,6 +88,7 @@
 									<option value="INFO">INFO</option>
 									<option value="MMI">MMI</option>
 									<option value="GEII">GEII</option>
+									<option value="Recherches">Autre</option>
 									<option value="Autre">Autre</option>
 								</select>
                             </div>
