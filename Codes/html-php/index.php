@@ -42,7 +42,7 @@
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-brown border-black">
                     <legend>Se connecter : </legend>
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="pages/accueil.php">
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
@@ -69,7 +69,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">Connexion</button>
+                                <button type="submit" class="btn btn-default"> Connexion </button>
                             </div>
                         </div>
                     </form>
