@@ -36,7 +36,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="" class="dropdown-toggle" data-toggle="dropdown">
-							Admin@DailyPrint.fr
+							admin@dailyprint.xyz
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
