@@ -37,7 +37,7 @@
             <br/>
             <div class="row ">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-brown border-black">
+                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white border-black">
                     <legend>Mot de passe oublié : </legend>
                     <form class="form-horizontal">
                         <div class="form-group">

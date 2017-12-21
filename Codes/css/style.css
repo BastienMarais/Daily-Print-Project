@@ -10,10 +10,15 @@
 
 /* background */
 
-.background-brown{
+.background-white{
 	background-color: #FFFFFF;
 }
 
 .background-generic{
 	background-color: #CFCFCF;
 }
+
+.center{
+	text-align : center;
+}
+

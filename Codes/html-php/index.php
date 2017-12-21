@@ -40,7 +40,7 @@
             <br/>
             <div class="row ">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-brown border-black">
+                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white border-black">
                     <legend>Se connecter : </legend>
                     <form class="form-horizontal" action="pages/accueil.php">
                         <div class="form-group">

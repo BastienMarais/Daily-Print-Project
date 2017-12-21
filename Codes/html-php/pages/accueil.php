@@ -2,10 +2,10 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
-		<meta name="description" content="Web tuto">
-		<meta name="keywords" content="HTML,CSS,JavaScript">
-		<meta name="author" content="Bastien Marais">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Daily'Print accueil">
+        <meta name="keywords" content="HTML,CSS, PHP, JavaScript">
+        <meta name="author" content="Daily'Print TEAM">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<!-- Déclatration des styles css et scripts js -->
 		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
@@ -20,6 +20,9 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
+					<li>
+						<a href="accueil.php"> <img src="../../images/logo-petit.png" class="img-responsive center-block"/> </a>
+					</li>
 					<li class="active">
 						<a href="accueil.php"> Accueil </a>
 					</li>
@@ -50,20 +53,41 @@
 		<br/>
 		<br/>
 		<div class="container-fluid">
-			
-			<!-- Corps de la page -->
 			<content class="container">
-				<div class="jumbotron">
-					<div class="container">
-						<h1> Bienvenue sur Daily'Print </h1>
-						<h2> Pour créer une demandes
+				<div class="row">
+					<div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
+					<div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
+						<img src="../../images/logo.png" class="img-responsive" alt="Responsive image" />
 					</div>
+					<div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
 				</div>
 				<br/>
-				<br/>
-				<br/>
-				<br/>
-				
+				<div class="row">
+					<div  class="col-xs-1 col-sm-1 col-md-4 col-lg-4">
+						<br/>
+					</div>
+					<div  class="col-xs-10 col-sm-10 col-md-4 col-lg-4 background-white border-black">
+						<h3> Pour créer une demande d'impression :</h3>
+						<ul>
+							<li> Aller sur "Nouvelle demande" </li>
+						</ul>
+						<h3> Pour voir vos demandes :</h3>
+						<ul>
+							<li> Aller sur "Mes demandes" </li>
+						</ul>
+						<h3> Pour vous déconnecter :</h3>
+						<ul>
+							<li> Aller sur votre nom </li>
+						</ul>
+						<h3> Pour plus d'informations :</h3>
+						<ul>
+							<li> Aller sur "Aide" </li>
+						</ul>
+					</div>
+					<div  class="col-xs-1 col-sm-1 col-md-4 col-lg-4">
+						<br/>
+					</div>	
+				</div>
 			</content>
 		</div>	
 	</body>
