@@ -14,14 +14,14 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../../css/style.css">
 		<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon"/>
-		<title> Panel Admin </title>
+		<title> Panel Admin / Demandes </title>
 	</head>
 	<body class="background-generic">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="admin.php#?users=False"> <img src="../../images/logo-petit.png" class="img-responsive center-block"/> </a>
+						<a href="admin.php"> <img src="../../images/logo-petit.png" class="img-responsive center-block"/> </a>
 					</li>
 					<li class="active">
 						<a href="admin.php"> Demandes d'inscription en attente </a>
