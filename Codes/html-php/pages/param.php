@@ -72,19 +72,19 @@
 							<div class="form-group">
 								<label for="inputPassword1" class="col-sm-4 control-label">Mot de passe actuel :</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+									<input type="password" class="form-control" id="inputPassword1" placeholder="Mot de passe actuel">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputPassword2" class="col-sm-4 control-label">Nouveau mot de passe :</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+									<input type="password" class="form-control" id="inputPassword2" placeholder="Nouveau mot de passe">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputPassword3" class="col-sm-4 control-label">Confirmer le mdp :</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="Nouveau mot de passe">
 								</div>
 							</div>
 							<div class="form-group">

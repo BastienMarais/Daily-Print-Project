@@ -40,7 +40,7 @@
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="param.php">Mes paramètres</a></li>
+							<li><a href="admin_param.php">Mes paramètres</a></li>
 							<li><a href="../index.php">Se déconnecter</a></li>
 						</ul>
 					</li>
