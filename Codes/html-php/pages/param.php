@@ -23,7 +23,7 @@
 					<li>
 						<a href="accueil.php"> <img src="../../images/logo-petit.png" class="img-responsive center-block"/> </a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="accueil.php"> Accueil </a>
 					</li>
 					<li>
@@ -37,13 +37,13 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
+					<li class="dropdown active">
 						<a href="" class="dropdown-toggle" data-toggle="dropdown">
 							email du prof a afficher
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="param.php">Mes paramètres</a></li>
+							<li class="active"><a href="param.php">Mes paramètres</a></li>
 							<li><a href="../index.php">Se déconnecter</a></li>
 						</ul>
 					</li>

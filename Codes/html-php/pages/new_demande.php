@@ -23,13 +23,13 @@
 					<li>
 						<a href="accueil.php"> <img src="../../images/logo-petit.png" class="img-responsive center-block"/> </a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="accueil.php"> Accueil </a>
 					</li>
 					<li>
 						<a href="visual.php"> Mes demandes </a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="new_demande.php"> Nouvelle demande </a>
 					</li>
 					<li>
