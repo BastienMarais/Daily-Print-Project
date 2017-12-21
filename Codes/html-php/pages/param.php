@@ -70,25 +70,25 @@
 						<legend> Partie mot de passe :</legend>
 						<form class="form-horizontal">
 							<div class="form-group">
-								<label for="inputPassword1" class="col-sm-2 control-label">Mot de passe actuel :</label>
-								<div class="col-sm-10">
+								<label for="inputPassword1" class="col-sm-4 control-label">Mot de passe actuel :</label>
+								<div class="col-sm-8">
 									<input type="password" class="form-control" id="inputPassword1" placeholder="Password">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputPassword2" class="col-sm-2 control-label">Nouveau mot de passe :</label>
-								<div class="col-sm-10">
+								<label for="inputPassword2" class="col-sm-4 control-label">Nouveau mot de passe :</label>
+								<div class="col-sm-8">
 									<input type="password" class="form-control" id="inputPassword2" placeholder="Password">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputPassword1" class="col-sm-2 control-label">Confirmer le mdp :</label>
-								<div class="col-sm-10">
-									<input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+								<label for="inputPassword3" class="col-sm-4 control-label">Confirmer le mdp :</label>
+								<div class="col-sm-8">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
 								</div>
 							</div>
 							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">
+								<div class="col-sm-offset-4 col-sm-8">
 									<button type="submit" class="btn btn-default">Changer mot de passe</button>
 								</div>
 							</div>
