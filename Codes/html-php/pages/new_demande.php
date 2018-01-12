@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" role="main">
 	<head>
 		<meta charset="utf-8">
         <meta name="description" content="Daily'Print new demande">
