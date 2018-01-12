@@ -21,7 +21,7 @@
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="admin.php"> <img src="../../images/logo-petit.png" class="img-responsive center-block"/> </a>
+						<a href="admin.php"> <img src="../../images/logo-petit.png" class="img-responsive center-block" alt="icone du site"/> </a>
 					</li>
 					<li>
 						<a href="admin.php"> Demandes d'inscription en attente </a>
