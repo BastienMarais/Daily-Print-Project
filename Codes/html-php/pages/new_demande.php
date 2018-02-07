@@ -103,6 +103,8 @@
 											<option value="type3">type 3</option>
 											<option value="type4">type 4</option>
 										</select>
+										<br/>
+										<br/>
 									</div>
                                     <br/>
 								</fieldset>
@@ -206,11 +208,11 @@
 								<br/>
 								<br/>
 								<div class="row">
-									<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 "></div>
-									<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+									<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 "></div>
+									<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 										<input type="submit" value="envoyer" />
 									</div>
-									<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5"></div>
+									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
 								</div>
 								<br/>
 								<br/>
