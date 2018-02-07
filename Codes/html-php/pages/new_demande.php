@@ -43,27 +43,36 @@
             </ul>
          </div>
       </nav> <br/>
-      <h1 id=haut_page> Remplissez ce formulaire de demande</h1>
+
       <div class="container-fluid">
          <content class="container">
-            <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12 "></div>
-            <div class="col-xs-8 col-sm-8 col-md-2 col-lg-2 "></div>
+
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "></div>
+           <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2 "></div>
             <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 background-white border-black">
                <form method="post" action="action.php">
+                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-12"></div>
+                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 "></div>
+                 <h1 id=haut_page>Remplissez ce formulaire de demande</h1>
+                 <br/><br/>
                   <div class="row">
-                     <div class="col-xs-2 col-sm-2 col-md-12 col-lg-12"></div>
-                     <div class="col-xs-8 col-sm-8 col-md-3 col-lg-3">
+                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                     <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2 "></div>
+                     <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
                         <p> <label for="inputReturnDate">Date de retour souhaitée :</label> </div>
-                     <div class="col-xs-8 col-sm-8 col-md-3 col-lg-3">
+
+                     <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
                         <input type="date" id="inputReturnDate" /> </div>
                      </p>
                   </div> <br/>
                   <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-2 "></div>
                      <div class="col-xs-8 col-sm-8 col-md-6 col-lg-6">
                         <fieldset>
                            <legend>Type de tirage </legend>
-                           <div class="col-xs-2 col-sm-2 col-md-12 col-lg-12"></div>
-                           <div class="col-xs-8 col-sm-8 col-md-5 col-lg-5">
+                           <div class="col-xs-7 col-sm-12 col-md-12 col-lg-12"></div>
+                           <div class="col-xs-7 col-sm-8 col-md-5 col-lg-5">
                               <p> <label for="inputCopyNumber">Nombre de copies :</label> </div>
                            <div class="col-xs-8 col-sm-8 col-md-3 col-lg-3">
                               <input type="text" id="inputCopyNumber" /> </div>
@@ -91,82 +100,122 @@
 											<option value="type3">type 3</option>
 											<option value="type4">type 4</option>
 										</select> </div>
+
                            </p> <br/> </fieldset> <br/> <br/>
                         <fieldset>
                            <legend>Finition </legend>
-                           <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3"></div>
-                           <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3">
+                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3"></div>
+                           <div class="col-xs-5 col-sm-4 col-md-4 col-lg-3">
                               <p> <label for="inputAgrafe1">1 agrafe</label> <input type="checkbox" id="inputAgrafe1" /> </p>
                            </div>
-                           <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3">
+                           <div class="col-xs-5 col-sm-4 col-md-5 col-lg-3">
                               <p> <label for="inputAgrafe2">2 agrafes</label> <input type="checkbox" id="inputAgrafe2" /> </p>
                            </div>
-                           <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3"></div>
-                           <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
-                              <p> <label for="livret">Livret</label> <input type="checkbox" id="livret" /> </p>
+                           <div class="col-xs-12 col-sm-4 col-md-12 col-lg-3"></div>
+                           <div class="col-xs-5 col-sm-4 col-md-4 col-lg-2">
+                              <p> <label for="livret">Livret&nbsp;&nbsp;&nbsp;&nbsp;</label> <input type="checkbox" id="livret" /> </p>
                            </div> <br/>
-                           <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3"></div>
-                           <div class="col-xs-1 col-sm-2 col-md-1 col-lg-1">
-                              <p> <label for="massicot">Massicot</label> <input type="checkbox" id="massicot" /> </p>
+                           <div class="col-xs-5 col-sm-12 col-md-8 col-lg-3"></div>
+                           <div class="col-xs-5 col-sm-4 col-md-8 col-lg-1">
+                              <p> <label for="massicot">Massicot&nbsp;</label> <input type="checkbox" id="massicot" /> </p>
                            </div>
-                           <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2"></div>
-                           <div class="col-xs-1 col-sm-2 col-md-1 col-lg-1">
-                              <p> <label for="pliage">Pliage</label> <input type="checkbox" id="pliage" /> </p>
+                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2"></div>
+                           <div class="col-xs-5 col-sm-4 col-md-4 col-lg-1">
+                              <p> <label for="pliage">Pliage&nbsp;&nbsp;&nbsp;</label> <input type="checkbox" id="pliage" /> </p>
                            </div>
                         </fieldset> <br/> <br/>
                         <fieldset>
                            <legend>Photographies de pubication protégées </legend>
-                           <div class="col-xs-2 col-sm-2 col-md-12 col-lg-12"></div>
-                           <div class="col-xs-8 col-sm-8 col-md-6 col-lg-6">
+                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                           <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
                               <p> <label for="publicationTitle">Titre de la publication :</label> </div>
-                           <div class="col-xs-8 col-sm-8 col-md-3 col-lg-3">
+                           <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                               <input type="text" id="publicationTitle" /> </div>
                            </p> <br/>
-                           <div class="col-xs-2 col-sm-2 col-md-12 col-lg-12"></div>
-                           <div class="col-xs-2 col-sm-2 col-md-6 col-lg-6">
+                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                           <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
                               <p> <label for="author">Auteur :</label> </div>
-                           <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+                           <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                               <input type="text" name="author" /> </div>
                            </p> <br/>
-                           <div class="col-xs-2 col-sm-2 col-md-12 col-lg-12"></div>
-                           <div class="col-xs-2 col-sm-2 col-md-6 col-lg-6">
+                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                           <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
                               <p> <label for="editor">Editeur :</label> </div>
-                           <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+                           <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                               <input type="text" id="editor" /> </div>
                            </p> <br/>
-                           <div class="col-xs-2 col-sm-2 col-md-12 col-lg-12"></div>
-                           <div class="col-xs-2 col-sm-2 col-md-6 col-lg-6">
+                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                           <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
                               <p> <label for="numberCopiedPages">Nb de pages A4 copiées :</label> </div>
-                           <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+                           <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                               <input type="text" id="numberCopiedPages" /> </div>
                            </p> <br/>
-                           <div class="col-xs-2 col-sm-2 col-md-12 col-lg-12"></div>
-                           <div class="col-xs-2 col-sm-2 col-md-6 col-lg-6">
+                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                           <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
                               <p> <label for="numberExByPages">Nb d'exemplaires/pages:</label> </div>
-                           <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+                           <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                               <input type="text" id="numberExByPages" /> </div>
                            </p> <br/> </fieldset> <br/> <br/>
                         <fieldset>
                            <div class="row">
-                              <div class="col-xs-2 col-sm-2 col-md-12 col-lg-12"></div>
-                              <div class="col-xs-8 col-sm-8 col-md-6 col-lg-6">
+                              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                  <p> <label for="fileSelector">Sélectionner le fichier:</label> </div>
-                              <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
+                              <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
                                  <input type="file" id="fileSelector" /> </div>
                               </p>
                            </div>
-                     </div> <br/> <br/> <br/><br/>
+                     </div> <br/> <br/> <br/><br/><br/>
 										 <div class="row">
-                     <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12"></div>
-										   <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
+                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                     <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12"></div>
+                     <div class="col-xs-5 col-sm-12 col-md-12 col-lg-2 "></div>
+										   <div class="col-xs-5 col-sm-8 col-md-4 col-lg-4">
                         <input type="submit" value="envoyer" />
 											</div>
 											<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-											<p><a href="#haut_page">retour haut de page</a></p>
+
 										</div>
                      </div>
+
 									 </div>
+                </div>
          </content>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <div class="row"> <br/>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+			<footer class="footer text-center background-grey-text-white row">
+        <div>
+					<div>Vous êtes sur web-bootstrap et il est :</div>
+        <br/><br/>
+					<div id='div_horloge'></div>
+					<a href='#haut_page'> Retourner en haut </a>
+
+				</div>
+</footer>
+       </div>
    </body>
 
 </html>
