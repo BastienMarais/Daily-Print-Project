@@ -5,7 +5,8 @@
 
 /* border */
 .border-black{
-	border: solid 2px black;
+	border: solid 1px #AAA;
+	padding-top: 10px;
 }
 
 /* background */
@@ -18,7 +19,12 @@
 	background-color: #CFCFCF;
 }
 
+/* alignement */
 .center{
 	text-align : center;
 }
 
+/* label */
+label {
+	font-weight: normal;
+}
