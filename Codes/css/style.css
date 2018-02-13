@@ -28,3 +28,8 @@
 label {
 	font-weight: normal;
 }
+
+/* legend */
+legend {
+	color : #888;
+}
