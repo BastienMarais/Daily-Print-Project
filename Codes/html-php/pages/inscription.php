@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword2" class="col-sm-2 control-label">Confirmer le mdp</label>
+                            <label for="inputPassword2" class="col-sm-2 control-label">Confirmer</label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
                             </div>
