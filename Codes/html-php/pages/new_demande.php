@@ -48,7 +48,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "></div>
                 <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2 "></div>
                 <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 background-white border-black">
-                    <form method="post" action="action.php">
+                    <form method="post" action="">
                         <div class="col-xs-2 col-sm-2 col-md-4 col-lg-12"></div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 "></div>
                         <h1 class="border-black text-center" id=haut_page>Remplissez ce formulaire de demande</h1>
@@ -218,7 +218,7 @@
 								<div class="row">
 									<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 "></div>
 									<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-										<input type="submit" value="envoyer" />
+										<input type="submit" value="envoyer" class="btn btn-success btn-lg" />
 									</div>
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
 								</div>
