@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" role="main">
+<html lang="fr"  >
 	<head>
 		<meta charset="utf-8">
         <meta name="description" content="Daily'Print Admin Panel">
@@ -50,9 +50,57 @@
 		<br/>
 		<br/>
 		<div class="container-fluid">
-			<content class="container">
+			<content class="container" role="main">
 				<h1 class="center"> TODO: admin.php</h1>
 			</content>
-		</div>	
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>		</div>	
 	</body>
 </html>

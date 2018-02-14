@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" role="main">
+<html lang="fr"  >
 
     <head>
         <meta charset="utf-8">
@@ -43,22 +43,22 @@
 		<br/>
 
         <div class="container-fluid">
-            <content class="container">
+            <content class="container" role="main">
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "></div>
                 <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2 "></div>
-                <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 background-white border-black">
+                <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 background-white cadre">
                     <form method="post" action="">
                         <div class="col-xs-2 col-sm-2 col-md-4 col-lg-12"></div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 "></div>
-                        <h1 class="border-black text-center" id=haut_page>Remplissez ce formulaire de demande</h1>
+                        <h1 class="cadre text-center background-gradient" id=haut_page>Remplissez ce formulaire de demande</h1>
                         <br/>
 						<br/>
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
                             <div class="col-xs-1 col-sm-1 col-md-2 col-lg-3 "></div>
                             <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
-								<label for="inputReturnDate">Date de retour souhaitée :</label>
+								<label for="inputReturnDate" title="jj/mm/aaaa">Date de retour souhaitée :</label>
 							</div>
                             <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
                                 <input type="date" id="inputReturnDate" />
@@ -70,8 +70,8 @@
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
                             <div class="col-xs-1 col-sm-1 col-md-2 col-lg-3 "></div>
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <fieldset class="border-black">
-                                    <legend>Type de tirage </legend>
+                                <fieldset class="cadre">
+                                    <legend class="color-blue">Type de tirage </legend>
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
                                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                                          <label for="inputCopyNumber">Nombre de copies :</label> </div>
@@ -85,7 +85,7 @@
                                         <label for="inputCopyType">Copie :</label>
 									</div>
                                     <div class="col-xs-8 col-sm-8 col-md-3 col-lg-3">
-                                        <select name="typecopie" style="width:187px">
+                                        <select id="inputCopyType" name="typecopie" style="width:187px">
 											<option value="choisissez un type"></option>
 											<option value="type1">type 1</option>
 											<option value="type2">type 2</option>
@@ -100,7 +100,7 @@
                                         <label for="inputPaperType">Papier :</label>
 									</div>
                                     <div class="col-xs-8 col-sm-8 col-md-3 col-lg-3">
-                                        <select name="typepapier" style="width:187px">
+                                        <select id="inputPaperType" name="typepapier" style="width:187px">
 											<option value="choisissez un type"></option>
 											<option value="type1">type 1</option>
 											<option value="type2">type 2</option>
@@ -108,14 +108,13 @@
 											<option value="type4">type 4</option>
 										</select>
 										<br/>
-										<br/>
 									</div>
                                     <br/>
 								</fieldset>
 								<br/>
 								<br/>
-                                <fieldset class="border-black">
-                                    <legend>Finitions </legend>
+                                <fieldset class="cadre">
+                                    <legend class="color-blue">Finitions </legend>
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3"></div>
                                     <div class="col-xs-5 col-sm-4 col-md-4 col-lg-3">
                                         <label for="inputAgrafe1">1 agrafe</label>
@@ -148,8 +147,8 @@
                                 </fieldset>
 								<br/>
 								<br/>
-                                <fieldset class="border-black">
-                                    <legend>Publications protégées </legend>
+                                <fieldset class="cadre">
+                                    <legend class="color-blue">Publications protégées </legend>
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 										<label for="publicationTitle">Titre de la publication :</label>
@@ -194,11 +193,6 @@
                                         <input type="text" id="numberExByPages" /> 
 									</div>
                                     <br/>
-									<br/>
-									<br/>
-									<br/>
-									<br/>
-									<br/>
 								</fieldset>
 								<br/>
 								<br/>
@@ -218,7 +212,7 @@
 								<div class="row">
 									<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 "></div>
 									<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-										<input type="submit" value="envoyer" class="btn btn-success btn-lg" />
+										<input type="submit" value="envoyer" class="btn background-gradient btn-lg" />
 									</div>
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
 								</div>

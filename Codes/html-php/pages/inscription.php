@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" role="main">
+<html lang="fr"  >
 
     <head>
         <meta charset="utf-8">
@@ -28,7 +28,7 @@
     </head>
 
     <body class="background-generic">
-        <content class="container">
+        <content class="container" role="main">
             <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
@@ -39,42 +39,42 @@
             <br/>
             <div class="row ">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white border-black">
+                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white cadre">
                     <legend>Inscription : </legend>
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label for="inputSurname" class="col-sm-2 control-label">Nom</label>
-                            <div class="col-sm-10">
+                            <label for="inputSurname" class="col-sm-4 control-label">Nom</label>
+                            <div class="col-sm-8">
                                 <input type="text" class="form-control" id="inputSurname" placeholder="Votre nom">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputName" class="col-sm-2 control-label">Prénom</label>
-                            <div class="col-sm-10">
+                            <label for="inputName" class="col-sm-4 control-label">Prénom</label>
+                            <div class="col-sm-8">
                                 <input type="text" class="form-control" id="inputName" placeholder="Votre prénom">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-                            <div class="col-sm-10">
+                            <label for="inputEmail" class="col-sm-4 control-label">Email</label>
+                            <div class="col-sm-8">
                                 <input type="email" class="form-control" id="inputEmail" placeholder="best_mail_ever@mail.fr">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword1" class="col-sm-2 control-label">Mot de passe</label>
-                            <div class="col-sm-10">
+                            <label for="inputPassword1" class="col-sm-4 control-label">Mot de passe</label>
+                            <div class="col-sm-8">
                                 <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword2" class="col-sm-2 control-label">Confirmer</label>
-                            <div class="col-sm-10">
+                            <label for="inputPassword2" class="col-sm-4 control-label">Confirmer</label>
+                            <div class="col-sm-8">
                                 <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">Statut</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-4 control-label">Statut</label>
+                            <div class="col-sm-8">
                                 <select class="form-control" name="inputStatus">
 									<option value="client">Client</option>
 									<option value="reprographie">Service reprographie</option>
@@ -82,8 +82,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">Départements</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-4 control-label">Départements</label>
+                            <div class="col-sm-8">
                                 <select class="form-control" name="inputDept">
 									<option value="INFO">INFO</option>
 									<option value="MMI">MMI</option>
@@ -95,8 +95,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">S'inscrire</button>
+                            <div class="col-sm-offset-5 col-sm-4">
+                                <button type="submit" class="btn background-gradient">S'inscrire</button>
                             </div>
                         </div>
                     </form>
@@ -109,12 +109,28 @@
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
                     <form class="form-horizontal" action="../index.php">
-                        <button type="submit" class="btn btn-default">Retour</button>
+                        <button type="submit" class="btn background-gradient-2">Retour</button>
                     </form>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
             </div>
         </content>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
     </body>
 
 </html>

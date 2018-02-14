@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" role="main">
+<html lang="fr"  >
 	<head>
 		<meta charset="utf-8">
         <meta name="description" content="Daily'Print accueil">
@@ -53,7 +53,7 @@
 		<br/>
 		<br/>
 		<div class="container-fluid">
-			<content class="container">
+			<content class="container" role="main">
 				<div class="row">
 					<div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
 					<div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
@@ -66,7 +66,7 @@
 					<div  class="col-xs-1 col-sm-1 col-md-4 col-lg-4">
 						<br/>
 					</div>
-					<div  class="col-xs-10 col-sm-10 col-md-4 col-lg-4 background-white border-black">
+					<div  class="col-xs-10 col-sm-10 col-md-4 col-lg-4 background-white cadre">
 						<h3> Pour créer une demande d'impression :</h3>
 						<ul>
 							<li> Aller sur "Nouvelle demande" </li>
@@ -89,6 +89,22 @@
 					</div>	
 				</div>
 			</content>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
 		</div>	
 	</body>
 </html>

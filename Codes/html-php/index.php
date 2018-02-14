@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" role="main">
+<html lang="fr"  >
 
     <head>
         <meta charset="utf-8">
@@ -29,7 +29,7 @@
     </head>
 
     <body class="background-generic">
-        <content class="container">
+        <content class="container" role="main">
             <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
@@ -40,7 +40,7 @@
             <br/>
             <div class="row ">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white border-black">
+                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white cadre">
                     <legend>Se connecter : </legend>
                     <form class="form-horizontal" action="pages/accueil.php">
                         <div class="form-group">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="col-sm-offset-2 col-sm-10">
-                            <a href="pages/oubli.php" class="color-red">Mot de passe oublié ???</a>
+                            <a href="pages/oubli.php" class="color-green">Mot de passe oublié ???</a>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
@@ -69,7 +69,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success"> Connexion </button>
+                                <button type="submit" class="btn background-gradient"> Connexion </button>
                             </div>
                         </div>
                     </form>
@@ -81,12 +81,28 @@
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
                     <form class="form-horizontal" action="pages/inscription.php">
-                        <button type="submit" class="btn btn-warning">Créer un compte</button>
+                        <button type="submit" class="btn background-gradient-2">Créer un compte</button>
                     </form>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
             </div>
         </content>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
     </body>
 
 </html>

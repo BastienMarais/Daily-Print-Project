@@ -1,12 +1,16 @@
 /* color */
-.color-red{
+.color-green{
 	color : #00EE00;
 }
 
-/* border */
-.border-black{
+.color-blue{
+	color : #337ab7;
+}
+
+/* Cadre */
+.cadre{
 	border: solid 1px #AAA;
-	padding-top: 10px;
+	padding: 10px;
 }
 
 /* background */
@@ -16,7 +20,29 @@
 }
 
 .background-generic{
-	background-color: #CFCFCF;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	background-image: linear-gradient(to bottom,#397aaa 0,#CFCFCF 100%);
+	background-repeat:no-repeat;
+}
+
+.background-green{
+	color: #FFFFFF;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%);
+}
+
+.background-gradient{
+	color: #FFFFFF;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	background-image: linear-gradient(to bottom,#337ab7 0,#419641 100%);
+	background-repeat:no-repeat;
+}
+
+.background-gradient-2{
+	color: #FFFFFF;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	background-image: linear-gradient(to bottom,#ffcc00 0,#b32d00 100%);
+	background-repeat:no-repeat;
 }
 
 /* alignement */

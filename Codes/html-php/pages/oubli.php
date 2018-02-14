@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" role="main">
+<html lang="fr"  >
 
     <head>
         <meta charset="utf-8">
@@ -26,7 +26,7 @@
     </head>
 
     <body class="background-generic">
-        <content class="container">
+        <content class="container" role="main">
             <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
@@ -37,7 +37,7 @@
             <br/>
             <div class="row ">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white border-black">
+                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white cadre">
                     <legend>Mot de passe oublié : </legend>
                     <form class="form-horizontal">
                         <div class="form-group">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">Envoyer</button>
+                                <button type="submit" class="btn background-gradient">Envoyer</button>
                             </div>
                         </div>
                     </form>
@@ -60,12 +60,28 @@
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
                     <form class="form-horizontal" action="../index.php">
-                        <button type="submit" class="btn btn-default">Retour</button>
+                        <button type="submit" class="btn background-gradient-2">Retour</button>
                     </form>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
             </div>
         </content>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
     </body>
 
 </html>
