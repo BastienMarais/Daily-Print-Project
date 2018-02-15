@@ -43,37 +43,37 @@
                     <legend>Inscription : </legend>
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label for="inputSurname" class="col-sm-4 control-label">Nom</label>
+                            <label for="inputSurname" class="col-sm-4 control-label">Nom :</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="inputSurname" placeholder="Votre nom">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputName" class="col-sm-4 control-label">Prénom</label>
+                            <label for="inputName" class="col-sm-4 control-label">Prénom :</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="inputName" placeholder="Votre prénom">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-sm-4 control-label">Email</label>
+                            <label for="inputEmail" class="col-sm-4 control-label">Email :</label>
                             <div class="col-sm-8">
                                 <input type="email" class="form-control" id="inputEmail" placeholder="best_mail_ever@mail.fr">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword1" class="col-sm-4 control-label">Mot de passe</label>
+                            <label for="inputPassword1" class="col-sm-4 control-label">Mot de passe :</label>
                             <div class="col-sm-8">
                                 <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword2" class="col-sm-4 control-label">Confirmer</label>
+                            <label for="inputPassword2" class="col-sm-4 control-label">Confirmer le mot de passe :</label>
                             <div class="col-sm-8">
                                 <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Statut</label>
+                            <label class="col-sm-4 control-label">Statut :</label>
                             <div class="col-sm-8">
                                 <select class="form-control" name="inputStatus">
 									<option value="client">Client</option>
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Départements</label>
+                            <label class="col-sm-4 control-label">Départements :</label>
                             <div class="col-sm-8">
                                 <select class="form-control" name="inputDept">
 									<option value="INFO">INFO</option>
