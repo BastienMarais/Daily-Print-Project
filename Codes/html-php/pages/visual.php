@@ -53,8 +53,86 @@
 		<br/>
 		<br/>
 		<div class="container-fluid">
-			<content class="container" role="main">
-				<h1 class="center"> TODO: visual.php</h1>
+			<content class="container col-md-offset-1 col-lg-offset-1 col-xs-12 col-sm-12 col-md-10 col-lg-10 background-white cadre" role="main">
+				<legend class="color-blue"> Vos demandes : </legend>
+				<div class="table-responsive">
+					<table class="table table-bordered table-responsive">
+						<thead>
+							<tr class="background-black">
+								<th scope="col" class="center">#</th>
+								<th scope="col" class="center">ID</th>
+								<th scope="col" class="center">Fichier</th>
+								<th scope="col" class="center">Date de retour</th>
+								<th scope="col" class="center">Statut</th>
+							</tr>
+						</thead>
+						<tbody class="center">
+							<tr class="background-gradient-4">
+								<th scope="row" class="center">1</th>
+								<td>0000001</td>
+								<td><a href="../../fichiers/exemple.pdf" target="blank" class="color-white"> exemple.pdf</a></td>
+								<td>10 / 03 / 2018</td>
+								<td>non traitée</td>
+							</tr>
+							<tr class="background-gradient-2">
+								<th scope="row" class="center">2</th>
+								<td>0000156</td>
+								<td><a href="../../fichiers/exemple.pdf" target="blank"  class="color-white"> exemple.pdf</a></td>
+								<td>02 / 03 / 2018</td>
+								<td>en cours</td>
+							</tr>
+							<tr class="background-gradient-2">
+								<th scope="row" class="center">3</th>
+								<td>0000253</td> 
+								<td><a href="../../fichiers/exemple.pdf" target="blank"  class="color-white"> exemple.pdf</a></td>
+								<td>01 / 03 / 2018</td>
+								<td>en cours</td>
+							</tr>
+							<tr class="background-gradient-3">
+								<th scope="row" class="center">4</th>
+								<td>0000001</td>
+								<td><a href="../../fichiers/exemple.pdf" target="blank" class="color-white"> exemple.pdf</a></td>
+								<td>23 / 02 / 2018</td>
+								<td>traitée</td>
+							</tr>
+							<tr class="background-gradient-3">
+								<th scope="row" class="center">5</th>
+								<td>0000156</td>
+								<td><a href="../../fichiers/exemple.pdf" target="blank"  class="color-white"> exemple.pdf</a></td>
+								<td>20 / 02 / 2018</td>
+								<td>traitée</td>
+							</tr>
+							<tr class="background-gradient-3">
+								<th scope="row" class="center">6</th>
+								<td>0000253</td> 
+								<td><a href="../../fichiers/exemple.pdf" target="blank"  class="color-white"> exemple.pdf</a></td>
+								<td>19 / 02 / 2018</td>
+								<td>traitée</td>
+							</tr>
+							<tr class="background-gradient-3">
+								<th scope="row" class="center">7</th>
+								<td>0000001</td>
+								<td><a href="../../fichiers/exemple.pdf" target="blank" class="color-white"> exemple.pdf</a></td>
+								<td>15 / 02 / 2018</td>
+								<td>traitée</td>
+							</tr>
+							<tr class="background-gradient-3">
+								<th scope="row" class="center">8</th>
+								<td>0000156</td>
+								<td><a href="../../fichiers/exemple.pdf" target="blank"  class="color-white"> exemple.pdf</a></td>
+								<td>15 / 02 / 2018</td>
+								<td>traitée</td>
+							</tr>
+							<tr class="background-gradient-3">
+								<th scope="row" class="center">9</th>
+								<td>0000253</td> 
+								<td><a href="../../fichiers/exemple.pdf" target="blank"  class="color-white"> exemple.pdf</a></td>
+								<td>12 / 02 / 2018</td>
+								<td>traitée</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</content>
 			<br/>
 			<br/>

@@ -40,7 +40,7 @@
             <div class="row ">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white cadre">
-                    <legend>Inscription : </legend>
+                    <legend class="color-blue">Inscription : </legend>
                     <form class="form-horizontal">
                         <div class="form-group">
                             <label for="inputSurname" class="col-sm-4 control-label">Nom :</label>
@@ -96,7 +96,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-5 col-sm-4">
-                                <button type="submit" class="btn background-gradient">S'inscrire</button>
+                                <button type="submit" class="btn background-gradient-3">S'inscrire</button>
                             </div>
                         </div>
                     </form>

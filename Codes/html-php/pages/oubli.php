@@ -38,7 +38,7 @@
             <div class="row ">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 background-white cadre">
-                    <legend>Mot de passe oublié : </legend>
+                    <legend class="color-blue">Mot de passe oublié : </legend>
                     <form class="form-horizontal">
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Email :</label>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn background-gradient">Envoyer</button>
+                                <button type="submit" class="btn background-gradient-3">Envoyer</button>
                             </div>
                         </div>
                     </form>

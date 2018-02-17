@@ -212,7 +212,7 @@
 								<div class="row">
 									<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 "></div>
 									<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-										<input type="submit" value="envoyer" class="btn background-gradient btn-lg" />
+										<input type="submit" value="Envoyer" class="btn background-gradient-3 btn-lg" />
 									</div>
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
 								</div>
@@ -224,10 +224,10 @@
                 </div>
             </content>
         </div>
-        <footer class="footer text-center background-grey-text-white row">
-            <div>
-                <a href='#haut_page'> Retourner en haut </a>
-            </div>
+        <footer class="center row">
+            <a href='#haut_page'> Retourner en haut </a>
+			<br/>
+			<br/>
         </footer>
     </body>
 </html>

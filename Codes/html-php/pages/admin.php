@@ -50,8 +50,81 @@
 		<br/>
 		<br/>
 		<div class="container-fluid">
-			<content class="container" role="main">
-				<h1 class="center"> TODO: admin.php</h1>
+			<content class="container col-md-offset-1 col-lg-offset-1 col-xs-12 col-sm-12 col-md-10 col-lg-10 background-white cadre" role="main">
+				<legend class="color-blue"> Vos demandes : </legend>
+				<div class="table-responsive">
+					<table class="table table-hover table-bordered table-responsive">
+						<thead>
+							<tr class="background-black">
+								<th scope="col" class="center">#</th>
+								<th scope="col" class="center">Nom</th>
+								<th scope="col" class="center">Prénom</th>
+								<th scope="col" class="center">Email</th>
+								<th scope="col" class="center">Statut</th>
+								<th scope="col" class="center">Département</th>
+								<th scope="col" class="center">Options</th>
+							</tr>
+						</thead>
+						<tbody class="center">
+							<tr>
+								<th scope="row" class="center">1</th>
+								<td>Nom_1</td>
+								<td>Prénom_1</td>
+								<td>user.1@gmail.com</td>
+								<td>Reprographie</td>
+								<td>Reprographie</td>
+								<td>
+									<form>
+										<input type="submit" value="Accepter" class="btn background-gradient-3"/>
+										<input type="submit" value="Refuser" class="btn background-gradient-4"/>
+									</form>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="center">2</th>
+								<td>Nom_2</td>
+								<td>Prénom_2</td>
+								<td>user.2@gmail.com</td>
+								<td>Professeur</td>
+								<td>INFO</td>
+								<td>
+									<form>
+										<input type="submit" value="Accepter" class="btn background-gradient-3"/>
+										<input type="submit" value="Refuser" class="btn background-gradient-4"/>
+									</form>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="center">3</th>
+								<td>Nom_3</td>
+								<td>Prénom_1</td>
+								<td>user.3@gmail.com</td>
+								<td>Professeur</td>
+								<td>GEII</td>
+								<td>
+									<form>
+										<input type="submit" value="Accepter" class="btn background-gradient-3"/>
+										<input type="submit" value="Refuser" class="btn background-gradient-4"/>
+									</form>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="center">4</th>
+								<td>Nom_4</td>
+								<td>Prénom_4</td>
+								<td>user.4@gmail.com</td>
+								<td>Reprographie</td>
+								<td>Reprographie</td>
+								<td>
+									<form>
+										<input type="submit" value="Accepter" class="btn background-gradient-3"/>
+										<input type="submit" value="Refuser" class="btn background-gradient-4"/>
+									</form>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</content>
 			<br/>
 			<br/>

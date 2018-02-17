@@ -64,7 +64,7 @@
 						<br/>
 					</div>
 					<div  class="col-xs-10 col-sm-10 col-md-4 col-lg-4 background-white cadre">
-						<legend> Partie mot de passe :</legend>
+						<legend class="color-blue"> Partie mot de passe :</legend>
 						<form class="form-horizontal">
 							<div class="form-group">
 								<label for="inputPassword1" class="col-sm-4 control-label">Mot de passe actuel :</label>
@@ -86,7 +86,7 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-4 col-sm-8">
-									<button type="submit" class="btn background-gradient">Changer mot de passe</button>
+									<button type="submit" class="btn background-gradient-3">Changer mot de passe</button>
 								</div>
 							</div>
 						</form>

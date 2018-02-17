@@ -7,6 +7,10 @@
 	color : #337ab7;
 }
 
+.color-white{
+	color : #FFFFFF;
+}
+
 /* Cadre */
 .cadre{
 	border: solid 1px #AAA;
@@ -19,6 +23,7 @@
 	background-color: #FFFFFF;
 }
 
+/* bleu et vers gris */
 .background-generic{
 	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
 	background-image: linear-gradient(to bottom,#397aaa 0,#CFCFCF 100%);
@@ -31,6 +36,12 @@
 	background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%);
 }
 
+.background-black{
+	color: #FFFFFF;
+	background-color: #000000;
+}
+
+/* bleu et vers vert */
 .background-gradient{
 	color: #FFFFFF;
 	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
@@ -38,12 +49,30 @@
 	background-repeat:no-repeat;
 }
 
+/* jaune et vers rouge */
 .background-gradient-2{
 	color: #FFFFFF;
 	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
 	background-image: linear-gradient(to bottom,#ffcc00 0,#b32d00 100%);
 	background-repeat:no-repeat;
 }
+
+/* vert et vers vert foncé */
+.background-gradient-3{
+	color: #FFFFFF;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	background-image: linear-gradient(to bottom,#33cc33 0,#0f3d0f 100%);
+	background-repeat:no-repeat;
+}
+
+/* rouge et vers rouge sombre */
+.background-gradient-4{
+	color: #FFFFFF;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	background-image: linear-gradient(to bottom,#ff0000 0,#330000 100%);
+	background-repeat:no-repeat;
+}
+
 
 /* alignement */
 .center{
