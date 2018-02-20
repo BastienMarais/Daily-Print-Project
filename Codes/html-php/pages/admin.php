@@ -79,7 +79,8 @@
 									<form>
 										<input type="submit" id="acc1" value="Accepter" class="btn background-gradient-3"/>
 										<input type="submit"id="ref1" value="Refuser" class="btn background-gradient-4"/>
-										<p id="datehour"> <?php
+										<p id="datehour">
+											 <?php
 												$date = date("d-m-Y H:i:s");
 												list($finDate,$finHeure) = preg_split('/ /',$date);
 												list($finAnnee,$finMois,$finJr) = preg_split('/-/',$finDate);
