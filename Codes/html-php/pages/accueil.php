@@ -14,6 +14,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../../css/style.css">
 		<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon"/>
+		<script src="../../js/timer.js" type="text/javascript"></script>
 		<title> ACCUEIL </title>
 	</head>
 	<body class="background-generic">
@@ -63,28 +64,14 @@
 				</div>
 				<br/>
 				<div class="row">
-					<div  class="col-xs-1 col-sm-1 col-md-4 col-lg-4">
+					<div  class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
 						<br/>
 					</div>
-					<div  class="col-xs-10 col-sm-10 col-md-4 col-lg-4 background-white cadre">
-						<h3> Pour créer une demande d'impression :</h3>
-						<ul>
-							<li> Aller sur "Nouvelle demande" </li>
-						</ul>
-						<h3> Pour voir vos demandes :</h3>
-						<ul>
-							<li> Aller sur "Mes demandes" </li>
-						</ul>
-						<h3> Pour vous déconnecter :</h3>
-						<ul>
-							<li> Aller sur votre nom </li>
-						</ul>
-						<h3> Pour plus d'informations :</h3>
-						<ul>
-							<li> Aller sur "Aide" </li>
-						</ul>
+					<div  class="col-xs-10 col-sm-10 col-md-6 col-lg-6 background-white cadre">
+						<h1> Bizenvenue sur Daily Print !</h1>
+						<div id="div_horloge" class="center"> </div>
 					</div>
-					<div  class="col-xs-1 col-sm-1 col-md-4 col-lg-4">
+					<div  class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
 						<br/>
 					</div>	
 				</div>
