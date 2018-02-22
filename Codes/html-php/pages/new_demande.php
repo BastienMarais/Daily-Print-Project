@@ -193,15 +193,14 @@
                                         <input type="text" id="numberExByPages" /> 
 									</div>
                                     <br/>
-								</fieldset>
-								<br/>
-								<br/>
-                                <fieldset>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                            <label for="fileSelector">Sélectionner le fichier:</label> 
-										</div>
+				</fieldset>
+				<br/>
+				<br/>
+                                <div class="row">
+                          	      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      	                <label for="fileSelector">Sélectionner le fichier:</label> 
+                		     </div>
                                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                             <input type="file" id="fileSelector" /> 
 										</div>
