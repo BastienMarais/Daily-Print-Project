@@ -67,9 +67,9 @@
 					<div  class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
 						<br/>
 					</div>
-					<div  class="col-xs-10 col-sm-10 col-md-6 col-lg-6 background-white cadre">
-						<h1> Bizenvenue sur Daily Print !</h1>
-						<div id="div_horloge" class="center"> </div>
+					<div  class="col-xs-10 col-sm-10 col-md-6 col-lg-6 center">
+						<h1> Bienvenue sur <b>Daily Print</b> !</h1>
+						<h1><div id="div_horloge" </div></h1>
 					</div>
 					<div  class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
 						<br/>
