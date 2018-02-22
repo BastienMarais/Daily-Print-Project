@@ -43,7 +43,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFhYJs4sTeclZM="
 									},
-									"name": "connexion",
+									"name": "changementMDP",
 									"visible": true,
 									"defaultDiagram": false,
 									"ownedViews": [
@@ -74,11 +74,11 @@
 													"containerExtending": false,
 													"left": 92.8203125,
 													"top": 13,
-													"width": 73.9453125,
+													"width": 124.6171875,
 													"height": 16,
 													"autoResize": false,
 													"underline": false,
-													"text": "connexion",
+													"text": "changementMDP",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
