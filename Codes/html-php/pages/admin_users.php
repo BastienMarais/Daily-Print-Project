@@ -97,7 +97,7 @@
 							<tr id="3">
 								<th scope="row" class="center">3</th>
 								<td>Nom_3</td>
-								<td>Prénom_1</td>
+								<td>Prénom_3</td>
 								<td>user.3@gmail.com</td>
 								<td>Professeur</td>
 								<td>GEII</td>
