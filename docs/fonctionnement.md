@@ -23,7 +23,8 @@
 	
 ## Partie mot de passe oublié :
 
-```* On clique sur le lien "Mot de passe oublié"
+```
+* On clique sur le lien "Mot de passe oublié"
 * On redirige vers oubli.php
 ```
 
