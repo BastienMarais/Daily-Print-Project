@@ -19,8 +19,8 @@ Ce projet vise à remplacer le système de reprographie de l'IUT de Vélizy par 
 * PL/SQL
 
 # Documentation :
-* (/fonctionnement)[Technique]
-* (/users)[Utilisateurs]
-* (/repro)[Reprographie]
-* (/admin)[Administrateur]
+* (https://bastienmarais.github.io/Daily-Print-Project/fonctionnement)[Technique]
+* (https://bastienmarais.github.io/Daily-Print-Project/users)[Utilisateurs]
+* (https://bastienmarais.github.io/Daily-Print-Project/repro)[Reprographie]
+* (https://bastienmarais.github.io/Daily-Print-Project/admin)[Administrateur]
 
