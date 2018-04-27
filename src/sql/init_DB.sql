@@ -13,7 +13,8 @@ name varchar(30) not null,
 surname varchar(30) not null,
 status varchar(30) not null,
 password varchar(50) not null,
-department varchar(30) not null);
+department varchar(30) not null,
+notification boolean not null);
 
 /* TMP_USER : Cette table est une table temporaire qui va contenir toutes les informations concernant un utilisateur. Ces informations 
 sont ajoutées lors de son inscription sur le site et avant la validation par l'admin */
@@ -23,7 +24,8 @@ name varchar(30) not null,
 surname varchar(30) not null,
 status varchar(30) not null,
 password varchar(50) not null,
-department varchar(30) not null,);
+department varchar(30) not null,
+notification boolean not null);
 
 /* REQUESTS : Cette table est celle qui va contenir toutes les informations relatives à une demande d'impression faite par
    un utilisateur*/
