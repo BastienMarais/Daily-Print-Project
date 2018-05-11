@@ -16,14 +16,20 @@
 /* Panel */
 .panel {
     border: solid 1px #AAA;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #FFFFFF;
 }
 
 
 /* Backgound */
-body {
-    padding-bottom : 30%;
+html,body {
+    height: 100%; 
     background-image : linear-gradient(to bottom, #BFCFFF, #DFEFFF 100%);
+	background-repeat:no-repeat;
+}
+
+legend {
+	border-bottom : 1px solid #337ab7 ;
+	margin-bottom : 25px ;
 }
