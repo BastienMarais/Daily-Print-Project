@@ -35,6 +35,29 @@ html,body {
 	background-attachment:fixed;
 }
 
+/*background linked to buttons */
+
+/* rouge et vers rouge sombre */
+.background-gradient-red{
+	color: #FFFFFF;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	background-image: linear-gradient(to bottom,#ff0000 0,#330000 100%);
+	background-repeat:no-repeat;
+}
+
+/* vert et vers vert sombre*/
+.background-gradient-green{
+  color: #FFFFFF;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+  background-image: linear-gradient(to bottom,#33cc33 0,#0f3d0f 100%);
+  background-repeat:no-repeat;
+}
+
+.background-black{
+	color: #FFFFFF;
+	background-color: #000000;
+}
+
 /* Gère les legends */
 legend {
 	border-bottom : 1px solid #337ab7 ;
