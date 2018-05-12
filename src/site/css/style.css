@@ -13,7 +13,7 @@
 
 /* Nav-item */
 .nav-item:hover {
-	color : white ; 
+	color : white ;
 }
 
 
@@ -29,7 +29,7 @@
 /* Background */
 html,body {
 	padding-top : 40px;
-    height: 100%; 
+    height: 100%;
     background-image : linear-gradient(to bottom, #BFCFFF, #DFEFFF 100%);
 	background-repeat:no-repeat;
 	background-attachment:fixed;
@@ -48,6 +48,10 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    width: 100%
-	
+    width: 100%;
+
+}
+
+table{
+  width: 100%;
 }
