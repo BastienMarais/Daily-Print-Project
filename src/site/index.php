@@ -33,9 +33,9 @@
             <br/>
 			
             <div class="row ">
-                <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3"></div>
 				
-                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 panel">
+                <div class="col-xs-8 col-sm-8 col-md-6 col-lg-6 panel">
 				
                     <legend class="color-blue">Se connecter : </legend>
 					
@@ -70,7 +70,7 @@
 					
 				</div>
 				
-				<div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
+				<div class="col-xs-2 col-sm-2 col-md-3 col-lg-3"></div>
 				
             </div>
 			

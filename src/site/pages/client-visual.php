@@ -15,13 +15,48 @@
 		<!-- My css -->
         <link rel="stylesheet" href="../css/style.css">       
 		
-        <title></title>
+        <title>Daily Print | Mes demandes</title>
         
     </head>
     <body>
     
+		<!-- Navbar -->
+		<nav class="nav nav-pills nav-justified navbar-dark bg-dark">
+		  <a class="nav-item nav-link active" href="client-visual.php">Mes demandes</a>
+		  <a class="nav-item nav-link" href="client-new.php">Nouvelle demande</a>
+		  <a class="nav-item nav-link" href="param.php">Paramètres</a>
+		  <a class="nav-item nav-link" href="../index.php">Se déconnecter</a>
+		</nav>
         
-
+		<content class="container" role="main">
+		
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
+                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
+                    <img src="../img/logo.png" class="img-fluid" alt="Responsive image" />
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
+            </div>
+			
+            <br/>
+			
+            <div class="row ">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+				
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 panel">
+				
+                    <legend class="color-blue">Mes demandes : </legend>
+					
+					<!-- Div modifiée par le js -->
+					<div id="data">
+					
+					</div>
+					
+				</div>
+				
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+			</div>
+		</content>
 
 
 

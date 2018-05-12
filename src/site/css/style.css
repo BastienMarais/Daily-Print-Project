@@ -11,6 +11,10 @@
     color : #FFFFFF;
 }
 
+/* Nav-item */
+.nav-item:hover {
+	color : white ; 
+}
 
 
 /* Panel */
@@ -22,14 +26,28 @@
 }
 
 
-/* Backgound */
+/* Background */
 html,body {
+	padding-top : 40px;
     height: 100%; 
     background-image : linear-gradient(to bottom, #BFCFFF, #DFEFFF 100%);
 	background-repeat:no-repeat;
+	background-attachment:fixed;
 }
 
+/* Gère les legends */
 legend {
 	border-bottom : 1px solid #337ab7 ;
 	margin-bottom : 25px ;
+}
+
+/* Fixe la barre de navigation */
+nav {
+	position : fixed ;
+	z-index : 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%
+	
 }

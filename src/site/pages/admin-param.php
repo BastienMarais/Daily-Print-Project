@@ -15,16 +15,16 @@
 		<!-- My css -->
         <link rel="stylesheet" href="../css/style.css">       
 		
-        <title>Daily Print | Nouvelles inscriptions</title>
+        <title>Daily Print | Mes paramètres</title>
         
     </head>
     <body>
     
 		<!-- Navbar -->
 		<nav class="nav nav-pills nav-justified navbar-dark bg-dark">
-		  <a class="nav-item nav-link active" href="admin-news.php">Nouvelles inscriptions</a>
+		  <a class="nav-item nav-link" href="admin-news.php">Nouvelles inscriptions</a>
 		  <a class="nav-item nav-link" href="admin-users.php">Liste des utilisateurs</a>
-		  <a class="nav-item nav-link" href="admin-param.php">Paramètres</a>
+		  <a class="nav-item nav-link active" href="admin-param.php">Paramètres</a>
 		  <a class="nav-item nav-link" href="../index.php">Se déconnecter</a>
 		</nav>
         
@@ -41,26 +41,64 @@
             <br/>
 			
             <div class="row ">
+			
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
 				
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 panel">
 				
-                    <legend class="color-blue">Nouvelles inscriptions : </legend>
+					<legend class="color-blue">Mes paramètres : </legend>
 					
-					<!-- Div modifiée par le js -->
-					<div id="data">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					
+						<legend class="color-blue">Changement de mot de passe : </legend>
+						
+						<form method="POST" action="../scripts/changePassword.php">
+							<div class="form-group">
+								<label for="inputPassword1">Nouveau mot de passe :</label>
+								<input type="password" class="form-control" id="inputPassword1" placeholder="Nouveau mot de passe" required>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword2">Confirmer le mot de passe :</label>
+								<input type="password" class="form-control" id="inputPassword2" placeholder="Nouveau mot de passe" required>
+							</div>
+							<button type="submit" class="btn btn-primary">Changer de mot de passe</button>
+						</form>
+					
+					</div>
+					
+					<br/>
+					
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					
+						<legend class="color-blue">Notifications par email : </legend>
+						
+						<form method="POST" action="../scripts/updateNotifications.php">
+							<div class="form-row">
+								<div class="col">
+									<label for="inputNotifications"> Etat : </label>
+									<select class="form-control" id="inputNotifications" required>
+										<option>Sans</option>
+										<option>Avec</option>
+									</select>
+								</div>
+							</div>
+							
+							<br/>
+							
+							<div class="form-row">
+								<div class="col">
+									<button type="submit" class="btn btn-primary">Enregistrer </button>
+								</div>
+							</div>
+						</form>
 					
 					</div>
 					
 				</div>
 				
 				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+				
 			</div>
-		</content>
-        
-
-
-
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
