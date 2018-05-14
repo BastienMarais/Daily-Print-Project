@@ -26,6 +26,7 @@
                     <li> <a href="visual.php"> Mes demandes </a> </li>
                     <li class="active"> <a href="new_demande.php"> Nouvelle demande </a> </li>
                     <li> <a href="aide.php"> Aide </a> </li>
+		    <li> <a href="statistique.php"> Statistique </a> </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown">
