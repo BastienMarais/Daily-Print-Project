@@ -35,6 +35,9 @@
 					<li class="active">
 						<a href="aide.php"> Aide </a>
 					</li>
+					<li>
+						<a href="statistique.php"> Statistique </a>
+					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
