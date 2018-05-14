@@ -88,3 +88,16 @@ label {
 legend {
 	color : #888;
 }
+
+#graph li
+{
+   position:absolute;	
+   list-style:none;
+   background:lightblue;
+   width:40px;
+   text-align:center;
+   border:1px solid black;
+   visibility: hidden;
+   background-image:url(bar-shaded.png);
+   background-repeat:repeat-y;
+}
