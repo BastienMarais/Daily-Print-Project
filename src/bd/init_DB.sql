@@ -43,12 +43,11 @@ finition varchar(50) not null);
 /* PROTECT_FILES : Cette table est celle qui va contenir toutes les informations relatives à une demande d'impression faite par
    un utilisateur et qui contient des pages d'un fichier protégé*/
 create table PROTECT_FILES (
-id_file int(10) AUTO_INCREMENT primary key,
-request int(10) not null,
+id_request int(10) primary key,
 title varchar(100) not null,
 author varchar(100) not null,
 editor varchar(100) not null,
-num_protect_page integer(3) not null,
+num_protect_page int(3) not null,
 num_copy int(3) not null);
 
 /* On ajoute un admin par défaut */
