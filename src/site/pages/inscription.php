@@ -111,8 +111,8 @@
 								echo "
 									<br/>
 									<span class='text-success'>
-										Votre compte a bien été créer, veuillez patienter le temps qu'un administrateur l'active. <br/>
-										Un email vous notifiera de l'activation.
+										Votre compte a bien été créé, veuillez patienter le temps qu'un administrateur valide votre inscription. <br/>
+										Un email vous notifiera lorsqu'il sera utilisable.
 									</span>
 								";
 							}
