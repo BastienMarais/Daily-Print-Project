@@ -32,12 +32,18 @@
     
 		<!-- Navbar -->
 		<nav class="nav nav-pills nav-justified navbar-dark bg-dark">
-		    <a class="nav-item nav-link" href="repro-visual.php">Les demandes</a>
-		    <a class="nav-item nav-link" href="repro-stat.php">Statistiques</a>
-		    <a class="nav-item nav-link active" href="repro-param.php">Paramètres</a>
-		    <form action="../scripts/deconnexion.php">
-				<button type="submit" class="nav-item nav-link deconnexion">Se déconnecter</button>
-			</form>
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<a class="nav-item nav-link" href="repro-visual.php">Les demandes</a>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<a class="nav-item nav-link" href="repro-stat.php">Statistiques</a>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<a class="nav-item nav-link active" href="repro-param.php">Paramètres</a>
+			</div> 
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<a class="nav-item nav-link" href="../scripts/deconnexion.php">Se déconnecter</a>
+			</div> 
 		</nav>
         
 		<content class="container" role="main">
