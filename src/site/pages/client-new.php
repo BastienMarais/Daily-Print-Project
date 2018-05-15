@@ -95,6 +95,13 @@
 										<option>Massicot</option>
 									</select>
 								</div>
+								<div class="col">
+									<label for="inputRecto">Recto/verso : </label>
+									<select class="form-control" id="inputRecto" name="champRectoVerso" required>
+										<option>Recto et verso</option>
+										<option>Recto uniquement</option>
+									</select>
+								</div>
 							</div>
 							
 						</div>

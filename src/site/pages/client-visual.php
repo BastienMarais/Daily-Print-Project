@@ -51,10 +51,10 @@
 						<thead>
 							<tr class="background-black">
 								<th scope="col" class="center">#</th>
-								<th scope="col" class="center">ID</th>
-								<th scope="col" class="center">Fichier</th>
-								<th scope="col" class="center">Date de retour</th>
-								<th scope="col" class="center">Statut</th>
+								<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">ID</th>
+								<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Fichier</th>
+								<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Date de retour</th>
+								<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Statut</th>
 							</tr>
 						</thead>
 					</div>

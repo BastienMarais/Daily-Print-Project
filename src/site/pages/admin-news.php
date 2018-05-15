@@ -49,18 +49,18 @@
 
 					<!-- Div modifiée par le js -->
 					<div id="data">
-            <table class="table table-hover table-bordered table-responsive">
-              <thead>
-                <tr class="background-black">
-                  <th scope="col" class="center">#</th>
-                  <th scope="col" class="center">Nom</th>
-                  <th scope="col" class="center">Prénom</th>
-                  <th scope="col" class="center">Email</th>
-                  <th scope="col" class="center">Statut</th>
-                  <th scope="col" class="center">Département</th>
-                  <th scope="col" class="center">Options</th>
-                </tr>
-              </thead>
+						<table class="table table-hover table-bordered table-responsive">
+						  <thead>
+							<tr class="background-black">
+							  <th scope="col" class="center">#</th>
+							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Nom</th>
+							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Prénom</th>
+							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Email</th>
+							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Statut</th>
+							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Département</th>
+							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Options</th>
+							</tr>
+						  </thead>
 					</div>
 
 				</div>
