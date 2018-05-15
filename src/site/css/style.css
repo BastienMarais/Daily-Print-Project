@@ -1,0 +1,80 @@
+/* Color */
+.color-green {
+    color : #00EE00;
+}
+
+.color-blue {
+    color : #337ab7;
+}
+
+.color-white {
+    color : #FFFFFF;
+}
+
+/* Nav-item */
+.nav-item:hover {
+	color : white ;
+}
+
+
+/* Panel */
+.panel {
+    border: solid 1px #AAA;
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #FFFFFF;
+}
+
+
+/* Background */
+html,body {
+	padding-top : 40px;
+    height: 100%;
+    background-image : linear-gradient(to bottom, #BFCFFF, #DFEFFF 100%);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+
+/*background linked to buttons */
+
+/* rouge et vers rouge sombre */
+.background-gradient-red{
+	color: #FFFFFF;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	background-image: linear-gradient(to bottom,#ff0000 0,#330000 100%);
+	background-repeat:no-repeat;
+}
+
+/* vert et vers vert sombre*/
+.background-gradient-green{
+  color: #FFFFFF;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+  background-image: linear-gradient(to bottom,#33cc33 0,#0f3d0f 100%);
+  background-repeat:no-repeat;
+}
+
+.background-black{
+	color: #FFFFFF;
+	background-color: #000000;
+}
+
+/* Gère les legends */
+legend {
+	border-bottom : 1px solid #337ab7 ;
+	margin-bottom : 25px ;
+}
+
+/* Fixe la barre de navigation */
+nav {
+	position : fixed ;
+	z-index : 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+}
+
+table{
+  width: 100%;
+}
