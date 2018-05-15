@@ -1,6 +1,12 @@
 <?php
 	// On démarre la session AVANT toute chose
 	session_start(); 
+	
+	// S'il n'a rien a faire ici 
+	if($_SESSION['statut'] !== "Admin"){
+		include("../scripts/deconnexion.php");
+		deconnexion_site();
+	}
 ?>
 <!doctype html>
 <html lang="fr">
