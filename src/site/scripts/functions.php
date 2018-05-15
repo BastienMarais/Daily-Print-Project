@@ -81,6 +81,14 @@
 			'motDePasse' => $arg_password,
 			'departement' => $arg_departement
 			));
+		
+		// Envoie l'email de confirmation
+		send_email_attente($arg_email);
+		
+		include("../conf/conf.php");
+		$message = "?mes=attente";
+		header('Location: ' . $VALEUR_url . '/pages/inscription.php' . $message);
+		exit();
 	}
 
 	function recuperation_champs_inscription(){
@@ -171,7 +179,7 @@
 			}
 			else {
 				$message = "?err=inconnue";
-				header('Location: ' . $VALEUR_url . 'index.php' . $message);
+				header('Location: ' . $VALEUR_url . '/index.php' . $message);
 				exit();
 			}
 			
@@ -179,7 +187,7 @@
 		}
 		else{
 			$message = "?err=mdp";
-			header('Location: ' . $VALEUR_url . 'index.php' . $message);
+			header('Location: ' . $VALEUR_url . '/index.php' . $message);
 			exit();
 		} 
 	}
@@ -202,9 +210,29 @@
 		// Destruction du tableau de session
 		unset($_SESSION);
 		
-		header('Location: ' . $VALEUR_url . 'index.php');
+		header('Location: ' . $VALEUR_url . '/index.php');
 		exit();
 	}
 	
+	/*******************************
+		Gestion des emails
+	*******************************/
 	
+	function send_email_attente($email_cible){
+		// Envoie un email d'attente pour l'activation
+		
+		echo "Email d'attente";
+	}
+	
+	function send_email_activation($email_cible){
+		// Envoie un email pour l'activation
+		
+		echo "Email d'activation";
+	}
+	
+	function send_email_notif($email_cible,$tuple){
+		// Envoie un email de notif avec le tuple donné
+		
+		echo "Email de notification";
+	}
 ?>

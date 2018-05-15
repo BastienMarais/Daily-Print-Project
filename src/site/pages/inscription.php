@@ -105,11 +105,23 @@
 							</div>
 						</form>
 					</div>
-					
+					<?php 
+						if (isset($_GET['mes'])){
+							if($_GET['mes'] === 'attente'){
+								echo "
+									<br/>
+									<span class='text-success'>
+										Votre compte a bien été créer, veuillez patienter le temps qu'un administrateur l'active. <br/>
+										Un email vous notifiera de l'activation.
+									</span>
+								";
+							}
+						}
+					?>
 				</div>
 				
 				<div class="col-xs-2 col-sm-2 col-md-3 col-lg-3"></div>
-				
+					
             </div>
 			
 		</content>
