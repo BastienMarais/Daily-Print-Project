@@ -37,6 +37,7 @@ creation_date date not null,
 delivery_date date not null,
 num_copy int(3) not null,
 couleur varchar(50) not null,
+recto_verso varchar(50) not null,
 finition varchar(50) not null);
 
 /* PROTECT_FILES : Cette table est celle qui va contenir toutes les informations relatives à une demande d'impression faite par
@@ -49,3 +50,6 @@ author varchar(100) not null,
 editor varchar(100) not null,
 num_protect_page integer(3) not null,
 num_copy int(3) not null);
+
+/* On ajoute un admin par défaut */
+INSERT INTO `REAL_USER` (`user_email`, `name`, `surname`, `statut`, `password`, `department`, `notification`) VALUES ('admin@dailyprint.xyz', 'Admin', 'Super', 'Admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'Autre', '0')
