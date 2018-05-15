@@ -1,3 +1,7 @@
+<?php
+	// On démarre la session AVANT toute chose
+	session_start(); 
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -20,10 +24,12 @@
 
 		<!-- Navbar -->
 		<nav class="nav nav-pills nav-justified navbar-dark bg-dark">
-		  <a class="nav-item nav-link active" href="client-visual.php">Mes demandes</a>
-		  <a class="nav-item nav-link" href="client-new.php">Nouvelle demande</a>
-		  <a class="nav-item nav-link" href="client-param.php">Paramètres</a>
-		  <a class="nav-item nav-link" href="../index.php">Se déconnecter</a>
+		    <a class="nav-item nav-link active" href="client-visual.php">Mes demandes</a>
+		    <a class="nav-item nav-link" href="client-new.php">Nouvelle demande</a>
+		    <a class="nav-item nav-link" href="client-param.php">Paramètres</a>
+		    <form action="../scripts/deconnexion.php">
+				<button type="submit" class="nav-item nav-link deconnexion">Se déconnecter</button>
+			</form>
 		</nav>
 
 		<content class="container" role="main">

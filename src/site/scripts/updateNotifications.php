@@ -1,5 +1,9 @@
 <?php
     
+	// Import des fonctions 
+	include("functions.php");
+	
+	
     /* 
 		Ce fichier doit gérer ce qui se passe lorsqu'on a remplit tous
 		les champs et cliqué sur "Enregistrer" dans la page "pages/param.php" 

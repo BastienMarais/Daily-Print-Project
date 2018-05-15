@@ -1,5 +1,8 @@
 <?php
     
+	// Import des fonctions 
+	include("functions.php");
+	
     /* 
 		Ce fichier doit gérer ce qui se passe lorsqu'on a mit son email
 		et cliqué sur "envoyer" dans la page "index.php" pour la récupération

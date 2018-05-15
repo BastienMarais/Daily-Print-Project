@@ -1,3 +1,7 @@
+<?php
+	// On démarre la session AVANT toute chose
+	session_start(); 
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -43,43 +47,43 @@
 						<div class="form-row">
 							<div class="col">
 								<label for="inputPrenom">Prénom :</label>
-								<input type="text" class="form-control" id="inputPrenom" placeholder="Jean" required>
+								<input type="text" class="form-control" id="inputPrenom" name="champPrenom" placeholder="Jean" required>
 							</div>
 							<div class="col">
 								<label for="inputNom">Nom : </label>
-								<input type="text" class="form-control" id="inputNom" placeholder="Dupont" required>
+								<input type="text" class="form-control" id="inputNom" name="champNom" placeholder="Dupont" required>
 							</div>
 						</div>
 						<br/>
 						<div class="form-row">
 							<div class="col">
 								<label for="inputEmail">Email :</label>
-								<input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="jdupont@gmail.com" required>
+								<input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" name="champEmail" placeholder="jdupont@gmail.com" required>
 							</div>
 						</div>
 						<br/>
 						<div class="form-row">
 							<div class="col">
 								<label for="inputPassword1">Mot de passe :</label>
-								<input type="password" class="form-control" id="inputPassword1" placeholder="Mot de passe" required>
+								<input type="password" class="form-control" id="inputPassword1" name="champMdp1" placeholder="Mot de passe" required>
 							</div>
 							<div class="col">
 								<label for="inputPassword2">Confirmation : </label>
-								<input type="password" class="form-control" id="inputPassword2" placeholder="Mot de passe" required>
+								<input type="password" class="form-control" id="inputPassword2" name="champMdp2" placeholder="Mot de passe" required>
 							</div>
 						</div>
 						<br/>
 						<div class="form-row">
 							<div class="col">
 								<label for="inputStatut">Statut :</label>
-								<select class="form-control" id="inputStatut">
+								<select class="form-control" id="inputStatut" name="champStatut">
 									<option>Client</option>
 									<option>Reprographie</option>
 								</select>
 							</div>
 							<div class="col">
 								<label for="inputDepartement">Département :</label>
-								<select class="form-control" id="inputDepartement">
+								<select class="form-control" id="inputDepartement" name="champDepartement">
 									<option>INFO</option>
 									<option>MMI</option>
 									<option>GEII</option>

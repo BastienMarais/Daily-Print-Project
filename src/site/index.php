@@ -1,3 +1,7 @@
+<?php
+	// On démarre la session AVANT toute chose
+	session_start(); 
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -42,11 +46,11 @@
                     <form id="connexionForm" method="POST" action="scripts/connexion.php">
 						<div class="form-group">
 							<label for="inputEmail">Adresse email : </label>
-							<input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" required>
+							<input type="email" class="form-control" id="inputEmail" name="champEmail" aria-describedby="emailHelp" placeholder="Email" required>
 						</div>
 						<div class="form-group">
 							<label for="inputPassword">Mot de passe :</label>
-							<input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
+							<input type="password" class="form-control" id="inputPassword" name="champMdp" placeholder="Mot de passe" required>
 						</div>
 						<div class="form-group">
 							<button type="button" class="btn btn-link" data-toggle="modal" data-target="#forgetPassword">Mot de passe oublié</a>
@@ -67,6 +71,27 @@
 						</div>
 					</div>
 					
+	
+					<?php 
+						if (isset($_GET['err'])){
+							if($_GET['err'] === 'mdp'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										La combinaison email / mot de passe est incorrecte.
+									</span>
+								";
+							}
+							if($_GET['err'] === 'inconnue'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										Erreur lors de la connexion.
+									</span>
+								";
+							}
+						}
+					?>
 					
 				</div>
 				

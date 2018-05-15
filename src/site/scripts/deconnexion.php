@@ -4,6 +4,6 @@
 	include("functions.php");
 
 	// Actions
-	recuperation_champs_connexion();
+	deconnexion_site();
     
 ?>

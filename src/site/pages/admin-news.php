@@ -1,3 +1,7 @@
+<?php
+	// On démarre la session AVANT toute chose
+	session_start();
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -22,10 +26,12 @@
 
 		<!-- Navbar -->
 		<nav class="nav nav-pills nav-justified navbar-dark bg-dark">
-		  <a class="nav-item nav-link active" href="admin-news.php">Nouvelles inscriptions</a>
-		  <a class="nav-item nav-link" href="admin-users.php">Liste des utilisateurs</a>
-		  <a class="nav-item nav-link" href="admin-param.php">Paramètres</a>
-		  <a class="nav-item nav-link" href="../index.php">Se déconnecter</a>
+			<a class="nav-item nav-link active" href="admin-news.php">Nouvelles inscriptions</a>
+			<a class="nav-item nav-link" href="admin-users.php">Liste des utilisateurs</a>
+			<a class="nav-item nav-link" href="admin-param.php">Paramètres</a>
+			<form action="../scripts/deconnexion.php">
+				<button type="submit" class="nav-item nav-link deconnexion">Se déconnecter</button>
+			</form>
 		</nav>
 
 		<content class="container" role="main">
@@ -49,20 +55,20 @@
 
 					<!-- Div modifiée par le js -->
 					<div id="data">
-						<table class="table table-hover table-bordered table-responsive">
-						  <thead>
+					<table class="table table-hover table-bordered table-responsive">
+						<thead>
 							<tr class="background-black">
-							  <th scope="col" class="center">#</th>
-							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Nom</th>
-							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Prénom</th>
-							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Email</th>
-							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Statut</th>
-							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Département</th>
-							  <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Options</th>
+							    <th scope="col" class="center">#</th>
+							    <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Nom</th>
+							    <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Prénom</th>
+							    <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Email</th>
+							    <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Statut</th>
+							    <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Département</th>
+							    <th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Options</th>
 							</tr>
-						  </thead>
+					  </thead>
 					</div>
-
+					
 				</div>
 
 				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>

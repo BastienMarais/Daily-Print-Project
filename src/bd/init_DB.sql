@@ -31,7 +31,7 @@ notification boolean not null);
    un utilisateur*/
 create table REQUESTS (
 id_request int(10) AUTO_INCREMENT primary key,
-user_email varchar(50) references REAL_USER not null,
+user_email varchar(50) not null,
 path_file varchar(50) not null,
 creation_date date not null,
 delivery_date date not null,
@@ -43,7 +43,7 @@ finition varchar(50) not null);
    un utilisateur et qui contient des pages d'un fichier protégé*/
 create table PROTECT_FILES (
 id_file int(10) AUTO_INCREMENT primary key,
-request int(10) references REQUESTS not null,
+request int(10) not null,
 title varchar(100) not null,
 author varchar(100) not null,
 editor varchar(100) not null,

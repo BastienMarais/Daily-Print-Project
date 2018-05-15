@@ -1,3 +1,7 @@
+<?php
+	// On démarre la session AVANT toute chose
+	session_start(); 
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -22,10 +26,12 @@
     
         <!-- Navbar -->
 		<nav class="nav nav-pills nav-justified navbar-dark bg-dark">
-		  <a class="nav-item nav-link" href="client-visual.php">Mes demandes</a>
-		  <a class="nav-item nav-link active" href="client-new.php">Nouvelle demande</a>
-		  <a class="nav-item nav-link" href="client-param.php">Paramètres</a>
-		  <a class="nav-item nav-link" href="../index.php">Se déconnecter</a>
+		    <a class="nav-item nav-link" href="client-visual.php">Mes demandes</a>
+		    <a class="nav-item nav-link active" href="client-new.php">Nouvelle demande</a>
+		    <a class="nav-item nav-link" href="client-param.php">Paramètres</a>
+		    <form action="../scripts/deconnexion.php">
+				<button type="submit" class="nav-item nav-link deconnexion">Se déconnecter</button>
+			</form>
 		</nav>
         
 		<content class="container" role="main">
@@ -57,11 +63,11 @@
 							<div class="form-row">
 								<div class="col">
 									<label for="inputDate">Date de retour souhaitée :</label>
-									<input type="date" class="form-control" id="inputDate" placeholder="jj/mm/aaaa" required>
+									<input type="date" class="form-control" id="inputDate" name="champDate" placeholder="jj/mm/aaaa" required>
 								</div>
 								<div class="col">
 									<label for="inputFile">Fichier a imprimer (.pdf) : </label>
-									<input type="file" id="inputFile" required>
+									<input type="file" id="inputFile" name="champFichier" required>
 								</div>
 							</div>
 							
@@ -70,11 +76,11 @@
 							<div class="form-row">
 								<div class="col">
 									<label for="inputNbCopies">Nombre de copies :</label>
-									<input type="number" min="0" class="form-control" id="inputNbCopies" placeholder="0" required>
+									<input type="number" min="0" class="form-control" id="inputNbCopies" name="champNbCopie" placeholder="0" required>
 								</div>
 								<div class="col">
 									<label for="inputTypeCopies">Impressions : </label>
-									<select class="form-control" id="inputTypeCopies" required>
+									<select class="form-control" id="inputTypeCopies" name="champCouleur" required>
 										<option>Noir et blanc</option>
 										<option>Couleurs</option>
 									</select>
@@ -86,7 +92,7 @@
 							<div class="form-row">
 								<div class="col">
 									<label for="inputFinition">Finition : </label>
-									<select class="form-control" id="inputFinition" required>
+									<select class="form-control" id="inputFinition" name="champFinition" required>
 										<option>Aucune finition</option>
 										<option>1 agraphe</option>
 										<option>2 agraphes</option>
@@ -95,13 +101,15 @@
 										<option>Massicot</option>
 									</select>
 								</div>
+
 								<div class="col">
 									<label for="inputRecto">Recto/verso : </label>
 									<select class="form-control" id="inputRecto" name="champRectoVerso" required>
 										<option>Recto et verso</option>
-										<option>Recto uniquement</option>
+										<option>Recto uniquement</option>	
 									</select>
 								</div>
+
 							</div>
 							
 						</div>

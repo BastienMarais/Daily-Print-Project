@@ -78,3 +78,8 @@ nav {
 table{
   width: 100%;
 }
+
+/* Elément du menu */
+.deconnexion:hover{
+	color: #337ab7;
+}
