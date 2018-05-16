@@ -72,6 +72,8 @@
 	// Récupère les champs du formulaire et créer la requète dans client-new.php
 		
 		session_start(); 
+		include("../conf/conf.php");
+		
 		$email = $_SESSION['user_email'];
 		$date_retour = $_POST['champDate'];
 		$chemin_fichier = $_POST['champFichier'];   
@@ -82,15 +84,16 @@
 			$finition = $_POST['champFinition'];
 		}
 		else {
-			echo 'Le champ finition est vide !';
+			$message = "?mes=finition";
+			$ancre = "#champRectoVerso";
+			header('Location: ' . $VALEUR_url . '/pages/client-new.php' . $message . $ancre);
+			exit();
 		}
 
 		if( isset($_POST['champRectoVerso']) ){
 			$recto_verso = $_POST['champRectoVerso'];
 		}
 		
-		// Verification que la requete n'est pas en double
-
 		date_default_timezone_set('Europe/Paris');
 
 		$date_actuelle = date('Y-m-d G:i:s');
@@ -102,8 +105,10 @@
 			new_request($email, $chemin_fichier, $date_actuelle, $date_retour, $nb_copie, $couleur, $finition, $recto_verso);
 		}
 		else{
-			echo "La demande existe déjà";
-			return 0;
+			$message = "?mes=exist";
+			$ancre = "#champRectoVerso";
+			header('Location: ' . $VALEUR_url . '/pages/client-new.php' . $message . $ancre);
+			exit();
 		}
 		
 		// Cas d'impression d'une oeuvre protegee
@@ -118,8 +123,11 @@
 				new_request_protected($id_requete, $titre, $auteur, $editeur, $nbPagesProtegees, $nbCopies);
 			}
 		}
-		echo "La reqûete a été faite.";
-		// Redirection
+		
+		$message = "?mes=success";
+		$ancre = "#champRectoVerso";
+		header('Location: ' . $VALEUR_url . '/pages/client-new.php' . $message . $ancre);
+		exit();
 		
 	}
 
@@ -646,6 +654,7 @@
 	function send_email($destinataire,$objet,$texte){
 	// Envoie des email
 	
+		/*
 		include("../conf/conf.php");
 		$origine = $VALEUR_email;
 		
@@ -673,7 +682,7 @@
 		
 		$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 
-		mail($destinataire,$objet,$message,$header);
+		mail($destinataire,$objet,$message,$header);*/
 
 	}
 	

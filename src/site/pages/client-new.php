@@ -179,6 +179,35 @@
 							
 						</div>
 						
+						<?php
+							if(isset($_GET['mes'])){
+								if($_GET['mes'] === "success"){
+									echo "
+										<br/>
+										<span class='text-success'>
+											Requête créée avec succès !
+										</span>
+									";
+								}
+								if($_GET['mes'] === "exist"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Cette requête a déjà été faite.
+										</span>
+									";
+								}
+								if($_GET['mes'] === "finition"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Le champs finition est vide.
+										</span>
+									";
+								}
+							}
+						?>
+						
 					</form>
 					
 				</div>
