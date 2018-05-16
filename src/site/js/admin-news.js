@@ -7,4 +7,6 @@ jQuery(document).ready(function($) {
   content+="</tbody>"
   content += "</table>"
   $('table').append(content);
+  
+  
 });

@@ -79,3 +79,14 @@ table{
   width: 100%;
 }
 
+/* menu dérulant */
+
+#choosestatus{
+	width: 50%;
+}
+
+
+.center {
+	text-align : center ;
+}
+

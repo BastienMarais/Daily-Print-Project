@@ -65,16 +65,16 @@
 
 					<!-- Div modifiée par le js -->
 					<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12' id="data">
-            <table class="table table-bordered table-responsive" id="tabl">
-						<thead>
-							<tr class="background-black">
-								<th scope="col" class="center">#</th>
-								<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">ID</th>
-								<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Fichier</th>
-								<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Date de retour</th>
-								<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Statut</th>
-							</tr>
-						</thead>
+						<table class="table table-bordered table-responsive" id="tabl">
+							<thead>
+								<tr class="background-black">
+									<th scope="col" class="center">#</th>
+									<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">ID</th>
+									<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Fichier</th>
+									<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Date de retour</th>
+									<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Statut</th>
+								</tr>
+							</thead>
 					</div>
 
 				</div>
