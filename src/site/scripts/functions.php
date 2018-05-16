@@ -156,7 +156,7 @@
 		include("../conf/conf.php");
 		
 		// Si c'est une connexion réussi
-		if(hash_equals($passwordSQL,$arg_password_hashe)){
+		if($passwordSQL === $arg_password_hashe){
 			
 			// On démarre la session AVANT toute chose
 			session_start(); 
