@@ -414,7 +414,7 @@
 	*******************************/
 
 	function password_modication($arg_email, $arg_new_password){ 
-		// Change le mdp de l'utilisateur donnée
+	// Change le mdp de l'utilisateur donnée
 
         $bdd = connexion_sql();
 		
@@ -536,7 +536,7 @@
 				$bdd->query($sql);
 				send_email_mdp($_POST['forgetEmail'],$mot_de_passe);
 				
-				$message = "?err=forget";
+				$message = "?err=forgetSuccess";
 				$ancre = "#inputEmail" ;
 				header('Location: ' . $VALEUR_url . '/index.php' . $message . $ancre);
 				exit();
@@ -562,7 +562,7 @@
 	*******************************/
 	
 	function recuperation_champs_connexion(){
-		// Récupère les champs du formulaire et connecte l'utilisateur sur index.php
+	// Récupère les champs du formulaire et connecte l'utilisateur sur index.php
 		
 		$email = $_POST['champEmail'];
 		$password = $_POST['champMdp'];
@@ -572,7 +572,7 @@
 	}
 	
 	function connexion_site($arg_email, $arg_password){
-		// Gère la connexion au site Daily Print
+	// Gère la connexion au site Daily Print
 	
         $bdd = connexion_sql();
    
@@ -626,7 +626,7 @@
 	}
 
 	function deconnexion_site(){
-		// Détruit la session et redirige vers index.php
+	// Détruit la session et redirige vers index.php
 		
 		// on récupère la conf
 		include("../conf/conf.php");

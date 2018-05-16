@@ -90,11 +90,12 @@
 									</span>
 								";
 							}
-							if($_GET['err'] === 'forget'){
+							if($_GET['err'] === 'forgetSuccess'){
 								echo "
 									<br/>
 									<span class='text-success'>
 										Un email avec le nouveau mot de passe a été envoyé.
+										Cela peut prendre un peu de temps avant de le recevoir...
 									</span>
 								";
 							}
