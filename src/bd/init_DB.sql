@@ -38,7 +38,8 @@ delivery_date date not null,
 num_copy int(3) not null,
 couleur varchar(50) not null,
 recto_verso varchar(50) not null,
-finition varchar(50) not null);
+finition varchar(50) not null,
+etat varchar(50) not null);
 
 /* PROTECT_FILES : Cette table est celle qui va contenir toutes les informations relatives à une demande d'impression faite par
    un utilisateur et qui contient des pages d'un fichier protégé*/
