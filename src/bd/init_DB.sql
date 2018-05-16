@@ -53,3 +53,4 @@ num_copy int(3) not null);
 
 /* On ajoute un admin par défaut */
 INSERT INTO `REAL_USER` (`user_email`, `name`, `surname`, `statut`, `password`, `department`, `notification`) VALUES ('admin@dailyprint.xyz', 'Admin', 'Super', 'Admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'Autre', '0')
+INSERT INTO `REAL_USER` (`user_email`, `name`, `surname`, `statut`, `password`, `department`, `notification`) VALUES ('client@dailyprint.xyz', 'Mister', 'Client', 'Client', '948fe603f61dc036b5c596dc09fe3ce3f3d30dc90f024c85f3c82db2ccab679d', 'INFO', '0'), ('repro@dailyprint.xyz', 'Mister', 'Repro', 'Reprographie', '681d1638f10411fb29eb810a9184e68742579702b7f53496db912a21c3f9441a', 'Reprographie', '0')
