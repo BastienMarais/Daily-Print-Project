@@ -116,6 +116,38 @@
 									</span>
 								";
 							}
+							else if($_GET['mes'] === 'mdpError'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										Vos mots de passe sont différents.
+									</span>
+								";
+							}
+							else if($_GET['mes'] === 'departement'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										Vous n'avez pas choisi de département.
+									</span>
+								";
+							}
+							else if($_GET['mes'] === 'statut'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										Vous n'avez pas choisi de statut.
+									</span>
+								";
+							}
+							else if($_GET['mes'] === 'email'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										Adresse email déjà existante. Votre compte n'est peut-être pas encore activé.
+									</span>
+								";
+							}
 						}
 					?>
 				</div>

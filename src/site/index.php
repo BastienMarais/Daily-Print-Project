@@ -90,6 +90,22 @@
 									</span>
 								";
 							}
+							if($_GET['err'] === 'forget'){
+								echo "
+									<br/>
+									<span class='text-success'>
+										Un email avec le nouveau mot de passe a été envoyé.
+									</span>
+								";
+							}
+							if($_GET['err'] === 'forgetError'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										L'email renseigné n'existe pas.
+									</span>
+								";
+							}
 						}
 					?>
 					
@@ -106,16 +122,16 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalCenterTitle">Récupération de mot de passe</h5>
+						<h5 class="modal-title" id="ModalCenterTitle">Récupération de mot de passe</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body">
-						<form id="forgetForm" method="POST" action="scripts/forgetPassword.php">
+						<form id="forgetForm" method="POST" action="../scripts/forgetPassword.php">
 							<div class="form-group">
 								<label for="inputForget">Adresse email : </label>
-								<input type="email" class="form-control" id="inputForget" aria-describedby="emailHelp" placeholder="Email" required>
+								<input type="email" class="form-control" id="inputForget" name="forgetEmail" aria-describedby="emailHelp" placeholder="Email" required>
 							</div>
 						</form>
 					</div>

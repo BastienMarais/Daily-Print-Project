@@ -37,7 +37,7 @@
 				<a class="nav-item nav-link" href="client-new.php">Nouvelle demande</a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				<a class="nav-item nav-link" href="client-param.php">Paramètres</a>
+				<a class="nav-item nav-link" href="param.php">Paramètres</a>
 			</div> 
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 				<a class="nav-item nav-link" href="../scripts/deconnexion.php">Se déconnecter</a>

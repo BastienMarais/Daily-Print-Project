@@ -39,7 +39,7 @@
 				<a class="nav-item nav-link active" href="repro-stat.php">Statistiques</a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				<a class="nav-item nav-link" href="repro-param.php">Paramètres</a>
+				<a class="nav-item nav-link" href="param.php">Paramètres</a>
 			</div> 
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 				<a class="nav-item nav-link" href="../scripts/deconnexion.php">Se déconnecter</a>

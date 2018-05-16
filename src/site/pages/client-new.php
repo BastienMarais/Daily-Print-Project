@@ -39,7 +39,7 @@
 				<a class="nav-item nav-link active" href="client-new.php">Nouvelle demande</a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				<a class="nav-item nav-link" href="client-param.php">Paramètres</a>
+				<a class="nav-item nav-link" href="param.php">Paramètres</a>
 			</div> 
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 				<a class="nav-item nav-link" href="../scripts/deconnexion.php">Se déconnecter</a>
@@ -136,7 +136,7 @@
 								<div class="form-row">
 									<div class="col">
 										<label for="inputTitre">Titre de la publication :</label>
-										<input type="text" class="form-control" id="inputTitre" placeholder="Titre">
+										<input type="text" class="form-control" id="inputTitre" name="champNomPublication" placeholder="Titre">
 									</div>
 								</div>
 								
@@ -145,11 +145,11 @@
 								<div class="form-row">
 									<div class="col">
 										<label for="inputAuteur">Auteur :</label>
-										<input type="text" class="form-control" id="inputAuteur" placeholder="Auteur" >
+										<input type="text" class="form-control" id="inputAuteur" name="champAuteur" placeholder="Auteur" >
 									</div>
 									<div class="col">
 										<label for="inputEditeur">Editeur : </label>
-										<input type="text" class="form-control" id="inputEditeur" placeholder="Editeur" >
+										<input type="text" class="form-control" id="inputEditeur" name="champEditeur" placeholder="Editeur" >
 									</div>
 								</div>
 								
@@ -158,11 +158,11 @@
 								<div class="form-row">
 									<div class="col">
 										<label for="inputNbPages">Nombre de pages copiées :</label>
-										<input type="number" min="0" class="form-control" id="inputNbPages" placeholder="0">
+										<input type="number" min="0" class="form-control" id="inputNbPages"  name="champNbPages" placeholder="0">
 									</div>
 									<div class="col">
 										<label for="inputNbExemplaires">Nombre d'éxemplaires par page : </label>
-										<input type="number" min="0" class="form-control" id="inputNbExemplaires" placeholder="0">
+										<input type="number" min="0" class="form-control" id="inputNbExemplaires" name="champNbExemplaire" placeholder="0">
 									</div>
 								</div>
 							</div>

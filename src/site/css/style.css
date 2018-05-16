@@ -28,7 +28,7 @@
 
 /* Background */
 html,body {
-	padding-top : 40px;
+	padding-top : 75px;
     height: 100%;
     background-image : linear-gradient(to bottom, #BFCFFF, #DFEFFF 100%);
 	background-repeat:no-repeat;
