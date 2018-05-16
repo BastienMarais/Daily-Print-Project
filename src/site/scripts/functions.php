@@ -648,13 +648,12 @@
 	}
 	
 	/*******************************
-		Gestion des emails 			A TESTER SUR LA PROD
+		Gestion des emails
 	*******************************/
 	
 	function send_email($destinataire,$objet,$texte){
-	// Envoie des email
+	// Envoie des emails (ne marche pas sans serveur smtp)
 	
-		/*
 		include("../conf/conf.php");
 		$origine = $VALEUR_email;
 		
@@ -691,13 +690,13 @@
 		
 		$objet = "Daily Print | Création d'un compte";
 		$texte = "
-		Bonjour,
+Bonjour,
 		
-		Nous sommes heureux de vous accueillir sur Daily Print. 
-		Votre compte a été créé mais il est en attente de validation par un administrateur.
+Nous sommes heureux de vous accueillir sur Daily Print. 
+Votre compte a été créé mais il est en attente de validation par un administrateur.
 		
-		A bientot !
-		";
+A bientot !
+";
 		send_email($email_cible,$objet,$texte);
 		
 	}
@@ -707,49 +706,50 @@
 		
 		$objet = "Daily Print | Activation de votre compte";
 		$texte = "
-		Bonjour,
+Bonjour,
 
-		Votre compte a été activé ! 
-		Vous pouvez a présent vous connecter.
+Votre compte a été activé ! 
+Vous pouvez a présent vous connecter.
 		
-		A bientot !
-		";
+A bientot !
+";
 		send_email($email_cible,$objet,$texte);
 	}
 	
 	function send_email_notif($email_cible){
 	// Envoie un email de notif avec le tuple donné
 		
+		
 		$objet = "Daily Print | Notification ";
 		$texte = "
-		Bonjour,
+Bonjour,
 		
-		Il y a du nouveau sur votre compte Daily Print ! 
-		Pensez a y jeter un oeil ;-)
+Il y a du nouveau sur votre compte Daily Print ! 
+Pensez a y jeter un oeil ;-)
 		
-		A bientot !
-		";
+A bientot !
+";
 		send_email($email_cible,$objet,$texte);
 	}
 	
 	function send_email_mdp($email_cible,$mdp) {
 	// Envoie l'email pour informer du changement de mot de passe
 	
-	$objet = "Daily Print | Notification ";
+		$objet = "Daily Print | Changement de mot de passe ";
 		$texte = "
-		Bonjour,
+Bonjour,
 		
-		Votre nouveau mot de passe est : ".$mdp." 
-		Vous pouvez vous connecter avec celui-ci.
+Votre nouveau mot de passe est : ".$mdp." 
+Vous pouvez vous connecter avec celui-ci.
 		
-		A bientot !
-		";
+A bientot !
+";
 		send_email($email_cible,$objet,$texte);
 	
 	}
 	
 	function send_email_notif_repro(){
-	// Envoie un email a tous les membres de la repro-visual
+	// Envoie un email a tous les membres de la reprographie
 	
 		$bdd = connexion_sql();
    		
@@ -757,10 +757,33 @@
 		$reponse = $bdd->query($requete);
 		
 		while ($donnees = $reponse->fetch()){
-			send_email_notif($donnees['user_email']);
+			
+			$courant = $donnees['user_email'];
+			
+			if(check_active_notif($courant)){
+				send_email_notif($courant);
+			}
+			
 		}
 
 		$reponse->closeCursor();
 		
+	}
+	
+	check_active_notif($arg_user_email){
+	// Retourne True si l'utilisateur accepte les notifs, False sinon
+		
+		$bdd = connexion_sql();
+
+		$requete = "SELECT notification FROM REAL_USER WHERE user_email='". $arg_user_email ."'";
+		$reponse = $bdd->query($requete);
+		$donnees = $reponse->fetch();
+		reponse->closeCursor();
+		
+		if($donnees['notification'] == "1"){
+			return True ;
+		}
+		
+		return False ;
 	}
 ?>
