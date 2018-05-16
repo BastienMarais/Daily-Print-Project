@@ -681,7 +681,7 @@
 		
 		$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 
-		mail($destinataire,$objet,$message,$header);*/
+		mail($destinataire,$objet,$message,$header);
 
 	}
 	
@@ -770,7 +770,7 @@ A bientot !
 		
 	}
 	
-	check_active_notif($arg_user_email){
+	function check_active_notif($arg_user_email){
 	// Retourne True si l'utilisateur accepte les notifs, False sinon
 		
 		$bdd = connexion_sql();
@@ -778,7 +778,7 @@ A bientot !
 		$requete = "SELECT notification FROM REAL_USER WHERE user_email='". $arg_user_email ."'";
 		$reponse = $bdd->query($requete);
 		$donnees = $reponse->fetch();
-		reponse->closeCursor();
+		$reponse->closeCursor();
 		
 		if($donnees['notification'] == "1"){
 			return True ;
