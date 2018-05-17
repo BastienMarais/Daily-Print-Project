@@ -816,9 +816,9 @@ A bientot !
 		$bdd = connexion_sql();
 		$todayAnnee = date("y");
 		//  REQUETE SQL DE SELECTION
-		$sql = "SELECT COUNT(*) FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '20".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+		$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='VALIDER' AND `creation_date` BETWEEN '20".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
 		$reponse = ($bdd->query($sql))->fetch();
-		$resultat = $reponse['COUNT(*)'];
+		$resultat = $reponse["COUNT('num_copy')"];
 		return $resultat;
 	}
 ?>
