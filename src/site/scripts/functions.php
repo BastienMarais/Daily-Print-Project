@@ -806,4 +806,19 @@ A bientot !
 		
 		return False ;
 	}
+	
+	
+	/*******************************
+			Statistique
+	*******************************/
+	function new_request_graphe($department){
+		// Créer la requète en BD
+		$bdd = connexion_sql();
+		$todayAnnee = date("y");
+		//  REQUETE SQL DE SELECTION
+		$sql = "SELECT COUNT(*) FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '20".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+		$reponse = ($bdd->query($sql))->fetch();
+		$resultat = $reponse['COUNT(*)'];
+		return $resultat;
+	}
 ?>
