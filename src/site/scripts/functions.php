@@ -594,6 +594,26 @@
 			// On démarre la session AVANT toute chose
 			session_start(); 
 			
+			// Cookie pour se rappeler de l'email si souvenir coché
+			if($_SERVER['SERVER_NAME'] == "localhost"){
+				if(isset($_POST['souvenir'])){
+					setcookie("email",$arg_email,false,"/",false);
+				}
+				else {
+					setcookie("email","",false,"/",false);
+				}
+			}
+			else {
+				if(isset($_POST['souvenir'])){
+					setcookie('email', $arg_email, time() + 7*24*3600, null, null, false, true);
+				}
+				else {
+					setcookie('email', "", time() + 7*24*3600, null, null, false, true);
+				}
+				
+			}
+			
+			
 			// On créer quelques variables de session dans $_SESSION
 			$_SESSION['user_email'] = $donnees['user_email'];
 			$_SESSION['statut'] = $donnees['statut'];

@@ -1,6 +1,7 @@
 <?php
 	// On démarre la session AVANT toute chose
 	session_start(); 
+	
 ?>
 <!doctype html>
 <html lang="fr">
@@ -45,8 +46,15 @@
 					
                     <form id="connexionForm" method="POST" action="scripts/connexion.php">
 						<div class="form-group">
-							<label for="inputEmail">Adresse email : </label>
-							<input type="email" class="form-control" id="inputEmail" name="champEmail" aria-describedby="emailHelp" placeholder="Email" required>
+							<label for="inputEmail">Adresse email : </label> 
+							<?php 
+								if(isset($_COOKIE['email'])){
+									echo "<input type='email' class='form-control' id='inputEmail' name='champEmail' aria-describedby='emailHelp' placeholder='Email' required value='". $_COOKIE['email']. "'>";
+								}
+								else {
+									echo "<input type='email' class='form-control' id='inputEmail' name='champEmail' aria-describedby='emailHelp' placeholder='Email' required>";
+								}
+							?>
 						</div>
 						<div class="form-group">
 							<label for="inputPassword">Mot de passe :</label>
@@ -56,7 +64,7 @@
 							<button type="button" class="btn btn-link" data-toggle="modal" data-target="#forgetPassword">Mot de passe oublié</a>
 						</div>
 						<div class="form-group form-check">
-							<input type="checkbox" class="form-check-input" id="checkSouvenir">
+							<input type="checkbox" class="form-check-input" id="checkSouvenir" name="souvenir" value="True">
 							<label class="form-check-label" for="checkSouvenir">Se souvenir de moi</label>
 						</div>
 					</form>
