@@ -590,7 +590,7 @@
 		// vérifications que tous les champs sont la 
 		$liste_champs = array("champEmail","champMdp");
 		if(check_liste_post($liste_champs) == False ){
-			$message = "?mes=required";
+			$message = "?err=required";
 			$ancre = "#inputEmail";
 			header('Location: ' . $VALEUR_url . '/index.php' . $message . $ancre);
 			exit();

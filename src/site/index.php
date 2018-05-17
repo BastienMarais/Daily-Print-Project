@@ -115,6 +115,14 @@
 									</span>
 								";
 							}
+							if($_GET['err'] === "required"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Vous n'avez pas rempli tous les champs.
+										</span>
+									";
+								}
 						}
 					?>
 					
