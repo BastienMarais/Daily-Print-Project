@@ -9,22 +9,22 @@ drop table IF EXISTS PROTECT_FILES ;
    sont ajoutées si et seulement si l'admin valide son inscription */
 create table REAL_USER (
 user_email varchar(50) primary key,
-name varchar(30) not null,
-surname varchar(30) not null,
-statut varchar(30) not null,
+name varchar(50) not null,
+surname varchar(50) not null,
+statut varchar(50) not null,
 password varchar(300) not null,
-department varchar(30) not null,
+department varchar(50) not null,
 notification boolean not null);
 
 /* TMP_USER : Cette table est une table temporaire qui va contenir toutes les informations concernant un utilisateur. Ces informations 
 sont ajoutées lors de son inscription sur le site et avant la validation par l'admin */
 create table TMP_USER (
 user_email varchar(50) primary key,
-name varchar(30) not null,
-surname varchar(30) not null,
-statut varchar(30) not null,
+name varchar(50) not null,
+surname varchar(50) not null,
+statut varchar(50) not null,
 password varchar(300) not null,
-department varchar(30) not null,
+department varchar(50) not null,
 notification boolean not null);
 
 /* REQUESTS : Cette table est celle qui va contenir toutes les informations relatives à une demande d'impression faite par
@@ -32,7 +32,7 @@ notification boolean not null);
 create table REQUESTS (
 id_request int(10) AUTO_INCREMENT primary key,
 user_email varchar(50) not null,
-path_file varchar(50) not null,
+path_file varchar(100) not null,
 creation_date varchar(50) not null,
 delivery_date varchar(50) not null,
 num_copy int(3) not null,

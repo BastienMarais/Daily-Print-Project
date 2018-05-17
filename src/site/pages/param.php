@@ -162,6 +162,14 @@
 										</span>
 									";
 								}
+								if($_GET['mes'] === "required"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Vous n'avez pas rempli tous les champs.
+										</span>
+									";
+								}
 							}
 						?>
 					</div>
@@ -207,6 +215,14 @@
 										<br/>
 										<span class='text-danger'>
 											Une erreur est survenue.
+										</span>
+									";
+								}
+								if($_GET['notif'] === "required"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Vous n'avez pas rempli tous les champs.
 										</span>
 									";
 								}

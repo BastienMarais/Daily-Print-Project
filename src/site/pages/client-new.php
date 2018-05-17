@@ -197,11 +197,11 @@
 										</span>
 									";
 								}
-								if($_GET['mes'] === "finition"){
+								if($_GET['mes'] === "required"){
 									echo "
 										<br/>
 										<span class='text-danger'>
-											Le champs finition est vide.
+											Vous n'avez pas rempli tous les champs.
 										</span>
 									";
 								}

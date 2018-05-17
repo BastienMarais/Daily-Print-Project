@@ -120,23 +120,7 @@
 								echo "
 									<br/>
 									<span class='text-danger'>
-										Vos mots de passe sont différents.
-									</span>
-								";
-							}
-							else if($_GET['mes'] === 'departement'){
-								echo "
-									<br/>
-									<span class='text-danger'>
-										Vous n'avez pas choisi de département.
-									</span>
-								";
-							}
-							else if($_GET['mes'] === 'statut'){
-								echo "
-									<br/>
-									<span class='text-danger'>
-										Vous n'avez pas choisi de statut.
+										Vos mots de passe sont différents ou trop court (mdp au moins 5 caractères).
 									</span>
 								";
 							}
@@ -145,6 +129,22 @@
 									<br/>
 									<span class='text-danger'>
 										Adresse email déjà existante. Votre compte n'est peut-être pas encore activé.
+									</span>
+								";
+							}
+							else if($_GET['mes'] === 'emailError'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										Adresse email mal formée.
+									</span>
+								";
+							}
+							else if($_GET['mes'] === 'required'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										Vous n'avez pas rempli tous les champs.
 									</span>
 								";
 							}

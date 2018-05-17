@@ -74,25 +74,23 @@
 		session_start(); 
 		include("../conf/conf.php");
 		
+		// vérifications que tous les champs sont la 
+		$liste_champs = array("user_email","champDate","champFichier","champNbCopie","champCouleur","champFinition","champRectoVerso");
+		if(check_liste_post($liste_champs) == False ){
+			$message = "?mes=required";
+			$ancre = "#champRectoVerso";
+			header('Location: ' . $VALEUR_url . '/pages/client-new.php' . $message . $ancre);
+			exit();
+		}
+		
 		$email = $_SESSION['user_email'];
 		$date_retour = $_POST['champDate'];
 		$chemin_fichier = $_POST['champFichier'];   
 		$nb_copie = (int) $_POST['champNbCopie'];
 		$couleur = $_POST['champCouleur'];
+		$finition = $_POST['champFinition'];
+		$recto_verso = $_POST['champRectoVerso'];
 		
-		if( isset($_POST['champFinition']) ){
-			$finition = $_POST['champFinition'];
-		}
-		else {
-			$message = "?mes=finition";
-			$ancre = "#champRectoVerso";
-			header('Location: ' . $VALEUR_url . '/pages/client-new.php' . $message . $ancre);
-			exit();
-		}
-
-		if( isset($_POST['champRectoVerso']) ){
-			$recto_verso = $_POST['champRectoVerso'];
-		}
 		
 		date_default_timezone_set('Europe/Paris');
 
@@ -114,6 +112,17 @@
 		// Cas d'impression d'une oeuvre protegee
 		if( isset($_POST['champNomPublication']) ){
 			if ($_POST['champNomPublication'] !== ''){
+				
+				// vérifications que tous les champs sont la 
+				$liste_champs = array("champNomPublication","champAuteur","champEditeur","champNbPages","champNbExemplaire");
+				if(check_liste_post($liste_champs) == False ){
+					$message = "?mes=required";
+					$ancre = "#champRectoVerso";
+					header('Location: ' . $VALEUR_url . '/pages/client-new.php' . $message . $ancre);
+					exit();
+				}
+				
+			
 				$titre = $_POST['champNomPublication'];
 				$auteur = $_POST['champAuteur'];
 				$editeur = $_POST['champEditeur'];
@@ -316,38 +325,41 @@
 	function recuperation_champs_inscription(){
 	// Récupère les champs du formulaire et créer un compte dans inscription.php
 		
-		if ($_POST['champMdp1'] != $_POST['champMdp2']){
+		include("../conf/conf.php");
+		
+		// vérifications que tous les champs sont la 
+		$liste_champs = array("champPrenom","champNom","champEmail","champMdp1","champMdp2","champStatut","champDepartement");
+		if(check_liste_post($liste_champs) == False ){
+			$message = "?mes=required";
+			$ancre = "#inscriptionForm";
+			header('Location: ' . $VALEUR_url . '/pages/inscription.php' . $message . $ancre);
+			exit();
+		}
+		
+		
+		// on regarde si les mdp sont identiques
+		if ($_POST['champMdp1'] != $_POST['champMdp2'] && strlen($_POST['champMdp1'] < 5)){
 			$message = "?mes=mdpError";
 			$ancre = "#inscriptionForm";
 			header('Location: ' . $VALEUR_url . '/pages/inscription.php' . $message . $ancre);
 			exit();
 		}
 
+		// email invalide
+		if (!filter_var($_POST['champEmail'], FILTER_VALIDATE_EMAIL)) {
+			$message = "?mes=emailError";
+			$ancre = "#inscriptionForm";
+			header('Location: ' . $VALEUR_url . '/pages/inscription.php' . $message . $ancre);
+			exit();
+		}
+		
 		$prenom = $_POST['champPrenom'];
 		$nom = $_POST['champNom'];
 		$email = $_POST['champEmail'];
-
 		$password = hash("sha256", $_POST['champMdp1']);
-
-		if( isset($_POST['champStatut']) ){
-			$statut = $_POST['champStatut'];
-		}
-		else{
-			$message = "?mes=statut";
-			$ancre = "#inscriptionForm";
-			header('Location: ' . $VALEUR_url . '/pages/inscription.php' . $message . $ancre);
-			exit();
-		} 
-
-		if( isset($_POST['champDepartement']) ){
-			$departement = $_POST['champDepartement'];
-		}
-		else{
-			$message = "?mes=departement";
-			$ancre = "#inscriptionForm";
-			header('Location: ' . $VALEUR_url . '/pages/inscription.php' . $message . $ancre);
-			exit();
-		}
+		$statut = $_POST['champStatut'];
+		$departement = $_POST['champDepartement'];
+		
 
 		
 		// Verification d'un email unique
@@ -437,8 +449,17 @@
 		include("../conf/conf.php");
 		session_start();
 		
+		
+		// vérifications que tous les champs sont la 
+		$liste_champs = array("champOldPassword","champNewPassword1","champNewPassword2");
+		if(check_liste_post($liste_champs) == False ){
+			$message = "?mes=required";
+			$ancre = "#inputOldPassword" ;
+			header('Location: ' . $VALEUR_url . '/pages/param.php' . $message . $ancre);
+			exit();
+		}
+		
 		$bdd = connexion_sql();
-
 		$requete = "SELECT password FROM REAL_USER WHERE user_email='". $_SESSION["user_email"] ."'";
 		$reponse = $bdd->query($requete);
 		$donnees = $reponse->fetch();
@@ -510,7 +531,7 @@
 			}
 		}
 		else {
-			$message = "?notif=error";
+			$message = "?notif=required";
 			$ancre = "#inputNotifications";
 			header('Location: ' . $VALEUR_url . '/pages/param.php' . $message . $ancre);
 			exit();
@@ -563,6 +584,17 @@
 	
 	function recuperation_champs_connexion(){
 	// Récupère les champs du formulaire et connecte l'utilisateur sur index.php
+	
+		include("../conf/conf.php");
+		
+		// vérifications que tous les champs sont la 
+		$liste_champs = array("champEmail","champMdp");
+		if(check_liste_post($liste_champs) == False ){
+			$message = "?mes=required";
+			$ancre = "#inputEmail";
+			header('Location: ' . $VALEUR_url . '/index.php' . $message . $ancre);
+			exit();
+		}
 		
 		$email = $_POST['champEmail'];
 		$password = $_POST['champMdp'];
@@ -610,7 +642,6 @@
 				else {
 					setcookie('email', "", time() + 7*24*3600, null, null, false, true);
 				}
-				
 			}
 			
 			
@@ -806,4 +837,37 @@ A bientot !
 		
 		return False ;
 	}
+	
+	
+	/*******************************
+		Checks 
+	*******************************/
+	
+	function check_liste_post($liste){
+	// Renvoie True si tout est present, False sinon
+	// $min <= champAuteur < $max
+	
+		$min = 1 ;
+		$max = 50;
+		
+		foreach($liste as $v ){
+			if(!isset($_POST[$v])){
+				return False ;
+			}
+			else {
+				if($v === "champFichier"){
+					$max = 100;
+				}
+				else {
+					$max = 50;
+				}
+				$chaine = str_replace(" ","",$_POST[$v]) ;
+				if(strlen($chaine) < $min && strlen($_POST[$v]) > $max){
+					return False ;
+				}
+			}
+		}
+		return True ;	
+	}
+	
 ?>
