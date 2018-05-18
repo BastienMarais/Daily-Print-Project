@@ -75,7 +75,7 @@
 		include("../conf/conf.php");
 		
 		// vérifications que tous les champs sont la 
-		$liste_champs = array("user_email","champDate","champFichier","champNbCopie","champCouleur","champFinition","champRectoVerso");
+		$liste_champs = array("champDate","champFichier","champCouleur","champFinition","champRectoVerso");
 		if(check_liste_post($liste_champs) == False ){
 			$message = "?mes=required";
 			$ancre = "#champRectoVerso";
@@ -83,10 +83,15 @@
 			exit();
 		}
 		
+		 
+		
+		if(isset($_POST['champNbCopie']) && (int) $_POST['champNbCopie'] > 0){
+			$nb_copie = (int) $_POST['champNbCopie'];
+		}
+		
 		$email = $_SESSION['user_email'];
 		$date_retour = $_POST['champDate'];
-		$chemin_fichier = $_POST['champFichier'];   
-		$nb_copie = (int) $_POST['champNbCopie'];
+		$chemin_fichier = $_POST['champFichier'];
 		$couleur = $_POST['champCouleur'];
 		$finition = $_POST['champFinition'];
 		$recto_verso = $_POST['champRectoVerso'];
@@ -114,8 +119,8 @@
 			if ($_POST['champNomPublication'] !== ''){
 				
 				// vérifications que tous les champs sont la 
-				$liste_champs = array("champNomPublication","champAuteur","champEditeur","champNbPages","champNbExemplaire");
-				if(check_liste_post($liste_champs) == False ){
+				$liste_champs_protected = array("champNomPublication","champAuteur","champEditeur","champNbPages","champNbExemplaire");
+				if(check_liste_post($liste_champs_protected) == False ){
 					$message = "?mes=required";
 					$ancre = "#champRectoVerso";
 					header('Location: ' . $VALEUR_url . '/pages/client-new.php' . $message . $ancre);
@@ -870,4 +875,27 @@ A bientot !
 		return True ;	
 	}
 	
+	/*******************************
+		Statistique
+	*******************************/
+	
+	function new_request_graphe($department,$etat){
+	// Créer la requète en BD 
+	// Etats acceptés : "EN ATTENTE", "EN COURS", "VALIDEE", "ANNULEE" , "ALL"
+	
+		$bdd = connexion_sql();
+		$todayAnnee = date("y");
+		//  REQUETE SQL DE SELECTION
+		
+		if($etat === "ALL"){
+			$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '20".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+		}
+		else {
+			$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '20".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+		}
+		
+		$reponse = ($bdd->query($sql))->fetch();
+		$resultat = $reponse["COUNT('num_copy')"];
+		return $resultat;
+	}
 ?>
