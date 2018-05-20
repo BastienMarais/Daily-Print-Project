@@ -3,20 +3,24 @@
 	require_once ('../jpgraph-4.2.0/src/jpgraph_bar.php');
 
 	include("functions.php");
-
-	$resultatINFO = new_request_graphe("INFO","ALL");
-	$dataINFOy=array($resultatINFO);
-	$resultatMMI = new_request_graphe("MMI","ALL");
-	$dataMMIy=array($resultatMMI);
-	$resultatGEII = new_request_graphe("GEII","ALL");
-	$dataGEIIy=array($resultatGEII);
-	$resultatReprographie = new_request_graphe("Reprographie","ALL");
-	$dataRecherchey=array($resultatReprographie);
-	$resultatRecherche = new_request_graphe("Recherche","ALL");
-	$dataReprographiey=array($resultatRecherche);
-	$resultatAutre = new_request_graphe("Autre","ALL");
-	$dataAutrey=array($resultatAutre);
-	$data1y=array($resultatINFO, $resultatMMI, $resultatGEII, $resultatRecherche, $resultatReprographie, $resultatAutre);
+	function grapheStatistique(){
+	$donnee=array("INFO","MMI","GEII","Reprographie","Recherche","Autre");
+	$data1y=array();
+	$champEtat = $_POST['champEtat'];
+	if($champEtat == 'ALL'){
+		$etat = "All";
+	}if($champEtat == 'EN ATTENTE'){
+		$etat = "En attente";
+	}if($champEtat == 'VALIDEE'){
+		$etat = "Validée";
+	}if($champEtat == 'ANNULEE'){
+		$etat = "Annulée";
+	}if($champEtat == 'EN COURS'){
+		$etat = "En cours";
+	}
+	foreach ($donnee as $i=>$value) {
+		$data1y[$i]	= new_request_graphe($value, $champEtat);
+	}
 
 	// Create the graph. These two calls are always required
 	$graph = new Graph(800,600,'auto');
@@ -38,6 +42,22 @@
 	// Create the bar plots
 	$b1plot = new BarPlot($data1y);
 
+	//création du soustitre
+	$jour = array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
+	$mois = array("","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre");
+	$datefr = $jour[date("w")]." ".date("d")." ".$mois[date("n")]." ".date("Y"); 
+	$ChampsDate = $_POST['champDate'];
+	if($ChampsDate == 'Journalier'){
+		$datefr = $jour[date("w")]." ".date("d")." ".$mois[date("n")]." ".date("Y");
+		$soustitre = "pour le ".$datefr." à l'état de ".$etat;
+	}if($ChampsDate == 'Mensuelle'){
+		$datefr = $mois[date("n")];
+		$soustitre = "pour le mois de ".$datefr." à l'état de ".$etat;
+	}if($ChampsDate == 'Annuelle'){
+		$datefr = date("Y");
+		$soustitre = "pour l'année ".$datefr." à l'état de ".$etat;
+	}
+	
 	// Create the grouped bar plot
 	$gbplot = new GroupBarPlot(array($b1plot));
 	// ...and add it to the graPH
@@ -47,9 +67,11 @@
 	$b1plot->value->SetFont(FF_ARIAL,FS_NORMAL,12);
 	$b1plot->SetColor(array('#85c1e9', '#f5b7b1', '#edbb99','#52be80','#bb8fce','black'));
 	$b1plot->SetFillColor(array('#85c1e9', '#f5b7b1', '#edbb99','#52be80','#bb8fce','black'));
-	$todayAnnee = date("y");
-	$graph->title->Set("Nombre de demande par département en 20".$todayAnnee);
+	$todayAnnee = date("Y");
+	$graph->title->Set("Nombre de copie par département");
 	$graph->title->SetFont(FF_ARIAL,FS_BOLD,20);
+	$graph->subtitle->Set($soustitre);
+	$graph->subtitle->SetFont(FF_ARIAL,FS_BOLD,20);
 
 	// Display the graph
 	$filename = "../img/statistique.png";
@@ -58,8 +80,9 @@
 		unlink($filename);
 		$graph->Stroke($filename);
 		echo "<center><img src='".$filename."' /><center>";
-	} else {
+	}else {
 		$graph->Stroke($filename);
 		echo "<center><img src='".$filename."' /><center>";
+	}
 	}
 ?>

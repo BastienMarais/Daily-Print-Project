@@ -884,16 +884,34 @@ A bientot !
 	// Etats acceptés : "EN ATTENTE", "EN COURS", "VALIDEE", "ANNULEE" , "ALL"
 	
 		$bdd = connexion_sql();
-		$todayAnnee = date("y");
+		$ChampsDate = $_POST['champDate'];
+		if($ChampsDate == 'Journalier'){
+			$today = date("d-m-y");
+			if($etat === "VALIDEE"){
+				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date`='".$today."'";
+			}
+			else {
+				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date`='".$today."'";
+			}
+		}if($ChampsDate == 'Mensuelle'){
+			$todayMois = date("m-y");
+			
+			if($etat === "VALIDEE"){
+				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '20".$todayMois."-01' AND '20".$todayMois."-31'";
+			}
+			else {
+				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '20".$todayMois."-01' AND '20".$todayMois."-31'";
+			}
+		}if($ChampsDate == 'Annuelle'){
+			$todayAnnee = date("Y");
+			if($etat === "VALIDEE"){
+				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+			}
+			else {
+				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+			}
+		}
 		//  REQUETE SQL DE SELECTION
-		
-		if($etat === "ALL"){
-			$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '20".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
-		}
-		else {
-			$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '20".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
-		}
-		
 		$reponse = ($bdd->query($sql))->fetch();
 		$resultat = $reponse["COUNT('num_copy')"];
 		return $resultat;

@@ -65,18 +65,37 @@
 				
                     <legend class="color-blue">Statistiques : </legend>
 					<br/>
+					<form method="POST" action="repro-stat.php">
+						<div class="col">
+							<label for="inputDate">Suivi periode : </label>
+							<select name="champDate" class="form-control" >
+								<option value="Journalier">Journalier</option>
+								<option value="Mensuelle">Mensuelle</option>
+								<option value="Annuelle" selected="selected" >Annuelle</option>	
+							</select>
+							<label for="inputEtat">Etat : </label>
+							<select name="champEtat" class="form-control" >
+								<option value="ALL">All</option>
+								<option value="EN ATTENTE">En attente</option>
+								<option value="EN COURS">En cour</option>
+								<option value="VALIDEE" selected="selected">Validée</option>
+								<option value="ANNULEE">Annulée</option>
+							</select>
+							<br/>
+							<button type="submit" class="btn btn-primary">Afficher le graphe</button>
+						</div>
+					</form>
 					<br/>
 					<?php
-						include("../scripts/grapheStatistique.php");
+						if (!empty($_POST['champDate']) && !empty($_POST['champEtat']) ){ ### Si ce n'est pas vide
+							include("../scripts/grapheStatistique.php");
+							grapheStatistique();
+						}
 					?>
 				</div>
-				
 				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
 			</div>
 		</content>
-
-
-
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
