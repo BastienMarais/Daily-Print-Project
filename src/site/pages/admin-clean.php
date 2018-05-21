@@ -36,10 +36,10 @@
 				<a class="nav-item nav-link" href="admin-news.php">Nouvelles inscriptions</a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				<a class="nav-item nav-link active" href="admin-users.php">Liste des utilisateurs</a>
+				<a class="nav-item nav-link" href="admin-users.php">Liste des utilisateurs</a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-				<a class="nav-item nav-link" href="admin-clean.php">Nettoyage de la base</a>
+				<a class="nav-item nav-link active" href="admin-clean.php">Nettoyage de la base</a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
 				<a class="nav-item nav-link" href="param.php">Paramètres</a>
@@ -66,24 +66,25 @@
 
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 panel">
 
-                    <legend class="color-blue">Liste des utilisateurs : </legend>
+                    <legend class="color-blue">Nettoyage de la base de données : </legend>
 
-					<!-- Div modifiée par le js -->
-					<div id="data">
-						<table class="table table-hover table-bordered table-responsive">
-							<thead>
-								<tr class="background-black">
-									<th scope="col" class="center">#</th>
-									<th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Nom</th>
-									<th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Prénom</th>
-									<th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Email</th>
-									<th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Statut</th>
-									<th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Département</th>
-									<th scope="col" class="center col-xs-2 col-sm-2 col-md-2 col-lg-2">Options</th>
-								</tr>
-							</thead>
-					</div>
-
+					<br/>
+					<form id="idForm" method="POST" action="../scripts/cleanRequests.php">
+						<button type="submit" class="btn btn-primary">Supprimer les requêtes de plus d'un an</button>
+					</form>
+					<?php
+						if(isset($_GET['msg'])){
+							if($_GET['msg'] === "todo"){
+								echo "
+									<br/>
+									<span class='text-warning'>
+										Cette partie n'a pas encore été implémenté.
+									</span>
+								";
+							}
+								
+						}
+					?>
 				</div>
 
 				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
@@ -96,7 +97,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <script src='../js/admin-users.js'></script>
 
     </body>
 </html>

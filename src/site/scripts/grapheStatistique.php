@@ -4,7 +4,7 @@
 
 	include("functions.php");
 	function grapheStatistique(){
-	$donnee=array("INFO","MMI","GEII","Reprographie","Recherche","Autre");
+	$donnee=array("INFO","MMI","GEII","Recherche","Autre");
 	$data1y=array();
 	$champEtat = $_POST['champEtat'];
 	if($champEtat == 'ALL'){
@@ -33,7 +33,7 @@
 	$graph->SetBox(false);
 
 	$graph->ygrid->SetFill(false);
-	$graph->xaxis->SetTickLabels(array('INFO','MMI','GEII','Recherche','Reprographie','Autre'), array('#85c1e9','#f5b7b1','#edbb99','#52be80', '#bb8fce', 'black'));
+	$graph->xaxis->SetTickLabels(array('INFO','MMI','GEII','Recherche','Autre'), array('#85c1e9','#f5b7b1','#edbb99', '#bb8fce', 'black'));
 	$graph->xaxis->SetFont(FF_ARIAL,FS_NORMAL,14);
 	$graph->yaxis->HideLine(false);
 	$graph->yaxis->HideTicks(false,false);
@@ -45,29 +45,28 @@
 	//création du soustitre
 	$jour = array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
 	$mois = array("","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre");
-	$datefr = $jour[date("w")]." ".date("d")." ".$mois[date("n")]." ".date("Y"); 
 	$ChampsDate = $_POST['champDate'];
 	if($ChampsDate == 'Journalier'){
+		$datefr = $jour[date("w")]." ".date("d")." ".$mois[date("n")]." ".date("Y");
 		if($etat === "All"){
-			$soustitre = "pour le ".$datefr." pour toutes les demandes";
+			$soustitre = "pour le ".$datefr.", toutes les demandes comprises";
 		}
 		else {
 			$soustitre = "pour le ".$datefr." à l'état de '".$etat . "'";
 		}
-		$datefr = $jour[date("w")]." ".date("d")." ".$mois[date("n")]." ".date("Y");
 		
 	}if($ChampsDate == 'Mensuelle'){
+		$datefr = $mois[date("n")];
 		if($etat === "All"){
-			$soustitre = "pour le mois de ".$datefr." pour toutes les demandes";
+			$soustitre = "pour le mois de ".$datefr.", toutes les demandes comprises";
 		}
 		else{
 			$soustitre = "pour le mois de ".$datefr." à l'état de '".$etat . "'";
 		}
-		$datefr = $mois[date("n")];
 	}if($ChampsDate == 'Annuelle'){
 		$datefr = date("Y");
 		if($etat === "All"){
-			$soustitre = "pour l'année ".$datefr." pour toutes les demandes";
+			$soustitre = "pour l'année ".$datefr.", toutes les demandes comprises";
 		}
 		else {
 			$soustitre = "pour l'année ".$datefr." à l'état de '".$etat . "'";
@@ -85,7 +84,7 @@
 	$b1plot->SetColor(array('#85c1e9', '#f5b7b1', '#edbb99','#52be80','#bb8fce','black'));
 	$b1plot->SetFillColor(array('#85c1e9', '#f5b7b1', '#edbb99','#52be80','#bb8fce','black'));
 	$todayAnnee = date("Y");
-	$graph->title->Set("Nombre de copie par département");
+	$graph->title->Set("Nombre de copies par département");
 	$graph->title->SetFont(FF_ARIAL,FS_BOLD,20);
 	$graph->subtitle->Set($soustitre);
 	$graph->subtitle->SetFont(FF_ARIAL,FS_BOLD,20);
@@ -96,10 +95,10 @@
 	if (file_exists($filename)) {
 		unlink($filename);
 		$graph->Stroke($filename);
-		echo "<center><img src='".$filename."' /><center>";
+		echo "<center><img class='img-fluid' src='".$filename."' /><center>";
 	}else {
 		$graph->Stroke($filename);
-		echo "<center><img src='".$filename."' /><center>";
+		echo "<center><img class='img-fluid' src='".$filename."' /><center>";
 	}
 	}
 ?>

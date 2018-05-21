@@ -916,4 +916,18 @@ A bientot !
 		$resultat = $reponse["COUNT('num_copy')"];
 		return $resultat;
 	}
-?>
+
+
+	/*******************************
+		Clean DB
+	*******************************/
+
+	function clean_requests(){
+			$message = "?msg=todo";
+			$ancre = "#idForm";
+			header('Location: ' . $VALEUR_url . '../pages/admin-clean.php' . $message . $ancre);
+			exit();
+	}
+
+?>	
+
