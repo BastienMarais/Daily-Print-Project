@@ -42,7 +42,7 @@
 			'choixCouleur' => $arg_choix_couleur,
 			'finition' => $arg_finition,
 			'rectoVerso' => $arg_recto_verso,
-			'etatRequete' => 'EN ATTENTE',
+			'etatRequete' => 'En attente',
 			));
 			
 		send_email_notif_repro();
