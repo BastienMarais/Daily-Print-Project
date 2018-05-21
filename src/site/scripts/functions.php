@@ -881,22 +881,22 @@ A bientot !
 	
 	function new_request_graphe($department,$etat){
 	// Créer la requète en BD 
-	// Etats acceptés : "EN ATTENTE", "EN COURS", "VALIDEE", "ANNULEE" , "ALL"
+	// Etats acceptés : "En attente", "En cours", "Validée", "Annulée" , "ALL"
 	
 		$bdd = connexion_sql();
 		$ChampsDate = $_POST['champDate'];
 		if($ChampsDate == 'Journalier'){
 			$today = date("d-m-y");
-			if($etat === "VALIDEE"){
+			if($etat === "ALL"){
 				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date`='".$today."'";
-			}
+			}	
 			else {
 				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date`='".$today."'";
 			}
 		}if($ChampsDate == 'Mensuelle'){
 			$todayMois = date("m-y");
 			
-			if($etat === "VALIDEE"){
+			if($etat === "ALL"){
 				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '20".$todayMois."-01' AND '20".$todayMois."-31'";
 			}
 			else {
@@ -904,7 +904,7 @@ A bientot !
 			}
 		}if($ChampsDate == 'Annuelle'){
 			$todayAnnee = date("Y");
-			if($etat === "VALIDEE"){
+			if($etat === "ALL"){
 				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
 			}
 			else {

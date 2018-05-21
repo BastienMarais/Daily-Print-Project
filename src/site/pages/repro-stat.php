@@ -67,7 +67,7 @@
 					<br/>
 					<form method="POST" action="repro-stat.php">
 						<div class="col">
-							<label for="inputDate">Suivi periode : </label>
+							<label for="inputDate">Suivi période : </label>
 							<select name="champDate" class="form-control" >
 								<option value="Journalier">Journalier</option>
 								<option value="Mensuelle">Mensuelle</option>
@@ -75,11 +75,11 @@
 							</select>
 							<label for="inputEtat">Etat : </label>
 							<select name="champEtat" class="form-control" >
-								<option value="ALL">All</option>
-								<option value="EN ATTENTE">En attente</option>
-								<option value="EN COURS">En cour</option>
-								<option value="VALIDEE" selected="selected">Validée</option>
-								<option value="ANNULEE">Annulée</option>
+								<option value="ALL" selected="selected">Toutes les demandes</option>
+								<option value="En attente">En attente</option>
+								<option value="En cours">En cours</option>
+								<option value="Validée">Validée</option>
+								<option value="Annulée">Annulée</option>
 							</select>
 							<br/>
 							<button type="submit" class="btn btn-primary">Afficher le graphe</button>

@@ -9,13 +9,13 @@
 	$champEtat = $_POST['champEtat'];
 	if($champEtat == 'ALL'){
 		$etat = "All";
-	}if($champEtat == 'EN ATTENTE'){
+	}if($champEtat == 'En attente'){
 		$etat = "En attente";
-	}if($champEtat == 'VALIDEE'){
+	}if($champEtat == 'Validée'){
 		$etat = "Validée";
-	}if($champEtat == 'ANNULEE'){
+	}if($champEtat == 'Annulée'){
 		$etat = "Annulée";
-	}if($champEtat == 'EN COURS'){
+	}if($champEtat == 'En cours'){
 		$etat = "En cours";
 	}
 	foreach ($donnee as $i=>$value) {
@@ -48,14 +48,31 @@
 	$datefr = $jour[date("w")]." ".date("d")." ".$mois[date("n")]." ".date("Y"); 
 	$ChampsDate = $_POST['champDate'];
 	if($ChampsDate == 'Journalier'){
+		if($etat === "All"){
+			$soustitre = "pour le ".$datefr." pour toutes les demandes";
+		}
+		else {
+			$soustitre = "pour le ".$datefr." à l'état de '".$etat . "'";
+		}
 		$datefr = $jour[date("w")]." ".date("d")." ".$mois[date("n")]." ".date("Y");
-		$soustitre = "pour le ".$datefr." à l'état de ".$etat;
+		
 	}if($ChampsDate == 'Mensuelle'){
+		if($etat === "All"){
+			$soustitre = "pour le mois de ".$datefr." pour toutes les demandes";
+		}
+		else{
+			$soustitre = "pour le mois de ".$datefr." à l'état de '".$etat . "'";
+		}
 		$datefr = $mois[date("n")];
-		$soustitre = "pour le mois de ".$datefr." à l'état de ".$etat;
 	}if($ChampsDate == 'Annuelle'){
 		$datefr = date("Y");
-		$soustitre = "pour l'année ".$datefr." à l'état de ".$etat;
+		if($etat === "All"){
+			$soustitre = "pour l'année ".$datefr." pour toutes les demandes";
+		}
+		else {
+			$soustitre = "pour l'année ".$datefr." à l'état de '".$etat . "'";
+		}
+		
 	}
 	
 	// Create the grouped bar plot
