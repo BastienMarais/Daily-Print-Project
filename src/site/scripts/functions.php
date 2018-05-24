@@ -75,7 +75,7 @@
 		include("../conf/conf.php");
 		
 		// vérifications que tous les champs sont la 
-		$liste_champs = array("champDate","champFichier","champCouleur","champFinition","champRectoVerso");
+		$liste_champs = array("champDate","champCouleur","champFinition","champRectoVerso");
 		if(check_liste_post($liste_champs) == False ){
 			$message = "?mes=required";
 			$ancre = "#champRectoVerso";
@@ -91,7 +91,7 @@
 		
 		$email = $_SESSION['user_email'];
 		$date_retour = $_POST['champDate'];
-		$chemin_fichier = $_POST['champFichier'];
+		$chemin_fichier = $_FILES['champFichier']['name'];
 		$couleur = $_POST['champCouleur'];
 		$finition = $_POST['champFinition'];
 		$recto_verso = $_POST['champRectoVerso'];
@@ -104,8 +104,42 @@
 		// Vérification que la meme requete n'a pas déjà été effectuée
 		if (check_demande($email, $chemin_fichier, $date_retour, $nb_copie, $couleur, $finition, $recto_verso)){
 
-			// Lance la création en BD de la requète
-			new_request($email, $chemin_fichier, $date_actuelle, $date_retour, $nb_copie, $couleur, $finition, $recto_verso);
+			// on regarde si c'est un pdf 
+			$extension_upload = explode(".",strtolower($chemin_fichier));
+			$extension_upload = array_pop($extension_upload) ;
+			if ( $extension_upload != "pdf"){
+				$message = "?mes=errorFile";
+				$ancre = "#champRectoVerso";
+				header('Location: ' . $VALEUR_url . '/pages/client-new.php' . $message . $ancre);
+				exit();
+			}
+
+			// On créer le répertoire utilisateur si besoin
+			if($VALEUR_os == "Windows"){
+				$VALEUR_files = str_replace("/","\\", $VALEUR_files);
+			}
+			$dossier = $VALEUR_files . $_SESSION['user_email'];
+			if(!is_dir($dossier)){
+			    mkdir($dossier);
+			}
+			
+			// On télécharge le fichier 
+			$nom =  hash("sha256", $chemin_fichier);
+			$path = $dossier . "/" . $nom;
+			if($VALEUR_os == "Windows"){
+				$path = str_replace("/","\\", $path);
+			}
+			$resultat = move_uploaded_file($_FILES['champFichier']['tmp_name'],$path);
+			if($resultat){
+				// Lance la création en BD de la requète
+				new_request($email, $chemin_fichier, $date_actuelle, $date_retour, $nb_copie, $couleur, $finition, $recto_verso);
+			}
+			else {
+				$message = "?mes=errorFile";
+				$ancre = "#champRectoVerso";
+				header('Location: ' . $VALEUR_url . '/pages/client-new.php' . $message . $ancre);
+				exit();
+			}
 		}
 		else{
 			$message = "?mes=exist";

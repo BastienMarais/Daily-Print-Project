@@ -65,7 +65,7 @@
 				
                     <legend class="color-blue">Nouvelle demande : </legend>
 					
-					<form method="POST" action="../scripts/newDemande.php">
+					<form method="POST" action="../scripts/newDemande.php" enctype="multipart/form-data">
 					
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					
@@ -202,6 +202,14 @@
 										<br/>
 										<span class='text-danger'>
 											Vous n'avez pas rempli tous les champs.
+										</span>
+									";
+								}
+								if($_GET['mes'] === "errorFile"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Une erreur est survenue lors de la récupération du fichier. Vous ne pouvez que transférer des pdf.
 										</span>
 									";
 								}
