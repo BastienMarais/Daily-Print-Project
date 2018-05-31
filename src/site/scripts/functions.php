@@ -221,11 +221,19 @@
 		
 		//  REQUETE SQL DE CREATION D'UNE NOUVELLE DEMANDE
 		$sql = "UPDATE REQUESTS SET etat='". $arg_new_state ."' WHERE id_request='". $arg_id_request ."'";
-		$bdd->query($sql);
+		$bdd->query($sql);	
 		echo "Le statut de la demande ". $arg_id_request ." a été modifié: ". $arg_new_state; 
-		send_email_notif($email);
-		header('Location: ../pages/repro-visual.php');
-		exit();
+		if($email == "repro"){
+			send_email_notif_repro();
+			header('Location: ../pages/client-visual.php');
+			exit();
+		}
+		else {
+			send_email_notif($email);
+			header('Location: ../pages/repro-visual.php');
+			exit();
+		}
+		
 	}
 	
 	
@@ -430,10 +438,10 @@
 				<td><?php echo $delivery_date; ?></td>
 				<td>
 				<select class="custom-select" name="status[]">
-						<option value="<?php echo $user_email. ",En attente,".$array[$i]['id_request'];?>">En attente</option>
-						<option value="<?php echo $user_email. ",En cours,".$array[$i]['id_request'];?>">En cours</option>
-						<option value="<?php echo $user_email. ",Validee,".$array[$i]['id_request'];?>">Validée</option>
-						<option value="<?php echo $user_email. ",Annulee,".$array[$i]['id_request'];?>">Annulée</option>
+						<option value="<?php echo $user_email. ",En attente,".$array[$i]['id_request'];?>"<?php if($etat == "En attente"){echo "selected";}?>>En attente</option>
+						<option value="<?php echo $user_email. ",En cours,".$array[$i]['id_request'];?>"<?php if($etat == "En cours"){echo "selected";}?>>En cours</option>
+						<option value="<?php echo $user_email. ",Validee,".$array[$i]['id_request'];?>"<?php if($etat == "Validee"){echo "selected";}?>>Validée</option>
+						<option value="<?php echo $user_email. ",Annulee,".$array[$i]['id_request'];?>"<?php if($etat == "Annulee"){echo "selected";}?>>Annulée</option>
 				</select>
 				</td>
 			</tr>
@@ -1191,8 +1199,9 @@ A bientot !
 			}
 		}
 		//  REQUETE SQL DE SELECTION
-		$reponse = ($bdd->query($sql))->fetch();
-		$resultat = $reponse["COUNT('num_copy')"];
+		$reponse = $bdd->query($sql);
+		$donnee =  $reponse->fetch();
+		$resultat = $donnee["COUNT('num_copy')"];
 		return $resultat;
 	}
 

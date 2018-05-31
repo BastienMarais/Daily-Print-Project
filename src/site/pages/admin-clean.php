@@ -78,11 +78,10 @@
 								echo "
 									<br/>
 									<span class='text-warning'>
-										Cette partie n'a pas encore été implémenté.
+										Cette partie n'a pas encore été implémentée.
 									</span>
 								";
 							}
-								
 						}
 					?>
 				</div>

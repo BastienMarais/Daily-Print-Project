@@ -8,7 +8,7 @@
 	$data1y=array();
 	$champEtat = $_POST['champEtat'];
 	if($champEtat == 'ALL'){
-		$etat = "All";
+		$etat = "ALL";
 	}if($champEtat == 'En attente'){
 		$etat = "En attente";
 	}if($champEtat == 'Validée'){
