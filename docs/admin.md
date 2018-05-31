@@ -15,7 +15,7 @@ Une fois vÃ´tre choix fait cliquez sur le bouton "GÃ©rer les inscriptions".
 
 ## Page : Liste des utilisateurs
 
-Vous pouvez voir ici tous les comptes utilisateurs, vous pouvez les supprimer en cas d'erreur ï¿½ l'aide de la case a cocher et du bouton associï¿½ juste au dessus du tableau.
+Vous pouvez voir ici tous les comptes utilisateurs, vous pouvez les supprimer en cas d'erreur à l'aide de la case a cocher et du bouton associé juste au dessus du tableau.
 
 /!\ Attention c'est dÃ©finitif /!\
 
