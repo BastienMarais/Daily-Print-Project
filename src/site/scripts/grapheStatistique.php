@@ -49,7 +49,7 @@
 	if($ChampsDate == 'Journalier'){
 		$datefr = $jour[date("w")]." ".date("d")." ".$mois[date("n")]." ".date("Y");
 		if($etat === "ALL"){
-			$soustitre = "pour le ".$datefr.", toutes les demandes comprises";
+			$soustitre = "pour le ".$datefr.", toutes les demandes comprises.";
 		}
 		else {
 			$soustitre = "pour le ".$datefr." à l'état de '".$champEtat . "'";
@@ -58,7 +58,7 @@
 	}if($ChampsDate == 'Mensuelle'){
 		$datefr = $mois[date("n")];
 		if($etat === "ALL"){
-			$soustitre = "pour le mois de ".$datefr.", toutes les demandes comprises";
+			$soustitre = "pour le mois de ".$datefr.", toutes les demandes comprises.";
 		}
 		else{
 			$soustitre = "pour le mois de ".$datefr." à l'état de '".$champEtat . "'";
@@ -66,7 +66,7 @@
 	}if($ChampsDate == 'Annuelle'){
 		$datefr = date("Y");
 		if($etat === "ALL"){
-			$soustitre = "pour l'année ".$datefr.", toutes les demandes comprises";
+			$soustitre = "pour l'année ".$datefr.", toutes les demandes comprises.";
 		}
 		else {
 			$soustitre = "pour l'année ".$datefr." à l'état de '".$champEtat . "'";

@@ -1082,7 +1082,7 @@ A bientot !
 	*******************************/
 	
 	function new_request_graphe($department,$etat){
-	// Créer la requète en BD 
+	// Créer la requète en BD    
 	// Etats acceptés : "En attente", "En cours", "Validée", "Annulée" , "ALL"
 	
 		$bdd = connexion_sql();
