@@ -1090,7 +1090,7 @@ A bientot !
 		if($ChampsDate == 'Journalier'){
 			$today = date("d-m-y");
 			if($etat === "ALL"){
-				$sql = "SELECT sum(requests.num_copy) as Total FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date`='".$today."'";
+				$sql = "SELECT sum(requests.num_copy) FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date`='".$today."'";
 			}	
 			else {
 				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date`='".$today."'";
@@ -1116,7 +1116,7 @@ A bientot !
 		//  REQUETE SQL DE SELECTION
 		$reponse = $bdd->query($sql);
 		$donnee =  $reponse->fetch();
-		$resultat = $donnee["SUM(Total)"];
+		$resultat = $donnee["Total"];
 		return $resultat;
 	}
 
