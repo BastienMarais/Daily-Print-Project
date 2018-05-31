@@ -69,17 +69,17 @@
 						<div class="col">
 							<label for="inputDate">Suivi période : </label>
 							<select name="champDate" class="form-control" >
-								<option value="Journalier">Journalier</option>
-								<option value="Mensuelle">Mensuelle</option>
-								<option value="Annuelle" selected="selected" >Annuelle</option>	
+								<option value="Journalier"<?php if(!empty($_POST['champDate'])){if($_POST['champDate'] == "Journalier"){echo "selected";}}?>>Journalier</option>
+								<option value="Mensuelle" <?php if(!empty($_POST['champDate'])){if($_POST['champDate'] == "Mensuelle"){echo "selected";}}?>>Mensuelle</option>
+								<option value="Annuelle" <?php if(!empty($_POST['champDate'])){if($_POST['champDate'] == "Annuelle"){echo "selected";}}else{echo "selected";}?> >Annuelle</option>	
 							</select>
 							<label for="inputEtat">Etat : </label>
 							<select name="champEtat" class="form-control" >
-								<option value="ALL" selected="selected">Toutes les demandes</option>
-								<option value="En attente">En attente</option>
-								<option value="En cours">En cours</option>
-								<option value="Validée">Validée</option>
-								<option value="Annulée">Annulée</option>
+								<option value="ALL" <?php  if(!empty($_POST['champEtat'])){if($_POST['champEtat'] == "ALL"){echo "selected";}}else{echo "selected";}?>>Toutes les demandes</option>
+								<option value="En attente"<?php if(!empty($_POST['champEtat'])){if($_POST['champEtat'] == "En attente"){echo "selected";}}?>>En attente</option>
+								<option value="En cours" <?php if(!empty($_POST['champEtat'])){if($_POST['champEtat'] == "En cours"){echo "selected";}}?>>En cours</option>
+								<option value="Validée" <?php if(!empty($_POST['champEtat'])){if($_POST['champEtat'] == "Validée"){echo "selected";}}?>>Validée</option>
+								<option value="Annulée" <?php if(!empty($_POST['champEtat'])){if($_POST['champEtat'] == "Annulée"){echo "selected";}}?>>Annulée</option>
 							</select>
 							<br/>
 							<button type="submit" class="btn btn-primary">Afficher le graphe</button>
