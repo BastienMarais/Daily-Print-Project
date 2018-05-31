@@ -56,4 +56,4 @@ INSERT INTO `REAL_USER` (`user_email`, `name`, `surname`, `statut`, `password`, 
 
 /* Valeurs de tests */
 INSERT INTO `REAL_USER` (`user_email`, `name`, `surname`, `statut`, `password`, `department`, `notification`) VALUES ('client@dailyprint.xyz', 'Mister', 'Client', 'Client', '948fe603f61dc036b5c596dc09fe3ce3f3d30dc90f024c85f3c82db2ccab679d', 'INFO', '0'), ('repro@dailyprint.xyz', 'Mister', 'Repro', 'Reprographie', '681d1638f10411fb29eb810a9184e68742579702b7f53496db912a21c3f9441a', 'Reprographie', '0');
-INSERT INTO `requests` (`id_request`, `user_email`, `path_file`, `creation_date`, `delivery_date`, `num_copy`, `couleur`, `recto_verso`, `finition`, `etat`) VALUES (12, 'client@dailyprint.xyz', 'Planning apprentissage  2017-2018.pdf', '2018-05-18 2:01:11', '2018-05-10', 4, 'Noir et blanc', 'Recto et verso', 'Livret', 'Validee');
+INSERT INTO `REQUESTS` (`id_request`, `user_email`, `path_file`, `creation_date`, `delivery_date`, `num_copy`, `couleur`, `recto_verso`, `finition`, `etat`) VALUES (12, 'client@dailyprint.xyz', 'Planning apprentissage  2017-2018.pdf', '2018-05-18 2:01:11', '2018-05-10', 4, 'Noir et blanc', 'Recto et verso', 'Livret', 'Validee');

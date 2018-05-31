@@ -74,11 +74,11 @@
 					</form>
 					<?php
 						if(isset($_GET['msg'])){
-							if($_GET['msg'] === "todo"){
+							if($_GET['msg'] === "success"){
 								echo "
 									<br/>
-									<span class='text-warning'>
-										Cette partie n'a pas encore été implémentée.
+									<span class='text-success'>
+										La base de données a été nettoyé.
 									</span>
 								";
 							}

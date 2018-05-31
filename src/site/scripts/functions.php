@@ -225,13 +225,11 @@
 		echo "Le statut de la demande ". $arg_id_request ." a été modifié: ". $arg_new_state; 
 		if($email == "repro"){
 			send_email_notif_repro();
-			header('Location: ../pages/client-visual.php');
-			exit();
+			
 		}
 		else {
 			send_email_notif($email);
-			header('Location: ../pages/repro-visual.php');
-			exit();
+			
 		}
 		
 	}
@@ -1125,10 +1123,27 @@ A bientot !
 	*******************************/
 
 	function clean_requests(){
-			$message = "?msg=todo";
-			$ancre = "#idForm";
-			header('Location: ' . $VALEUR_url . '../pages/admin-clean.php' . $message . $ancre);
-			exit();
+		
+		$todayAnnee = date("Y");
+		
+		$bdd = connexion_sql();
+		$requete = "SELECT * FROM REQUESTS WHERE `creation_date` NOT LIKE '".$todayAnnee."%'";
+		$reponse = $bdd->query($requete);
+		
+		while ($donnees = $reponse->fetch()){
+			$r = "DELETE FROM table WHERE id_request='". $donnees['id_request']. "'";
+			$bdd->query($r);
+			$path = "../files/". $donnees['user_email'] . "/" . hash("sha256",$donnees['path_file']);
+			unlink($path);
+		}
+		
+		
+		$reponse->closeCursor();
+		
+		$message = "?msg=success";
+		$ancre = "#idForm";
+		header('Location: ' . $VALEUR_url . '../pages/admin-clean.php' . $message . $ancre);
+		exit();
 	}
 
 ?>	
