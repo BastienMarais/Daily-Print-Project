@@ -14,7 +14,7 @@
 	$VALEUR_email = "admin@dailyprint.xyz" ;
 	
 	// Path des fichiers du site 
-	$VALEUR_files = "M:\git\Daily-Print-Project\src\site\files";
+	$VALEUR_files = "M:/git/Daily-Print-Project/src/site/files/";
 	
 	// Windows ou Linux ( ça gère les séparateurs de fichiers)
 	$VALEUR_os = "Windows";

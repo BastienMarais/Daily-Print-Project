@@ -126,9 +126,9 @@
 			// On télécharge le fichier 
 			$nom =  hash("sha256", $chemin_fichier);
 			$path = $dossier . "/" . $nom;
-			if($VALEUR_os == "Windows"){
-				$path = str_replace("/","\\", $path);
-			}
+			// if($VALEUR_os == "Windows"){
+				// $path = str_replace("/","\\", $path);
+			// }
 			$resultat = move_uploaded_file($_FILES['champFichier']['tmp_name'],$path);
 			if($resultat){
 				// Lance la création en BD de la requète
@@ -408,7 +408,7 @@
 		
 		
 		$reponse = $bdd->query($requete);
-		$reponse2 = $bdd->query("SELECT count(*) FROM REQUESTS WHERE etat != 'Annulée'");
+		$reponse2 = $bdd->query("SELECT count(*) FROM REQUESTS WHERE etat != 'Annulee'");
 		$array = array();
 
 		while ($donnees = $reponse->fetch()){
@@ -464,7 +464,7 @@
 								<li class="list-group-item list-group-item-action list-group-item-info"><?php echo $recto_verso;?></li>
 								<li class="list-group-item list-group-item-action list-group-item-secondary"><?php echo $finition;?></li>
 								<li class="list-group-item list-group-item-action list-group-item-info">
-								<?php echo "<a target='_blank' href='../files/" . $user_email .  "/" .  hash('sha256',$array[$i]['path_file']) . "'>". $path_file . "</a></li>";?>
+								<?php echo "<a target='_blank' href='../files/" . $user_email .  "/" .  hash('sha256',$path_file) . "'>". $path_file . "</a></li>";?>
 								
 							</ul>
 					</div>
@@ -488,91 +488,6 @@
 	}
 	
 
-	
-	function recover_repro_request_info(){ // MARCHE
-	// Affiche tout les infos d'une seule requete
-	// * de la table REQUEST et PROTECT_FILES si c'est le cas
-		$bdd = connexion_sql();
-   
-		$requete = "SELECT * FROM REQUESTS WHERE etat!= 'Annulée'";
-		$reponse = $bdd->query($requete);
-		$array = array();
-		while ($donnees = $reponse->fetch()){
-			array_push($array, $donnees);
-		}
-		//$requete2 = "SELECT * FROM PROTECT_FILES WHERE id_request='". $arg_id ."'";
-
-		//$reponse2 = $bdd->query($requete2);
-		//$donnees2 = $reponse2->fetch();
-
-		//if ($donnees2['id_request']==$arg_id){
-		//	array_push($array,$donnees2);
-		//}
-		/*$reponse2 = $bdd->query("SELECT count(*) FROM REQUESTS WHERE etat !='Annulée'");
-		$data = $reponse2->fetchColumn();
-		for ($i=0;$i<$data;$i++){
-				$id_request = $array[$i]['id_request'];
-				$user_email = $array[$i]['user_email'];
-				$creation_date = $array[$i]['creation_date'];
-				$delivery_date = $array[$i]['delivery_date'];
-				$path_file = $array[$i]['path_file'];
-				$num_copy = $array[$i]['num_copy'];
-				$couleur = $array[$i]['couleur'];
-				$recto_verso = $array[$i]['recto_verso'];
-				$finition = $array[$i]['finition'];
-				$etat = $array[$i]['etat'];
-				
-			?>
-			
-			<form action="../scripts/changeRequestStatusRepro.php" method="POST">
-			<tbody>
-				<tr>
-					<td><?php echo $i;?></td>
-					<td data-toggle="modal" data-target="#requestInfo"><strong><a><?php echo '000'.$id_request; ?></a></strong></td>
-					<td><?php echo $user_email; ?></td>
-					<td><?php echo $delivery_date; ?></td>
-					<td><select class="custom-select" name="status"><option selected> </option><option value="1">EN ATTENTE</option><option value="2">En cours</option><option value="3">Validée</option><option value="4">Annulée</option></td>
-				</tr>
-			</tbody>
-			
-			<div class="modal fade" id="requestInfo" tabindex="-1" role="dialog" aria-labelledby="forgetPassword" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="ModalCenterTitle">Information sur la demande <?php echo '000'.$id_request; ?></h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<h1 align="center"> Informations : </h1>
-							<ul class="list-group">
-								<li class="list-group-item list-group-item-action list-group-item-info"><?php echo $num_copy;?> copies<br>
-								<li class="list-group-item list-group-item-action list-group-item-secondary"><?php echo $couleur;?><br>
-								<li class="list-group-item list-group-item-action list-group-item-info"><?php echo $recto_verso;?><br>
-								<li class="list-group-item list-group-item-action list-group-item-secondary"><?php echo $finition;?><br>
-								<li class="list-group-item list-group-item-action list-group-item-secondary"><?php echo $path_file;?><br>
-								
-							</ul>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<?php
-			}
-			?>
-			<input class="btn btn-primary" type="submit">
-			</form>
-					<!-- Modal -->
-			
-			<?php		
-		$reponse->closeCursor();
-		//$reponse2->closeCursor();
-		//return $array;*/
-	}
 	
 	function accept_tmp_user($arg_email){ // MARCHE
 	// Valide une inscription
@@ -1175,33 +1090,33 @@ A bientot !
 		if($ChampsDate == 'Journalier'){
 			$today = date("d-m-y");
 			if($etat === "ALL"){
-				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date`='".$today."'";
+				$sql = "SELECT sum(requests.num_copy) as Total FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date`='".$today."'";
 			}	
 			else {
-				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date`='".$today."'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date`='".$today."'";
 			}
 		}if($ChampsDate == 'Mensuelle'){
 			$todayMois = date("m-y");
 			
 			if($etat === "ALL"){
-				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '20".$todayMois."-01' AND '20".$todayMois."-31'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '20".$todayMois."-01' AND '20".$todayMois."-31'";
 			}
 			else {
-				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '20".$todayMois."-01' AND '20".$todayMois."-31'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '20".$todayMois."-01' AND '20".$todayMois."-31'";
 			}
 		}if($ChampsDate == 'Annuelle'){
 			$todayAnnee = date("Y");
 			if($etat === "ALL"){
-				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
 			}
 			else {
-				$sql = "SELECT COUNT('num_copy') FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
 			}
 		}
 		//  REQUETE SQL DE SELECTION
 		$reponse = $bdd->query($sql);
 		$donnee =  $reponse->fetch();
-		$resultat = $donnee["COUNT('num_copy')"];
+		$resultat = $donnee["SUM(Total)"];
 		return $resultat;
 	}
 
