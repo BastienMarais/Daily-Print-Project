@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
-                    <img src="../img/logo.png" class="img-fluid" alt="Responsive image" />
+                    <img src="../img/titre.png" class="img-fluid" alt="Responsive image" />
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
             </div>
@@ -63,7 +63,7 @@
 				
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 panel">
 				
-                    <legend class="color-blue">Statistiques : </legend>
+                    <legend class="color-blue">Statistiques : <a  class="mini" href="https://bastienmarais.github.io/Daily-Print-Project/" target="_blank"> Besoin d'aide ? </a></legend>
 					<br/>
 					<form method="POST" action="repro-stat.php">
 						<div class="col">

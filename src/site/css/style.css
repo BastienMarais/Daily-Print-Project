@@ -90,3 +90,12 @@ table{
 	text-align : center ;
 }
 
+.black-link {
+	color : black;
+}
+
+
+.mini {
+	font-size : 12px;
+	color : #337ab7;
+}

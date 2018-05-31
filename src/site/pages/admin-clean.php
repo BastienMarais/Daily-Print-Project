@@ -25,7 +25,7 @@
 		<!-- My css -->
         <link rel="stylesheet" href="../css/style.css">
 
-        <title>Daily Print | Liste des utilisateurs</title>
+        <title>Daily Print | Nettoyage de la base</title>
 
     </head>
     <body>
@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
-                    <img src="../img/logo.png" class="img-fluid" alt="Responsive image" />
+                    <img src="../img/titre.png" class="img-fluid" alt="Responsive image" />
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
             </div>
@@ -66,7 +66,7 @@
 
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 panel">
 
-                    <legend class="color-blue">Nettoyage de la base de données : </legend>
+                    <legend class="color-blue">Nettoyage de la base de données : <a  class="mini" href="https://bastienmarais.github.io/Daily-Print-Project/" target="_blank"> Besoin d'aide ? </a></legend>
 
 					<br/>
 					<form id="idForm" method="POST" action="../scripts/cleanRequests.php">

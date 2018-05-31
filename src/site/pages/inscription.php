@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
-                    <img src="../img/logo.png" class="img-fluid" alt="Responsive image" />
+                    <img src="../img/titre.png" class="img-fluid" alt="Responsive image" />
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
             </div>
@@ -41,7 +41,7 @@
 				
                 <div class="col-xs-8 col-sm-8 col-md-6 col-lg-6 panel">
 				
-                    <legend class="color-blue">Création de compte : </legend>
+                    <legend class="color-blue">Création de compte : <a  class="mini" href="https://bastienmarais.github.io/Daily-Print-Project/" target="_blank"> Besoin d'aide ? </a></legend>
 					
                     <form id="inscriptionForm" method="POST" action="../scripts/inscription.php">
 						<div class="form-row">

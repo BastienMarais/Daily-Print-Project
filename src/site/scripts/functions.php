@@ -260,7 +260,7 @@
 					<tr id=<?php echo 'id'.$i;?>>
 						<td><?php echo $i+1;?></td>
 						<td><strong><?php echo $id_request; ?></strong></td>
-						<td><?php echo "<a target='_blank' href='../files/" . $user_email .  "/" .  hash('sha256',$array[$i]['path_file']) . "'>". $path_file . "</a>";?></td>
+						<td><?php echo "<a class='black-link' target='_blank' href='../files/" . $user_email .  "/" .  hash('sha256',$array[$i]['path_file']) . "'>". $path_file . "</a>";?></td>
 						<td><?php echo $delivery_date; ?></td>
 						<td id=<?php echo 'state'.$i;?>><?php echo $etat; ?></td>
 						<td><input type="checkbox" name="annuler[]" value=<?php echo $id_request; ?>></td>	
@@ -271,10 +271,10 @@
 					if ( cellContent == "En attente"){
 						document.getElementById("id<?php echo $i;?>").style.background ="yellow";
 					}
-					else if ( cellContent == "Validée"){
+					else if ( cellContent == "Validee"){
 						document.getElementById("id<?php echo $i;?>").style.background ="green";
 					}
-					else if ( cellContent == "Annulée"){
+					else if ( cellContent == "Annulee"){
 						document.getElementById("id<?php echo $i;?>").style.background ="gray";
 						document.getElementById("id<?php echo $i;?>").style.color ="black";
 					}
