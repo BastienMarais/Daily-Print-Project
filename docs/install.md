@@ -1,5 +1,6 @@
 # Partie installation de l'application :
 
+## Pré-requis :
 
 Pour installer Daily Print il vous faut tout d'abord un serveur web comme Apache et un serveur MySQL.
 Nous utilisons Xampp ou lampp qui réunit ces deux serveurs.
