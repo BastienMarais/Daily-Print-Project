@@ -214,7 +214,7 @@
 		}
 	}
 
-	function request_state_change($arg_id_request, $arg_new_state){
+	function request_state_change_repro($arg_id_request, $arg_new_state, $email){
 	// Modifie le statut d'une demande dans la BD
 
 		$bdd = connexion_sql();
@@ -222,11 +222,10 @@
 		//  REQUETE SQL DE CREATION D'UNE NOUVELLE DEMANDE
 		$sql = "UPDATE REQUESTS SET etat='". $arg_new_state ."' WHERE id_request='". $arg_id_request ."'";
 		$bdd->query($sql);
-
 		echo "Le statut de la demande ". $arg_id_request ." a été modifié: ". $arg_new_state; 
-		
-		send_email_notif();
-		// TODO message de notification
+		send_email_notif($email);
+		header('Location: ../pages/repro-visual.php');
+		exit();
 	}
 	
 	
@@ -234,19 +233,62 @@
 		Affichage des requetes en tableau JS
 	*******************************/
 
-	function recover_user_request($arg_email){ //MARCHE
+	function recover_user_request(){ //MARCHE
 	// Renvoi le numéro de la demande, le chemin du fichier, la date de retour et l'état de la demande
 		
 		$bdd = connexion_sql();
    
-		$sql = "SELECT id_request ,path_file, delivery_date, etat FROM REQUESTS WHERE user_email='". $arg_email ."'";
-
+		$sql = "SELECT id_request ,path_file, delivery_date, etat,user_email FROM REQUESTS WHERE user_email='". $_SESSION['user_email'] ."'";
+		$sql2 = "SELECT count(*) FROM REQUESTS WHERE user_email='". $_SESSION['user_email'] ."'";
 		$reponse = $bdd->query($sql);
+		$reponse2 = $bdd->query($sql2);
 		$array = array();
 		while ($donnees = $reponse->fetch()){
 			array_push($array, $donnees);
 		}
-
+		$data = $reponse2->fetchColumn(0);
+				for ($i = 0; $i<$data; $i++){
+					$id_request = $array[$i]['id_request'];
+					$path_file = $array[$i]['path_file'];
+					$delivery_date = $array[$i]['delivery_date'];
+					$etat = $array[$i]['etat'];
+					$user_email=$array[$i]['user_email'];
+					
+					?>
+				<form action="../scripts/cancelRequest.php" method="POST">
+				<tbody>
+					<tr id=<?php echo 'id'.$i;?>>
+						<td><?php echo $i+1;?></td>
+						<td><strong><?php echo $id_request; ?></strong></td>
+						<td><?php echo "<a target='_blank' href='../files/" . $user_email .  "/" .  hash('sha256',$array[$i]['path_file']) . "'>". $path_file . "</a>";?></td>
+						<td><?php echo $delivery_date; ?></td>
+						<td id=<?php echo 'state'.$i;?>><?php echo $etat; ?></td>
+						<td><input type="checkbox" name="annuler[]" value=<?php echo $id_request; ?>></td>	
+					</tr>
+				</tbody>
+				<script>
+					var cellContent = document.getElementById("state<?php echo $i;?>").textContent;
+					if ( cellContent == "En attente"){
+						document.getElementById("id<?php echo $i;?>").style.background ="yellow";
+					}
+					else if ( cellContent == "Validée"){
+						document.getElementById("id<?php echo $i;?>").style.background ="green";
+					}
+					else if ( cellContent == "Annulée"){
+						document.getElementById("id<?php echo $i;?>").style.background ="gray";
+						document.getElementById("id<?php echo $i;?>").style.color ="black";
+					}
+					else if ( cellContent == "En cours"){
+						document.getElementById("id<?php echo $i;?>").style.background ="orange";
+					}
+				</script>
+				<?php
+				
+				}
+		?>
+		<input class="btn btn-primary" type="submit" value="Annuler"/> <br/><br/>
+		</form>
+		<?php
 		$reponse->closeCursor();
 		return $array;
 	}
@@ -258,15 +300,46 @@
 		$bdd = connexion_sql();
    
 		$requete = "SELECT user_email, name, surname, statut, department, notification FROM REAL_USER";
-
+		//$requete2 = ;
+		
 		$reponse = $bdd->query($requete);
+		$reponse2 = $bdd->query("SELECT count(*) FROM REAL_USER");
+		
 		$array = array();
 		while ($donnees = $reponse->fetch()){
 			array_push($array, $donnees);
 		}
-
+		$data = $reponse2->fetchColumn(0);
+		
+		for ($i = 0; $i<$data; $i++){
+			$name = $array[$i]['name'];
+			$user_email = $array[$i]['user_email'];
+			$surname = $array[$i]['surname'];
+			$statut = $array[$i]['statut'];
+			$department = $array[$i]['department'];
+			?>
+		<form action="../scripts/deleteUsers.php" method="POST">
+		<tbody>
+			<tr id=<?php echo 'id'.$i;?>>
+				<td><?php echo $i;?></td>
+				<td><strong><?php echo $name; ?></strong></td>
+				<td><strong><?php echo $surname; ?></strong></td>
+				<td><?php echo $user_email; ?></td>
+				<td><?php echo $statut; ?></td>
+				<td><?php echo $department; ?></td>
+				<td><input type="checkbox" name='supprimer[]' value=<?php echo $user_email;?>></td>
+				
+			</tr>
+		</tbody>
+		<?php
+		}
+		?>
+		<input class="btn btn-primary" type="submit" value="Supprimer les utilisateurs"/> <br/><br/>
+		</form>
+		<?php
 		$reponse->closeCursor();
-		return $array;
+		//echo $array;
+		//return $array;
 	}
 
 	function recover_new_account(){ // MARCHE
@@ -278,11 +351,39 @@
 		$requete = "SELECT user_email, name, surname, statut, department FROM TMP_USER";
 
 		$reponse = $bdd->query($requete);
+		$reponse2= $bdd->query("SELECT count(*) FROM TMP_USER");
+		
 		$array = array();
 		while ($donnees = $reponse->fetch()){
 			array_push($array, $donnees);
 		}
-
+		$data=$reponse2->fetchColumn(0);
+		for ($i=0;$i < $data ; $i++){
+			$name = $array[$i]['name'];
+			$user_email = $array[$i]['user_email'];
+			$surname = $array[$i]['surname'];
+			$statut = $array[$i]['statut'];
+			$department = $array[$i]['department'];
+			?>
+		<form action="../scripts/validUsers.php" method="POST">
+		<tbody>
+			<tr id=<?php echo $i;?>>
+				<td><?php echo $i;?></td>
+				<td><strong><?php echo $name; ?></strong></td>
+				<td><strong><?php echo $surname; ?></strong></td>
+				<td id=<?php echo 'email'.$i;?>><?php echo $user_email; ?></td>
+				<td><?php echo $statut; ?></td>
+				<td><?php echo $department; ?></td>
+				<td><input type="checkbox" name='valid[]' value=<?php echo $user_email;?>></td>
+				<td><input type="checkbox" name='refus[]' value=<?php echo $user_email;?>></td>	
+			</tr>
+		</tbody>
+		<?php
+		}
+		?>
+		<input class="btn btn-primary" type="submit" value="Gérer les inscriptions"/> <br/><br/>
+		</form>
+		<?php
 		$reponse->closeCursor();
 		return $array;
 	}
@@ -291,44 +392,204 @@
 	// Affiche toutes les requetes de la table REQUESTS
 	// id request, user email, fichier, date de retour, etat
 		
+		include("../conf/conf.php");
+		
 		$bdd = connexion_sql();
    		
-		$requete = "SELECT id_request, user_email, path_file, delivery_date, etat from REQUESTS";
+		$requete = "SELECT * from REQUESTS WHERE etat != 'Annulée'";
+		
+		
+		$reponse = $bdd->query($requete);
+		$reponse2 = $bdd->query("SELECT count(*) FROM REQUESTS WHERE etat != 'Annulée'");
+		$array = array();
 
+		while ($donnees = $reponse->fetch()){
+			array_push($array, $donnees);
+		}
+		$data = $reponse2->fetchColumn(0);
+		for ($i=0;$i < $data ; $i++){
+				$id_request = $array[$i]['id_request'];
+				$user_email = $array[$i]['user_email'];
+				$creation_date = $array[$i]['creation_date'];
+				$delivery_date = $array[$i]['delivery_date'];
+				$path_file = $array[$i]['path_file'];
+				$num_copy = $array[$i]['num_copy'];
+				$couleur = $array[$i]['couleur'];
+				$recto_verso = $array[$i]['recto_verso'];
+				$finition = $array[$i]['finition'];
+				$etat = $array[$i]['etat'];
+			?>
+		
+		<form action="../scripts/changeRequestStatusRepro.php" method="POST">
+		<tbody>
+			
+			<tr>
+				<td><?php echo $i;?></td>
+				<td data-toggle="modal" data-target="#requestInfo<?php echo $i; ?>"><strong><?php echo $id_request; ?></strong></td>
+				<td><?php echo $user_email; ?></td>
+				<td><?php echo $delivery_date; ?></td>
+				<td>
+				<select class="custom-select" name="status[]">
+						<option value="<?php echo $user_email. ",En attente,".$array[$i]['id_request'];?>">En attente</option>
+						<option value="<?php echo $user_email. ",En cours,".$array[$i]['id_request'];?>">En cours</option>
+						<option value="<?php echo $user_email. ",Validee,".$array[$i]['id_request'];?>">Validée</option>
+						<option value="<?php echo $user_email. ",Annulee,".$array[$i]['id_request'];?>">Annulée</option>
+				</select>
+				</td>
+			</tr>
+		</tbody>
+		
+		<div class="modal fade" id="requestInfo<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="requestInfo" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="ModalCenterTitle">Information sur la demande <?php echo $id_request; ?></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<h1 align="center"> Ticket : </h1>
+							<ul class="list-group">
+								<li class="list-group-item list-group-item-action list-group-item-info"><?php echo $num_copy;?> copies</li>
+								<li class="list-group-item list-group-item-action list-group-item-secondary"><?php echo $couleur;?></li>
+								<li class="list-group-item list-group-item-action list-group-item-info"><?php echo $recto_verso;?></li>
+								<li class="list-group-item list-group-item-action list-group-item-secondary"><?php echo $finition;?></li>
+								<li class="list-group-item list-group-item-action list-group-item-info">
+								<?php echo "<a target='_blank' href='../files/" . $user_email .  "/" .  hash('sha256',$array[$i]['path_file']) . "'>". $path_file . "</a></li>";?>
+								
+							</ul>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php
+		}
+		?>
+		<input class="btn btn-primary" type="submit" value="Valider"></input> <br/>
+		<br/>
+		
+		</form>
+				<!-- Modal -->
+		
+		<?php
+		$reponse->closeCursor();$reponse2->closeCursor();	
+	}
+	
+
+	
+	function recover_repro_request_info(){ // MARCHE
+	// Affiche tout les infos d'une seule requete
+	// * de la table REQUEST et PROTECT_FILES si c'est le cas
+		$bdd = connexion_sql();
+   
+		$requete = "SELECT * FROM REQUESTS WHERE etat!= 'Annulée'";
 		$reponse = $bdd->query($requete);
 		$array = array();
 		while ($donnees = $reponse->fetch()){
 			array_push($array, $donnees);
 		}
+		//$requete2 = "SELECT * FROM PROTECT_FILES WHERE id_request='". $arg_id ."'";
 
+		//$reponse2 = $bdd->query($requete2);
+		//$donnees2 = $reponse2->fetch();
+
+		//if ($donnees2['id_request']==$arg_id){
+		//	array_push($array,$donnees2);
+		//}
+		/*$reponse2 = $bdd->query("SELECT count(*) FROM REQUESTS WHERE etat !='Annulée'");
+		$data = $reponse2->fetchColumn();
+		for ($i=0;$i<$data;$i++){
+				$id_request = $array[$i]['id_request'];
+				$user_email = $array[$i]['user_email'];
+				$creation_date = $array[$i]['creation_date'];
+				$delivery_date = $array[$i]['delivery_date'];
+				$path_file = $array[$i]['path_file'];
+				$num_copy = $array[$i]['num_copy'];
+				$couleur = $array[$i]['couleur'];
+				$recto_verso = $array[$i]['recto_verso'];
+				$finition = $array[$i]['finition'];
+				$etat = $array[$i]['etat'];
+				
+			?>
+			
+			<form action="../scripts/changeRequestStatusRepro.php" method="POST">
+			<tbody>
+				<tr>
+					<td><?php echo $i;?></td>
+					<td data-toggle="modal" data-target="#requestInfo"><strong><a><?php echo '000'.$id_request; ?></a></strong></td>
+					<td><?php echo $user_email; ?></td>
+					<td><?php echo $delivery_date; ?></td>
+					<td><select class="custom-select" name="status"><option selected> </option><option value="1">EN ATTENTE</option><option value="2">En cours</option><option value="3">Validée</option><option value="4">Annulée</option></td>
+				</tr>
+			</tbody>
+			
+			<div class="modal fade" id="requestInfo" tabindex="-1" role="dialog" aria-labelledby="forgetPassword" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="ModalCenterTitle">Information sur la demande <?php echo '000'.$id_request; ?></h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<h1 align="center"> Informations : </h1>
+							<ul class="list-group">
+								<li class="list-group-item list-group-item-action list-group-item-info"><?php echo $num_copy;?> copies<br>
+								<li class="list-group-item list-group-item-action list-group-item-secondary"><?php echo $couleur;?><br>
+								<li class="list-group-item list-group-item-action list-group-item-info"><?php echo $recto_verso;?><br>
+								<li class="list-group-item list-group-item-action list-group-item-secondary"><?php echo $finition;?><br>
+								<li class="list-group-item list-group-item-action list-group-item-secondary"><?php echo $path_file;?><br>
+								
+							</ul>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php
+			}
+			?>
+			<input class="btn btn-primary" type="submit">
+			</form>
+					<!-- Modal -->
+			
+			<?php		
 		$reponse->closeCursor();
-		return $array;
-	}
-
-	function recover_repro_request_info($arg_id){ // MARCHE
-	// Affiche tout les infos d'une seule requete
-	// * de la table REQUEST et PROTECT_FILES si c'est le cas
-		$bdd = connexion_sql();
-   
-		$requete = "SELECT * FROM REQUESTS WHERE id_request='". $arg_id ."'";
-		$reponse = $bdd->query($requete);
-		$array = array();
-		array_push($array, $reponse->fetch());
-
-		$requete2 = "SELECT * FROM PROTECT_FILES WHERE id_request='". $arg_id ."'";
-
-		$reponse2 = $bdd->query($requete2);
-		$donnees2 = $reponse2->fetch();
-
-		if ($donnees2['id_request'] ==  $arg_id){
-			array_push($array, $donnees2);
-		}
-
-		$reponse->closeCursor();
-		$reponse2->closeCursor();
-		return $array;
+		//$reponse2->closeCursor();
+		//return $array;*/
 	}
 	
+	function accept_tmp_user($arg_email){ // MARCHE
+	// Valide une inscription
+	// Récupère les infos de la table TMP_USER, les copies dans la table REAL_USER, et supprime la ligne dans TMP_USER
+		
+		$bdd = connexion_sql();
+		$requete = "INSERT INTO REAL_USER SELECT * FROM TMP_USER WHERE user_email='". $arg_email ."'";
+		$requete2 = "DELETE FROM TMP_USER WHERE user_email='". $arg_email ."'";
+		echo "L'inscription de l'utilisateur ". $arg_email ." a été validée";
+		$bdd->query($requete);
+		$bdd->query($requete2);
+		header('Location: ../pages/admin-news.php');
+		exit();
+		
+	}
+	
+	function remove_user($arg_email,$arg_table){
+		$bdd = connexion_sql();
+		$requete = "DELETE FROM ".$arg_table." WHERE user_email='". $arg_email ."'";
+		echo "La suppression de l'utilisateur ". $arg_email ." de la table ". $arg_table ." a été validée";
+		$bdd->query($requete);
+		header('Location: ../pages/admin-users.php');
+		exit();
+		
+	}
 	/*******************************
 		Inscriptions 
 	*******************************/
@@ -442,22 +703,6 @@
 		return FALSE;
 	}
 	
-	function accept_tmp_user($arg_email){ // MARCHE
-	// Valide une inscription
-	// Récupère les infos de la table TMP_USER, les copies dans la table REAL_USER, et supprime la ligne dans TMP_USER
-		
-		$bdd = connexion_sql();
-   
-		$requete = "INSERT INTO REAL_USER SELECT * FROM TMP_USER WHERE user_email='". $arg_email ."'";
-		$requete2 = "DELETE FROM TMP_USER WHERE user_email='". $arg_email ."'";
-
-		$bdd->query($requete);
-		$bdd->query($requete2);
-		echo "L'inscription de l'utilisateur ". $arg_email ." a été validée";
-		
-		// TODO quand la page admin sera prête
-		// REDIRECTION
-	}
 	
 	
 	/*******************************

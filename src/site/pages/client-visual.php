@@ -73,11 +73,16 @@
 									<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Fichier</th>
 									<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Date de retour</th>
 									<th scope="col" class="center col-xs-3 col-sm-3 col-md-3 col-lg-3">Statut</th>
+									<th scope="col" class="center">Annuler</th>
 								</tr>
 							</thead>
 					</div>
-
+						<?php 
+							include ("../scripts/functions.php");
+							recover_user_request();
+						?>
 				</div>
+
 
 				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
 			</div>

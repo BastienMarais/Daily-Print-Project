@@ -12,14 +12,14 @@
 	}if($champEtat == 'En attente'){
 		$etat = "En attente";
 	}if($champEtat == 'Validée'){
-		$etat = "Validée";
+		$etat = "Validee";
 	}if($champEtat == 'Annulée'){
-		$etat = "Annulée";
+		$etat = "Annulee";
 	}if($champEtat == 'En cours'){
 		$etat = "En cours";
 	}
 	foreach ($donnee as $i=>$value) {
-		$data1y[$i]	= new_request_graphe($value, $champEtat);
+		$data1y[$i]	= new_request_graphe($value, $etat);
 	}
 
 	// Create the graph. These two calls are always required
@@ -52,7 +52,7 @@
 			$soustitre = "pour le ".$datefr.", toutes les demandes comprises";
 		}
 		else {
-			$soustitre = "pour le ".$datefr." à l'état de '".$etat . "'";
+			$soustitre = "pour le ".$datefr." à l'état de '".$champEtat . "'";
 		}
 		
 	}if($ChampsDate == 'Mensuelle'){
@@ -61,7 +61,7 @@
 			$soustitre = "pour le mois de ".$datefr.", toutes les demandes comprises";
 		}
 		else{
-			$soustitre = "pour le mois de ".$datefr." à l'état de '".$etat . "'";
+			$soustitre = "pour le mois de ".$datefr." à l'état de '".$champEtat . "'";
 		}
 	}if($ChampsDate == 'Annuelle'){
 		$datefr = date("Y");
@@ -69,7 +69,7 @@
 			$soustitre = "pour l'année ".$datefr.", toutes les demandes comprises";
 		}
 		else {
-			$soustitre = "pour l'année ".$datefr." à l'état de '".$etat . "'";
+			$soustitre = "pour l'année ".$datefr." à l'état de '".$champEtat . "'";
 		}
 		
 	}

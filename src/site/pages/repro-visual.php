@@ -71,11 +71,16 @@
 							<thead>
 								<tr class="background-black">
 									<th scope="col" class="center">#</th>
-									<th scope="col" class="center col-xs-4 col-sm-4 col-md-4 col-lg-4">Numéro de la demande</th>
-									<th scope="col" class="center col-xs-4 col-sm-4 col-md-4 col-lg-4"> Demandeur </th>
-									<th scope="col" class="center col-xs-4 col-sm-4 col-md-4 col-lg-4"> Etat de la demande </th>
+									<th scope="col" class="center col-xs-4 col-sm-4 col-md-4 col-lg-3">Numéro de la demande</th>
+									<th scope="col" class="center col-xs-4 col-sm-4 col-md-4 col-lg-3"> Demandeur</th>
+									<th scope="col" class="center col-xs-4 col-sm-4 col-md-4 col-lg-3"> Date de retour souhaitée </th>
+									<th scope="col" class="center col-xs-4 col-sm-4 col-md-4 col-lg-3"> Modifier l'état </th>
 								</tr>
 							</thead>
+							<?php 	
+								include("../scripts/functions.php"); 
+								recover_repro_request_list();
+							?>			
 					</div>
 					
 				</div>
@@ -85,24 +90,6 @@
 		</content>
 
 		<!-- Modal -->
-		<div class="modal fade" id="requestInfo" tabindex="-1" role="dialog" aria-labelledby="request" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="modalCenterTitle">Information sur la demande</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-					</div>
-				</div>
-			</div>
-		</div>
 
 
 
