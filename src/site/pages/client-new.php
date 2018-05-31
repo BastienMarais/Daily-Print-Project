@@ -1,3 +1,13 @@
+<?php
+	// On démarre la session AVANT toute chose
+	session_start(); 
+	
+	// S'il n'a rien a faire ici 
+	if($_SESSION['statut'] !== "Client"){
+		include("../scripts/deconnexion.php");
+		deconnexion_site();
+	}
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -22,10 +32,18 @@
     
         <!-- Navbar -->
 		<nav class="nav nav-pills nav-justified navbar-dark bg-dark">
-		  <a class="nav-item nav-link" href="client-visual.php">Mes demandes</a>
-		  <a class="nav-item nav-link active" href="client-new.php">Nouvelle demande</a>
-		  <a class="nav-item nav-link" href="client-param.php">Paramètres</a>
-		  <a class="nav-item nav-link" href="../index.php">Se déconnecter</a>
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<a class="nav-item nav-link" href="client-visual.php">Mes demandes</a>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<a class="nav-item nav-link active" href="client-new.php">Nouvelle demande</a>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<a class="nav-item nav-link" href="param.php">Paramètres</a>
+			</div> 
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<a class="nav-item nav-link" href="../scripts/deconnexion.php">Se déconnecter</a>
+			</div> 
 		</nav>
         
 		<content class="container" role="main">
@@ -33,7 +51,7 @@
             <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
                 <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
-                    <img src="../img/logo.png" class="img-fluid" alt="Responsive image" />
+                    <img src="../img/titre.png" class="img-fluid" alt="Responsive image" />
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
             </div>
@@ -45,9 +63,9 @@
 				
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 panel">
 				
-                    <legend class="color-blue">Nouvelle demande : </legend>
+                    <legend class="color-blue">Nouvelle demande : <a  class="mini" href="https://bastienmarais.github.io/Daily-Print-Project/" target="_blank"> Besoin d'aide ? </a> </legend>
 					
-					<form method="POST" action="../scripts/newDemande.php">
+					<form method="POST" action="../scripts/newDemande.php" enctype="multipart/form-data">
 					
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					
@@ -57,11 +75,11 @@
 							<div class="form-row">
 								<div class="col">
 									<label for="inputDate">Date de retour souhaitée :</label>
-									<input type="date" class="form-control" id="inputDate" placeholder="jj/mm/aaaa" required>
+									<input type="date" class="form-control" id="inputDate" name="champDate" placeholder="jj/mm/aaaa" required>
 								</div>
 								<div class="col">
 									<label for="inputFile">Fichier a imprimer (.pdf) : </label>
-									<input type="file" id="inputFile" required>
+									<input type="file" id="inputFile" name="champFichier" required>
 								</div>
 							</div>
 							
@@ -70,11 +88,11 @@
 							<div class="form-row">
 								<div class="col">
 									<label for="inputNbCopies">Nombre de copies :</label>
-									<input type="number" min="0" class="form-control" id="inputNbCopies" placeholder="0" required>
+									<input type="number" min="0" class="form-control" id="inputNbCopies" name="champNbCopie" placeholder="0" required>
 								</div>
 								<div class="col">
 									<label for="inputTypeCopies">Impressions : </label>
-									<select class="form-control" id="inputTypeCopies" required>
+									<select class="form-control" id="inputTypeCopies" name="champCouleur" required>
 										<option>Noir et blanc</option>
 										<option>Couleurs</option>
 									</select>
@@ -86,7 +104,7 @@
 							<div class="form-row">
 								<div class="col">
 									<label for="inputFinition">Finition : </label>
-									<select class="form-control" id="inputFinition" required>
+									<select class="form-control" id="inputFinition" name="champFinition" required>
 										<option>Aucune finition</option>
 										<option>1 agraphe</option>
 										<option>2 agraphes</option>
@@ -95,6 +113,15 @@
 										<option>Massicot</option>
 									</select>
 								</div>
+
+								<div class="col">
+									<label for="inputRecto">Recto/verso : </label>
+									<select class="form-control" id="inputRecto" name="champRectoVerso" required>
+										<option>Recto et verso</option>
+										<option>Recto uniquement</option>	
+									</select>
+								</div>
+
 							</div>
 							
 						</div>
@@ -109,7 +136,7 @@
 								<div class="form-row">
 									<div class="col">
 										<label for="inputTitre">Titre de la publication :</label>
-										<input type="text" class="form-control" id="inputTitre" placeholder="Titre">
+										<input type="text" class="form-control" id="inputTitre" name="champNomPublication" placeholder="Titre">
 									</div>
 								</div>
 								
@@ -118,11 +145,11 @@
 								<div class="form-row">
 									<div class="col">
 										<label for="inputAuteur">Auteur :</label>
-										<input type="text" class="form-control" id="inputAuteur" placeholder="Auteur" >
+										<input type="text" class="form-control" id="inputAuteur" name="champAuteur" placeholder="Auteur" >
 									</div>
 									<div class="col">
 										<label for="inputEditeur">Editeur : </label>
-										<input type="text" class="form-control" id="inputEditeur" placeholder="Editeur" >
+										<input type="text" class="form-control" id="inputEditeur" name="champEditeur" placeholder="Editeur" >
 									</div>
 								</div>
 								
@@ -131,11 +158,11 @@
 								<div class="form-row">
 									<div class="col">
 										<label for="inputNbPages">Nombre de pages copiées :</label>
-										<input type="number" min="0" class="form-control" id="inputNbPages" placeholder="0">
+										<input type="number" min="0" class="form-control" id="inputNbPages"  name="champNbPages" placeholder="0">
 									</div>
 									<div class="col">
 										<label for="inputNbExemplaires">Nombre d'éxemplaires par page : </label>
-										<input type="number" min="0" class="form-control" id="inputNbExemplaires" placeholder="0">
+										<input type="number" min="0" class="form-control" id="inputNbExemplaires" name="champNbExemplaire" placeholder="0">
 									</div>
 								</div>
 							</div>
@@ -151,6 +178,43 @@
 							<button type="submit" class="btn btn-primary">Envoyer la demande</button>
 							
 						</div>
+						
+						<?php
+							if(isset($_GET['mes'])){
+								if($_GET['mes'] === "success"){
+									echo "
+										<br/>
+										<span class='text-success'>
+											Requête créée avec succès !
+										</span>
+									";
+								}
+								if($_GET['mes'] === "exist"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Cette requête a déjà été faite.
+										</span>
+									";
+								}
+								if($_GET['mes'] === "required"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Vous n'avez pas rempli tous les champs.
+										</span>
+									";
+								}
+								if($_GET['mes'] === "errorFile"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Une erreur est survenue lors de la récupération du fichier. Vous ne pouvez que transférer des pdf.
+										</span>
+									";
+								}
+							}
+						?>
 						
 					</form>
 					

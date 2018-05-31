@@ -1,3 +1,8 @@
+<?php
+	// On démarre la session AVANT toute chose
+	session_start(); 
+	
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -41,18 +46,25 @@
 					
                     <form id="connexionForm" method="POST" action="scripts/connexion.php">
 						<div class="form-group">
-							<label for="inputEmail">Adresse email : </label>
-							<input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" required>
+							<label for="inputEmail">Adresse email : </label> 
+							<?php 
+								if(isset($_COOKIE['email'])){
+									echo "<input type='email' class='form-control' id='inputEmail' name='champEmail' aria-describedby='emailHelp' placeholder='Email' required value='". $_COOKIE['email']. "'>";
+								}
+								else {
+									echo "<input type='email' class='form-control' id='inputEmail' name='champEmail' aria-describedby='emailHelp' placeholder='Email' required>";
+								}
+							?>
 						</div>
 						<div class="form-group">
 							<label for="inputPassword">Mot de passe :</label>
-							<input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
+							<input type="password" class="form-control" id="inputPassword" name="champMdp" placeholder="Mot de passe" required>
 						</div>
 						<div class="form-group">
 							<button type="button" class="btn btn-link" data-toggle="modal" data-target="#forgetPassword">Mot de passe oublié</a>
 						</div>
 						<div class="form-group form-check">
-							<input type="checkbox" class="form-check-input" id="checkSouvenir">
+							<input type="checkbox" class="form-check-input" id="checkSouvenir" name="souvenir" value="True">
 							<label class="form-check-label" for="checkSouvenir">Se souvenir de moi</label>
 						</div>
 					</form>
@@ -67,6 +79,52 @@
 						</div>
 					</div>
 					
+	
+					<?php 
+						if (isset($_GET['err'])){
+							if($_GET['err'] === 'mdp'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										La combinaison email / mot de passe est incorrecte.
+									</span>
+								";
+							}
+							if($_GET['err'] === 'inconnue'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										Erreur lors de la connexion.
+									</span>
+								";
+							}
+							if($_GET['err'] === 'forgetSuccess'){
+								echo "
+									<br/>
+									<span class='text-success'>
+										Un email avec le nouveau mot de passe a été envoyé.
+										Cela peut prendre un peu de temps avant de le recevoir...
+									</span>
+								";
+							}
+							if($_GET['err'] === 'forgetError'){
+								echo "
+									<br/>
+									<span class='text-danger'>
+										L'email renseigné n'existe pas.
+									</span>
+								";
+							}
+							if($_GET['err'] === "required"){
+									echo "
+										<br/>
+										<span class='text-danger'>
+											Vous n'avez pas rempli tous les champs.
+										</span>
+									";
+								}
+						}
+					?>
 					
 				</div>
 				
@@ -81,16 +139,16 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalCenterTitle">Récupération de mot de passe</h5>
+						<h5 class="modal-title" id="ModalCenterTitle">Récupération de mot de passe</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body">
-						<form id="forgetForm" method="POST" action="scripts/forgetPassword.php">
+						<form id="forgetForm" method="POST" action="../scripts/forgetPassword.php">
 							<div class="form-group">
 								<label for="inputForget">Adresse email : </label>
-								<input type="email" class="form-control" id="inputForget" aria-describedby="emailHelp" placeholder="Email" required>
+								<input type="email" class="form-control" id="inputForget" name="forgetEmail" aria-describedby="emailHelp" placeholder="Email" required>
 							</div>
 						</form>
 					</div>

@@ -28,7 +28,7 @@
 
 /* Background */
 html,body {
-	padding-top : 40px;
+	padding-top : 75px;
     height: 100%;
     background-image : linear-gradient(to bottom, #BFCFFF, #DFEFFF 100%);
 	background-repeat:no-repeat;
@@ -77,4 +77,25 @@ nav {
 
 table{
   width: 100%;
+}
+
+/* menu dérulant */
+
+#choosestatus{
+	width: 50%;
+}
+
+
+.center {
+	text-align : center ;
+}
+
+.black-link {
+	color : black;
+}
+
+
+.mini {
+	font-size : 12px;
+	color : #337ab7;
 }
