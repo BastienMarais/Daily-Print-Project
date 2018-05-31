@@ -1,5 +1,11 @@
 # Partie installation de l'application :
 
+## Documentations :
+* [Installation](https://bastienmarais.github.io/Daily-Print-Project/install)
+* [Utilisateurs](https://bastienmarais.github.io/Daily-Print-Project/users)
+* [Reprographie](https://bastienmarais.github.io/Daily-Print-Project/repro)
+* [Administrateur](https://bastienmarais.github.io/Daily-Print-Project/admin)
+
 ## Pré-requis :
 
 Pour installer Daily Print il vous faut tout d'abord un serveur web comme Apache et un serveur MySQL.
