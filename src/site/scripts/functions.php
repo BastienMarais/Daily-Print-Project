@@ -1088,29 +1088,28 @@ A bientot !
 		$bdd = connexion_sql();
 		$ChampsDate = $_POST['champDate'];
 		if($ChampsDate == 'Journalier'){
-			$today = date("d-m-y");
+			$today = date("Y-m-d");
 			if($etat === "ALL"){
-				$sql = "SELECT sum(requests.num_copy) FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date`='".$today."'";
+				$sql = "SELECT sum(requests.num_copy) as Total FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` LIKE '".$today."%'";
 			}	
 			else {
-				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date`='".$today."'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` LIKE '".$today."%'";
 			}
 		}if($ChampsDate == 'Mensuelle'){
-			$todayMois = date("m-y");
-			
+			$todayMois = date("Y-m");
 			if($etat === "ALL"){
-				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '20".$todayMois."-01' AND '20".$todayMois."-31'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` LIKE '".$todayMois."%'";
 			}
 			else {
-				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '20".$todayMois."-01' AND '20".$todayMois."-31'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` LIKE '".$todayMois."%'";
 			}
 		}if($ChampsDate == 'Annuelle'){
 			$todayAnnee = date("Y");
 			if($etat === "ALL"){
-				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` BETWEEN '".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `creation_date` LIKE '".$todayAnnee."%'";
 			}
 			else {
-				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` BETWEEN '".$todayAnnee."-01-01' AND '20".$todayAnnee."-12-31'";
+				$sql = "SELECT  sum(requests.num_copy) as Total  FROM requests, real_user WHERE requests.user_email=real_user.user_email AND `department`='".$department."' AND `etat`='".$etat."' AND `creation_date` LIKE '".$todayAnnee."%'";
 			}
 		}
 		//  REQUETE SQL DE SELECTION

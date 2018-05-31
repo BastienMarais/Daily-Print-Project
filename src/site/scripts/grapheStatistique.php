@@ -48,7 +48,7 @@
 	$ChampsDate = $_POST['champDate'];
 	if($ChampsDate == 'Journalier'){
 		$datefr = $jour[date("w")]." ".date("d")." ".$mois[date("n")]." ".date("Y");
-		if($etat === "All"){
+		if($etat === "ALL"){
 			$soustitre = "pour le ".$datefr.", toutes les demandes comprises";
 		}
 		else {
@@ -57,7 +57,7 @@
 		
 	}if($ChampsDate == 'Mensuelle'){
 		$datefr = $mois[date("n")];
-		if($etat === "All"){
+		if($etat === "ALL"){
 			$soustitre = "pour le mois de ".$datefr.", toutes les demandes comprises";
 		}
 		else{
@@ -65,7 +65,7 @@
 		}
 	}if($ChampsDate == 'Annuelle'){
 		$datefr = date("Y");
-		if($etat === "All"){
+		if($etat === "ALL"){
 			$soustitre = "pour l'année ".$datefr.", toutes les demandes comprises";
 		}
 		else {
