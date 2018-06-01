@@ -10,8 +10,7 @@
 
 Sur la page index.php cliquez sur "Créer un compte" puis remplir chacun des champs et surtout :
 ```
-Statut = Reprographie
-Département = Reprographie
+Statut = Client
 ```
 
 ## Page : Mes demandes
