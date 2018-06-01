@@ -51,7 +51,7 @@ Il vous reste juste a initialiser la base de données avec le script `src/bd/ini
 
 Vous pouvez a présent accéder au site avec comme identifiant :
 ```
-Login : admin@dailyprint
+Login : admin@dailyprint.xyz
 Mdp   : admin
 ```
 
