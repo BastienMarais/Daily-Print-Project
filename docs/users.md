@@ -1,7 +1,7 @@
 # Partie utilisateurs :
 
 ## Documentations :
-* [Intallation](https://bastienmarais.github.io/Daily-Print-Project/install)
+* [Installation](https://bastienmarais.github.io/Daily-Print-Project/install)
 * [Utilisateurs](https://bastienmarais.github.io/Daily-Print-Project/users)
 * [Reprographie](https://bastienmarais.github.io/Daily-Print-Project/repro)
 * [Administrateur](https://bastienmarais.github.io/Daily-Print-Project/admin)
@@ -10,8 +10,7 @@
 
 Sur la page index.php cliquez sur "Créer un compte" puis remplir chacun des champs et surtout :
 ```
-Statut = Reprographie
-Département = Reprographie
+Statut = Client
 ```
 
 ## Page : Mes demandes

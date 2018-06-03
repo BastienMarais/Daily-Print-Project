@@ -1,7 +1,7 @@
 # Partie administrateur :
 
 ## Documentations :
-* [Intallation](https://bastienmarais.github.io/Daily-Print-Project/install)
+* [Installation](https://bastienmarais.github.io/Daily-Print-Project/install)
 * [Utilisateurs](https://bastienmarais.github.io/Daily-Print-Project/users)
 * [Reprographie](https://bastienmarais.github.io/Daily-Print-Project/repro)
 * [Administrateur](https://bastienmarais.github.io/Daily-Print-Project/admin)
@@ -15,7 +15,7 @@ Une fois vôtre choix fait cliquez sur le bouton "Gérer les inscriptions".
 
 ## Page : Liste des utilisateurs
 
-Vous pouvez voir ici tous les comptes utilisateurs, vous pouvez les supprimer en cas d'erreur � l'aide de la case a cocher et du bouton associ� juste au dessus du tableau.
+Vous pouvez voir ici tous les comptes utilisateurs, vous pouvez les supprimer en cas d'erreur à l'aide de la case a cocher et du bouton associé juste au dessus du tableau.
 
 /!\ Attention c'est définitif /!\
 

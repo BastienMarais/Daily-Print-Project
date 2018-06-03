@@ -1,4 +1,6 @@
-# Description du projet
+# Daily Print
+
+## Description du projet
 
 Ce projet vise à remplacer le système de reprographie de l'IUT de Vélizy par une application web traitant les demandes numériquement et facilitant la communication entre les professeurs et le service de reprographie.
 

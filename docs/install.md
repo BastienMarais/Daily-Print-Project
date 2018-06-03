@@ -1,20 +1,26 @@
 # Partie installation de l'application :
 
-## Pré-requis :
+## Documentations :
+* [Installation](https://bastienmarais.github.io/Daily-Print-Project/install)
+* [Utilisateurs](https://bastienmarais.github.io/Daily-Print-Project/users)
+* [Reprographie](https://bastienmarais.github.io/Daily-Print-Project/repro)
+* [Administrateur](https://bastienmarais.github.io/Daily-Print-Project/admin)
+
+## PrÃ©-requis :
 
 Pour installer Daily Print il vous faut tout d'abord un serveur web comme Apache et un serveur MySQL.
-Nous utilisons Xampp ou lampp qui réunit ces deux serveurs.
+Nous utilisons Xampp ou lampp qui rÃ©unit ces deux serveurs.
 
-Le site nécessite PHP 7 et un serveur SMPT pour l'envoi d'emails.
+Le site nÃ©cessite PHP 7 et un serveur SMPT pour l'envoi d'emails.
 
 
-Une fois les éléments précédents installés, il faut récupérer le dépot github :
+Une fois les Ã©lÃ©ments prÃ©cÃ©dents installÃ©s, il faut rÃ©cupÃ©rer le dÃ©pot github :
 ```sh
 git clone https://Github.com/BastienMarais/Daily-Print-Project.git
 git checkout dev
 ```
 
-Ensuite aller dans `src/site/conf/conf.php` et paramétrer l'application :
+Ensuite aller dans `src/site/conf/conf.php` et paramÃ©trer l'application :
 ```php
 <?php
 
@@ -34,22 +40,22 @@ Ensuite aller dans `src/site/conf/conf.php` et paramétrer l'application :
     // Path des fichiers du site 
     $VALEUR_files = "M:/git/Daily-Print-Project/src/site/files/";
     
-    // Windows ou Linux (ça gère les séparateurs de fichiers)
+    // Windows ou Linux (Ã§a gÃ¨re les sÃ©parateurs de fichiers)
     $VALEUR_os = "Windows";
 	
 ?>
 ```
 
-Il vous reste juste a initialiser la base de données avec le script `src/bd/init_DB.sql`
+Il vous reste juste a initialiser la base de donnÃ©es avec le script `src/bd/init_DB.sql`
 
 
-Vous pouvez a présent accéder au site avec comme identifiant :
+Vous pouvez a prÃ©sent accÃ©der au site avec comme identifiant :
 ```
-Login : admin@dailyprint
+Login : admin@dailyprint.xyz
 Mdp   : admin
 ```
 
-Changer immédiatement le mot de passe admin dans la partie "Paramètres".
+Changer immÃ©diatement le mot de passe admin dans la partie "ParamÃ¨tres".
 
 
-L'application est prête !
+L'application est prÃªte !
